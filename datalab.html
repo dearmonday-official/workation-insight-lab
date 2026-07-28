@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workation DataLab — Workation Insight Lab | DearMonday</title>
+<meta name="description" content="DearMonday 직영 워케이션 시설 11개소의 W2BI 2차 진단 결과와 프로그램 유형별 매칭 데이터를 공개합니다.">
+<link rel="icon" href="assets/dear monday-07.png">
+<link rel="stylesheet" href="assets/wil.css">
+</head>
+<body>
+
+<div id="wilHeader"></div>
+
+<section class="phead">
+  <div class="container">
+    <span class="eyebrow">Workation DataLab</span>
+    <h1>W2BI <em>진단 결과</em> &amp; 데이터</h1>
+    <p>워케이션 시설 유형별 W2BI 진단 결과를 공개합니다. 진단 범위는 단계적으로 확장됩니다.</p>
+  </div>
+</section>
+
+<!-- ══════════ 진단 결과 (탭) ══════════ -->
+<section class="section tint" id="results">
+  <div class="container">
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-pane="p1">DearMonday 직영점<small>11개소 · 2026.07 진단 완료</small></button>
+      <button class="tab" data-pane="p2">DearMonday 운영 지자체 시설<small>준비 중</small></button>
+      <button class="tab" data-pane="p3">전국 지자체 시설<small>준비 중</small></button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div class="tabpane on" id="p1">
+      <div class="note">
+        <b>진단 기준</b>
+        <p>
+          <b>W2BI 환산지수</b>는 100점 만점 절대 총점이 아니라 <b>확정 점수 ÷ 평가 가능 배점 × 100</b>의 비교 지표입니다.
+          <b>프로그램 유형</b>은 유형별로 각각 독립 판정하며, 한 시설이 4개 전부에 해당하거나 하나도 해당하지 않을 수 있습니다.
+          <b>V*</b>는 필수 요건이 판정 보류인 상태의 잠정 해당 표기입니다. 각 유형 칸의 키워드는 판정을 가른 핵심 근거입니다.
+        </p>
+      </div>
+
+      <div class="tablewrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="c" style="width:44px">순위</th>
+              <th>워케이션 시설</th>
+              <th class="c" style="width:58px">오피스<br>정원</th>
+              <th style="width:160px">W2BI 환산지수</th>
+              <th class="c" style="width:82px">필수 요건</th>
+              <th class="ty" style="width:112px">출장 연계<br>업무형 BT</th>
+              <th class="ty" style="width:112px">팀/단체<br>워크샵형 TW</th>
+              <th class="ty" style="width:112px">몰입<br>프로젝트형 FP</th>
+              <th class="ty" style="width:112px">정규<br>근무형 RW</th>
+            </tr>
+          </thead>
+          <tbody id="w2biBody"></tbody>
+        </table>
+      </div>
+
+      <div class="legend">
+        <span><i style="background:#DDF0E4"></i>필수 요건 충족 <b style="color:var(--ink)">8개소</b></span>
+        <span><i style="background:#FBDCDC"></i>미충족 <b style="color:var(--ink)">1개소</b></span>
+        <span><i style="background:var(--gold-50);border:1px solid #F0DFA8"></i>판정 보류 <b style="color:var(--ink)">2개소</b> — 객실 정보 미확인</span>
+        <span><i style="background:var(--gold)"></i>V = 유형 해당 · V* = 잠정 해당</span>
+      </div>
+
+      <div style="margin-top:56px" id="types">
+        <div class="sec-head" style="margin-bottom:24px">
+          <span class="eyebrow">Program Type Fit</span>
+          <h2 style="margin-top:12px;font-size:26px">프로그램 <em>유형별 해당 시설</em></h2>
+          <p>총점이 높은 시설이 모든 프로그램에 적합한 것은 아닙니다. 유형별 핵심 항목만 재집계해 판정했습니다.</p>
+        </div>
+        <div class="type-grid" id="typeGrid"></div>
+      </div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div class="tabpane" id="p2">
+      <div class="soon">
+        <b>DearMonday 운영 지자체 시설 진단</b>
+        <p>DearMonday가 위탁·협력 운영하는 지자체 워케이션 시설을 대상으로 W2BI 진단을 확대할 예정입니다.
+           직영점과 동일한 12개 항목·프로그램 유형 판정 체계를 적용합니다.</p>
+        <span class="tagline">진단 체계 준비 중</span>
+      </div>
+    </div>
+
+    <!-- TAB 3 -->
+    <div class="tabpane" id="p3">
+      <div class="soon">
+        <b>전국 지자체 워케이션 시설 진단</b>
+        <p>전국 지방자치단체가 운영하는 공공 워케이션 시설을 대상으로 W2BI 진단을 확대하여,
+           지역별 공급 역량 격차와 기업 매칭 가능 시설을 파악할 수 있는 전국 단위 데이터를 구축할 예정입니다.</p>
+        <span class="tagline">진단 체계 준비 중</span>
+      </div>
+    </div>
+
+    <!-- 지표 출처 -->
+    <div style="margin-top:56px" id="sources">
+      <h3 class="sub-h">지표 및 데이터 출처</h3>
+      <p style="font-size:14px;color:var(--body);line-height:1.75;max-width:820px">
+        WIL이 산출하는 지표는 아래와 같이 구성되며, 각 지표는 원천 데이터를 직접 확인해 작성합니다.
+        근거를 확인할 수 없는 항목은 점수를 부여하지 않고 미확인으로 표기합니다.
+      </p>
+      <div class="srcwrap">
+        <table>
+          <thead>
+            <tr><th style="width:150px">대분류</th><th style="width:180px">중분류</th><th>지표</th><th style="width:200px">출처</th></tr>
+          </thead>
+          <tbody>
+            <tr><td rowspan="3">시설 공급 역량</td><td>업무 환경</td><td>Wifi·개인 업무 시설·업무 지원 장비·협업 시설</td><td>시설 공식 운영 정보, 현장 실사</td></tr>
+            <tr><td>체류 환경</td><td>객실 품질·체험 프로그램·운영 시간</td><td>시설 공식 운영 정보, 현장 실사</td></tr>
+            <tr><td>접근·절차</td><td>대중교통 접근성·출퇴근 난이도·이용 절차·물리적 보안</td><td>시설 공식 운영 정보, 운영팀 확인</td></tr>
+            <tr><td rowspan="2">체류 실적</td><td>이용 현황</td><td>체류 박수·시설별 이용 패턴·기업/개인 이용 비중</td><td>DearMonday 예약·운영 DB</td></tr>
+            <tr><td>재방문</td><td>재방문율·장기체류 비율·B2B 전환율</td><td>DearMonday 예약·운영 DB</td></tr>
+            <tr><td rowspan="2">소비 지출<span class="status" style="margin-left:6px">2027 예정</span></td><td>실결제</td><td>1인 1박당 소비지출액·업종별 소비 구조</td><td>카드 승인·매입 내역 연동(동의 기반)</td></tr>
+            <tr><td>파급 효과</td><td>생산유발효과·부가가치유발효과</td><td>한국은행 지역산업연관표</td></tr>
+            <tr><td>수요자 만족</td><td>체류 품질</td><td>업무 몰입도·숙박 만족도·지역 콘텐츠 만족도</td><td>체크아웃 설문</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 자가 진단 CTA ══════════ -->
+<section class="section deep">
+  <div class="container">
+    <div class="diag">
+      <div>
+        <span class="eyebrow" style="color:var(--gold)">W2BI Self-Diagnosis</span>
+        <h2 style="margin-top:16px">우리 시설의<br><em>기업 친화도</em>를 진단해보세요</h2>
+        <p>
+          12개 항목 · 100점 만점의 진단 체계를 그대로 적용한 자가 진단입니다.
+          응답만으로 W2BI 총점, 필수 요건 충족 여부, 프로그램 유형별 해당 여부를 즉시 확인할 수 있습니다.
+        </p>
+        <button class="btn-fill" onclick="openSelf()" style="margin-top:28px">W2BI 자가 진단 해보기 →</button>
+      </div>
+      <div class="d-items">
+        <div class="d-item"><div class="d-num">01 · 필수</div><div class="d-label">Wifi 환경 &amp; 정보 보안</div><div class="d-score">가중치 5점</div></div>
+        <div class="d-item"><div class="d-num">02 · 필수</div><div class="d-label">개인 업무 시설</div><div class="d-score">가중치 15점</div></div>
+        <div class="d-item"><div class="d-num">03 · 필수</div><div class="d-label">체험 프로그램</div><div class="d-score">가중치 5점</div></div>
+        <div class="d-item"><div class="d-num">04 · 필수</div><div class="d-label">객실 품질</div><div class="d-score">가중치 10점</div></div>
+        <div class="d-item"><div class="d-num">05 · 필수</div><div class="d-label">이용 절차</div><div class="d-score">가중치 10점</div></div>
+        <div class="d-item"><div class="d-num">06–12 · 권장</div><div class="d-label">운영시간 · 보안 · 협업시설 · 접근성 외</div><div class="d-score">가중치 55점</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="wilFooter"></div>
+<div id="wilModal"></div>
+
+<script src="assets/wil.js"></script>
+<script>
+  mountHeader('datalab');
+  mountFooter();
+  mountSelfModal();
+
+  /* 진단 결과 표 */
+  (function(){
+    const rows = BRANCHES.map(b => ({...b, idx: Math.round(b.got / b.den * 1000) / 10}))
+                         .sort((a, b) => b.idx - a.idx);
+    const max = Math.max(...rows.map(r => r.idx));
+    const VD = {pass:['충족','v-pass'], fail:['미충족','v-fail'], hold:['판정 보류','v-hold']};
+    document.getElementById('w2biBody').innerHTML = rows.map((b, i) => `
+      <tr>
+        <td class="c" style="font-weight:800;color:var(--gold-deep)">${i + 1}</td>
+        <td><div class="bname">${b.n}</div><div class="bregion">${b.r} · ${b.tag}</div></td>
+        <td class="c">${b.cap}석</td>
+        <td><span class="bar"><i><b style="width:${(b.idx / max * 100).toFixed(1)}%"></b></i><em>${b.idx.toFixed(1)}</em></span></td>
+        <td class="c"><span class="${VD[b.vd][1]}">${VD[b.vd][0]}</span></td>
+        ${b.ty.map(([mk, kw]) => `<td class="tyc">${
+          mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${kw}</span>`
+             : `<span class="x">–</span><span class="kw">${kw}</span>`
+        }</td>`).join('')}
+      </tr>`).join('');
+  })();
+
+  /* 유형별 해당 시설 카드 */
+  (function(){
+    document.getElementById('typeGrid').innerHTML = TYPES.map((t, ti) => {
+      const hit = BRANCHES.filter(b => b.ty[ti][0])
+                          .map(b => ({n: b.n.replace('DearMonday ', ''), m: b.ty[ti][0]}));
+      return `<div class="tcard">
+        <div><span class="tcode">${t.c}</span></div>
+        <h4>${t.n}</h4>
+        <p>${t.d}</p>
+        <div class="tkeys"><b style="color:var(--teal)">판정 항목</b><br>${t.k}</div>
+        <div class="thits">${
+          hit.length ? hit.map(x => `<div class="thit"><i>${x.m}</i><span>${x.n}</span></div>`).join('')
+                     : '<div style="font-size:12.5px;color:var(--mute);padding:6px 0">해당 시설 없음</div>'
+        }</div>
+        <div class="tcount">해당 ${hit.length} / 11개소${t.note ? ' · ' + t.note : ''}</div>
+      </div>`;
+    }).join('');
+  })();
+
+  /* 탭 */
+  document.getElementById('tabs').addEventListener('click', e => {
+    const btn = e.target.closest('.tab');
+    if (!btn) return;
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t === btn));
+    document.querySelectorAll('.tabpane').forEach(p => p.classList.toggle('on', p.id === btn.dataset.pane));
+  });
+</script>
+</body>
+</html>
