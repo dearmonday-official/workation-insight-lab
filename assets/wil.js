@@ -77,6 +77,15 @@ const MUNICIPAL_GROUPS = [
     {n:'광역 단위 지역 D-5', cap:30, idx:70.0, vd:'pass', ty:[[null,'운영 09~18시'],['V','30석 · 회의실·장비'],[null,'보안 · 장시간 운영 미달'],[null,'서류·증빙사진 절차']]},
     {n:'광역 단위 지역 D-6', cap:20, idx:65.3, vd:'fail', ty:[[null,'카페형 · Wi-Fi 미확인'],[null,'회의실 X'],[null,'장비 · 보안 미확인'],[null,'필수 요건 미충족']]},
     {n:'광역 단위 지역 D-7', cap:16, idx:60.0, vd:'fail', ty:[[null,'산악권 교통 · 운영 09~18시'],[null,'회의실 X'],[null,'장비 · 보안 미확인'],[null,'필수 요건 미충족']]}
+   ]},
+  {name:'광역 단위 지역 E', date:'2026.07.29', source:'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트',
+   summary:{total:6, pass:1, fail:4, hold:1, avg:64.1}, facilities:[
+    {n:'광역 단위 지역 E-1', cap:30, idx:66.7, vd:'pass', ty:[[null,'운영 09~18시 · 숙소 이동'],[null,'캠핑 숙소 · 예약체계 미확인'],[null,'보안 · 장시간 운영 미달'],[null,'캠핑 숙소 · 센터 이동']]},
+    {n:'광역 단위 지역 E-2', cap:13, idx:63.5, vd:'hold', ty:[[null,'Wi-Fi · 보안 미확인'],[null,'정원 13석'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'Wi-Fi · 지역교통 제한']]},
+    {n:'광역 단위 지역 E-3', cap:10, idx:68.9, vd:'fail', ty:[[null,'정원 10석 · 외곽 교통'],[null,'정원 10석'],[null,'물리 보안 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 E-4', cap:5, idx:64.7, vd:'fail', ty:[[null,'정원 5석 · 회의실 X'],[null,'정원 5석 · 회의실 X'],[null,'회의실 X · 보안 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 E-5', cap:6, idx:55.3, vd:'fail', ty:[[null,'카페형 · 휴무일 다수'],[null,'정원 6석 · 회의실 X'],[null,'회의실 X · 운영 09~18시'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 E-6', cap:13, idx:65.3, vd:'fail', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'정원 13석'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'필수 요건 미충족']]}
    ]}
 ];
 
