@@ -61,6 +61,12 @@ const MUNICIPAL_GROUPS = [
     {n:'광역 단위 지역 B-2', cap:10, idx:66.2, vd:'pass', ty:[[null,'교통 · 운영시간 미확인'],[null,'정원 10석'],[null,'보안 · 운영시간 미확인'],[null,'교통 · 객실 품질 한계']]},
     {n:'광역 단위 지역 B-3', cap:24, idx:61.3, vd:'fail', ty:[[null,'Wi-Fi 미확인 · 필수 미달'],[null,'체험 프로그램 X'],[null,'장비 · 보안 미확인'],[null,'필수 요건 미충족']]},
     {n:'광역 단위 지역 B-4', cap:30, idx:60.0, vd:'fail', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'회의실 X'],[null,'회의실 X · 보안 미확인'],[null,'필수 요건 미충족']]}
+   ]},
+  {name:'광역 단위 지역 C', date:'2026.07.29', source:'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트',
+   summary:{total:3, pass:1, fail:1, hold:1, avg:59.4}, facilities:[
+    {n:'광역 단위 지역 C-1', cap:20, idx:50.8, vd:'fail', ty:[[null,'도서 접근 · Wi-Fi 미확인'],[null,'회의실 · 장비 미확인'],[null,'보안 · 운영시간 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 C-2', cap:20, idx:63.1, vd:'hold', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'회의실 수 · 예약 미확인'],[null,'보안 · 운영시간 미확인'],[null,'숙소별 이동시간 미확인']]},
+    {n:'광역 단위 지역 C-3', cap:50, idx:64.4, vd:'pass', ty:[[null,'운영 09~18시'],[null,'회의실 수 미확인'],[null,'보안 · 장시간 운영 미달'],[null,'숙소 이동 · 서류 절차']]}
    ]}
 ];
 
