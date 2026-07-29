@@ -5,7 +5,7 @@
 const S3 = 'https://dearmonday-prod-public.s3.ap-northeast-2.amazonaws.com/branch/';
 const BRANCHES = [
   {n:'DearMonday 경주 라한셀렉트호텔점', r:'경상북도 경주시', cap:25, got:61, den:70, vd:'pass',
-   tag:'5성 호텔 프리미엄 오피스', img:S3+'thumbnail/20250425_113651_9167f706-bc02-4b4d-be22-7562a7c2045a-%EB%9D%BC%ED%95%9C%EC%85%80%EB%A0%89%ED%8A%B8%EA%B2%BD%EC%A3%BC%20%EC%A0%84%EA%B2%BD_%EB%B2%9A%EA%BD%83%EC%8B%9C%EC%A6%8C.jpeg',
+   tag:'5성 호텔 프리미엄 오피스', img:'assets/hero-indexes-clean.webp',
    ty:[['V','동일 건물 · 24h'],['V','25석 · 8인 협업석'],['V','전 좌석 27인치'],['V','5성급 · 뷔페']]},
   {n:'DearMonday 경주 체스터톤스호텔점', r:'경상북도 경주시', cap:11, got:61, den:70, vd:'pass',
    tag:'경주 중심지 신규 호텔', img:S3+'thumbnail/20250425_105427_04607886-7627-4b9e-a9e4-72ee89e9bf4a-%EC%99%B8%EB%B6%80%20(1).jpg',
@@ -231,7 +231,7 @@ const MUNICIPAL_GROUPS = [
 ].map(([name, codes]) => {
   const groups = codes.map(code => RAW_MUNICIPAL_GROUPS.find(g => g.name.endsWith(` ${code}`)));
   const facilities = groups.flatMap(g => g.facilities).map((f, i) => ({
-    ...f, n:`${name} 시설 ${String(i + 1).padStart(2, '0')}`
+    ...f, vd:(f.vd === 'hold' && f.idx >= 80 ? 'pass' : f.vd), n:`${name} 시설 ${String(i + 1).padStart(2, '0')}`
   }));
   const total = facilities.length;
   return {
@@ -253,7 +253,7 @@ const MUNICIPAL_GROUPS = [
    센터 기준 공통 적용, 객실 품질은 숙소별 개별 평가, 나머지 항목은 두 정보를 조합해 판정. */
 const DM_MUNICIPAL_GROUPS = [
   {name:'농식품부 농촌형 워케이션', date:'2026.07.29', source:'농림축산식품부 농촌 워케이션 사업 공식 발표 + 디어먼데이 예약 페이지 + 시설 공식/관광공사 정보',
-   summary:{total:10, pass:0, fail:4, hold:6, avg:56.8}, facilities:[
+   summary:{total:10, pass:1, fail:4, hold:5, avg:56.8}, facilities:[
     {n:'정읍 송죽마을', cap:0, idx:48.9, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
     {n:'홍천 무네미마을', cap:0, idx:53.3, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
     {n:'상주 객주촌', cap:0, idx:42.9, vd:'hold', ty:[[null,'근거 확보율 23%'], [null,'근거 확보율 33%'], [null,'근거 확보율 17%'], [null,'근거 확보율 38%']]},
@@ -261,7 +261,7 @@ const DM_MUNICIPAL_GROUPS = [
     {n:'영천 한의마을', cap:10, idx:64.3, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
     {n:'남원 혼불체험관', cap:0, idx:33.3, vd:'hold', ty:[[null,'근거 확보율 38%'], [null,'근거 확보율 25%'], [null,'근거 확보율 0%'], [null,'근거 확보율 46%']]},
     {n:'공주 힐스포레', cap:0, idx:62.9, vd:'hold', ty:[[null,'근거 확보율 23%'], [null,'근거 확보율 50%'], [null,'근거 확보율 17%'], [null,'근거 확보율 38%']]},
-    {n:'남해 오피스 닻', cap:24, idx:82.7, vd:'hold', ty:[['V','적합'], ['V','적합'], ['V','적합'], ['V','적합']]},
+    {n:'남해 오피스 닻', cap:24, idx:82.7, vd:'pass', ty:[['V','적합'], ['V','적합'], ['V','적합'], ['V','적합']]},
     {n:'곡성 러스틱타운', cap:41, idx:61.8, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
     {n:'이천 산수유마을', cap:0, idx:57.5, vd:'hold', ty:[[null,'근거 확보율 38%'], [null,'근거 확보율 58%'], [null,'근거 확보율 17%'], [null,'근거 확보율 46%']]}
   ]},
@@ -327,14 +327,14 @@ const QUESTIONS = [
 /* ── 헤더/네비 스캐폴딩: 각 페이지 <div id="wilHeader" data-active="..."></div> 자리에 삽입 ── */
 function mountHeader(active){
   const menus = [
-    {href:'about.html', key:'about', label:'WIL 소개', mega:{h:'WIL 소개', items:[
+    {href:'about.html', key:'about', label:'ABOUT', mega:{h:'ABOUT', items:[
       ['about.html#vision','비전과 목표'],['about.html#fields','4대 연구 분야'],['about.html#network','협력 네트워크']]}},
-    {href:'indexes.html', key:'indexes', label:'Indexes', mega:{h:'INDEXES', items:[
+    {href:'indexes.html', key:'indexes', label:'INDEXES', mega:{h:'INDEXES', items:[
       ['w2bi.html','워케이션 시설의 기업 요구사항 만족 지수'],
       ['wibi.html','기업의 워케이션 도입 가능성 지수']]}},
-    {href:'datalab.html', key:'datalab', label:'DataLab', mega:{h:'DATALAB', items:[
-      ['datalab.html#diagnosis','진단 데이터'],['datalab.html#research-data','연구 데이터'],['datalab.html#sources','데이터 출처']]}} ,
-    {href:'research.html', key:'research', label:'Research', mega:{h:'RESEARCH', items:[
+    {href:'datalab.html', key:'datalab', label:'DATALAB', mega:{h:'DATALAB', items:[
+      ['corporate-workation-status.html','기업 워케이션 현황'],['regional-workation-market.html','지역별 워케이션 시장 현황']]}} ,
+    {href:'research.html', key:'research', label:'RESEARCH', mega:{h:'RESEARCH', items:[
       ['research.html#list','연구보고서'],['research.html#list','실증 연구'],['research.html#list','학술 협력']]}}
   ];
   const nav = menus.map(m => `<a href="${m.href}" class="${m.key === active ? 'on' : ''}">${m.label}</a>`).join('');
@@ -348,8 +348,7 @@ function mountHeader(active){
   <header>
     <div class="hbar">
       <a href="index.html" class="brand">
-        <img class="brand-icon" src="assets/dear monday-07.png" alt="">
-        <span class="brand-word"><b>DearMonday</b><i>Insight Lab</i></span>
+        <img class="brand-mark" src="assets/dear monday-04.png" alt="DearMonday"><span class="brand-div"></span><span class="brand-lab"><b>WORKATION</b><span>INSIGHT LAB</span></span>
       </a>
       <nav class="nav" id="nav">${nav}</nav>
       <div class="hact">
@@ -373,9 +372,7 @@ function mountFooter(){
     <div class="container">
       <div class="f-row">
         <div class="f-brand">
-          <img src="assets/dear monday-04-white.png" alt="DearMonday">
-          <span class="fb-div"></span>
-          <div><b>DearMonday</b><span>Workation Insight Lab</span></div>
+          <img src="assets/dear monday-04-white.png" alt="DearMonday"><span class="fb-div"></span><div class="brand-lab footer-lab"><b>WORKATION</b><span>INSIGHT LAB</span></div>
         </div>
         <div class="f-act">
           <a href="https://dearmonday.io/common/terms" target="_blank" rel="noopener">이용약관</a>
@@ -562,7 +559,7 @@ function renderMunicipalGroups(groups, containerId, countLabel){
     <section class="municipal-group">
       <button class="municipal-head" type="button" aria-expanded="false" aria-controls="${containerId}-panel-${gi}">
         <span class="municipal-plus" aria-hidden="true">+</span>
-        <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}${countLabel || '개소'} · ${g.date} 진단</small></span>
+        <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}${countLabel || '개소'}</small></span>
         <span class="municipal-stats">
           <em class="stat-pass">적합 ${g.summary.pass}</em><em class="stat-fail">개선 필요 ${g.summary.fail}</em><em class="stat-hold">추가 확인 ${g.summary.hold}</em><em>평균 ${g.summary.avg.toFixed(1)}</em>
         </span>
