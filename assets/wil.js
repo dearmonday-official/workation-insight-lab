@@ -324,6 +324,11 @@ const QUESTIONS = [
     ['도보 10분 이내', 7],['동일 건물·동일 부지 (도보 거리)', 10]]}
 ];
 
+const SELF_EXAMPLES = {
+  dm:['경주 라한셀렉트호텔점','경주 라한셀렉트호텔점','제주 마레보비치호텔점','경주 라한셀렉트호텔점','경주 라한셀렉트호텔점','속초 체스터톤스호텔점','경주 라한셀렉트호텔점','제주 마레보비치호텔점','경주 라한셀렉트호텔점','시흥 르컬렉티브점','경주 춘추관점','경주 라한셀렉트호텔점'],
+  public:['남해 오피스 닻','남해 오피스 닻','공주 힐스포레','가평 W지우리조트','남해 오피스 닻','남해 오피스 닻','남해 오피스 닻','남해 오피스 닻','남해 오피스 닻','가평 호텔자라','남해 오피스 닻','남해 오피스 닻']
+};
+
 /* ── 헤더/네비 스캐폴딩: 각 페이지 <div id="wilHeader" data-active="..."></div> 자리에 삽입 ── */
 function mountHeader(active){
   const menus = [
@@ -436,10 +441,10 @@ function mountShowcase(elId, dotsId, pickIdx){
 function mountSelfModal(){
   const req = QUESTIONS.filter(q => q.req), rec = QUESTIONS.filter(q => !q.req);
   const mk = q => `<div class="q">
-      <div class="qt"><b>${q.id}. ${q.t}</b><span>배점 ${q.w}점</span></div>
+      <div class="qt"><b>${q.id}. ${q.t}</b></div>
       <div class="opts">${q.o.map(([lb, sc]) =>
         `<label class="opt"><input type="radio" name="q${q.id}" value="${sc}">
-         <span>${lb}</span><em>${sc}점</em></label>`).join('')}</div>
+         <span>${lb}</span></label>`).join('')}</div>
     </div>`;
   document.getElementById('wilModal').innerHTML = `
   <div class="modal" id="selfModal">
@@ -453,7 +458,6 @@ function mountSelfModal(){
         <button class="mclose" onclick="closeSelf()" aria-label="닫기">✕</button>
       </div>
       <div class="mbody">
-        <div class="result" id="selfResult"></div>
         <div class="cap-row">
           <label for="capIn">오피스 정원</label>
           <input type="number" id="capIn" value="12" min="1" max="200">
@@ -465,9 +469,10 @@ function mountSelfModal(){
           <div class="qlabel">권장 항목 · 7개 · 55점</div>
           ${rec.map(mk).join('')}
         </div>
+        <div class="result" id="selfResult"></div>
       </div>
       <div class="mfoot">
-        <span style="font-size:12px;color:var(--mute)">항목을 선택하면 즉시 계산됩니다. 미선택 항목은 0점 처리됩니다.</span>
+        <span style="font-size:12px;color:var(--mute)">모든 항목을 선택한 후 결과 보기를 눌러주세요.</span>
         <div style="display:flex;gap:10px">
           <button class="btn-line" style="border-color:var(--line);color:var(--body)" onclick="resetSelf()">초기화</button>
           <button class="btn-fill" onclick="calcSelf(true)">결과 보기</button>
@@ -475,8 +480,6 @@ function mountSelfModal(){
       </div>
     </div>
   </div>`;
-  document.getElementById('qWrap').addEventListener('change', () => calcSelf(false));
-  document.getElementById('capIn').addEventListener('input', () => calcSelf(false));
   document.getElementById('selfModal').addEventListener('click', e => { if (e.target.id === 'selfModal') closeSelf(); });
 }
 
@@ -491,6 +494,11 @@ function getScores(){
 
 function calcSelf(scroll){
   const s = getScores();
+  const missing = QUESTIONS.filter(q => !document.querySelector(`input[name="q${q.id}"]:checked`));
+  if (missing.length) {
+    alert(`미응답 문항이 ${missing.length}개 있습니다. 모든 문항에 응답해 주세요.`);
+    return;
+  }
   const cap = +document.getElementById('capIn').value || 0;
   const reqSum = [1,2,3,4,5].reduce((a, i) => a + s[i], 0);
   const recSum = [6,7,8,9,10,11,12].reduce((a, i) => a + s[i], 0);
@@ -512,6 +520,14 @@ function calcSelf(scroll){
   });
 
   const box = document.getElementById('selfResult');
+  const improve = QUESTIONS.filter(q => s[q.id] < q.w).map(q => {
+    const picked = q.o.find(([, score]) => score === s[q.id]);
+    const best = q.o[q.o.length - 1][0];
+    return `<div class="improve-item"><h5>${q.id}. ${q.t}</h5>
+      <p><b>문제 지점</b> 현재 응답은 ‘${picked ? picked[0] : '미확인'}’으로 최고 기준에 미달합니다.<br>
+      <b>개선 기준</b> ${best}<br>
+      <b>최고 기준 사례</b> <a href="https://dearmonday.io/branch/list?useCount=0" target="_blank" rel="noopener">DearMonday ${SELF_EXAMPLES.dm[q.id - 1]}</a> · 지자체 운영 시설 ${SELF_EXAMPLES.public[q.id - 1]}</p></div>`;
+  }).join('');
   box.className = 'result on';
   box.innerHTML = `
     <div class="res-top">
@@ -533,11 +549,16 @@ function calcSelf(scroll){
         <span>${t.ok ? '적합도 ' + t.fit : t.why}</span>
       </div>`).join('')}
     </div>
+    <div class="improve-list">
+      ${improve || '<div class="improve-item"><h5>모든 항목이 최고 기준입니다</h5><p>현재 응답 기준으로 추가 개선이 필요한 항목이 없습니다.</p></div>'}
+    </div>
     <p style="margin-top:14px;font-size:11.5px;color:var(--mute);line-height:1.6">
       본 자가 진단은 응답 기반 참고 결과입니다. 공식 W2BI 진단은 현장 실사 및 운영 데이터 확인을 거쳐 확정됩니다.
-    </p>`;
+    </p>
+    <button class="btn-fill pdf-btn" onclick="downloadSelfPDF()">결과를 PDF로 다운로드</button>`;
   if (scroll) box.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
+function downloadSelfPDF(){ window.print(); }
 function resetSelf(){
   document.querySelectorAll('#qWrap input[type=radio]').forEach(r => r.checked = false);
   document.getElementById('capIn').value = 12;
