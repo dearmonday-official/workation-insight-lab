@@ -157,6 +157,11 @@ const MUNICIPAL_GROUPS = [
     {n:'광역 단위 지역 J-10', cap:200, idx:64.0, vd:'fail', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'상시 좌석관리 미확인'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'필수 요건 미충족']]},
     {n:'광역 단위 지역 J-11', cap:13, idx:51.4, vd:'hold', ty:[[null,'해안 외곽 · Wi-Fi 미확인'],[null,'정원 13석'],[null,'장비 · 보안 · 운영시간 미확인'],[null,'숙박 5실 · 지역교통 제한']]},
     {n:'광역 단위 지역 J-12', cap:20, idx:51.4, vd:'fail', ty:[[null,'카페형 · 해안 외곽'],[null,'회의실 X'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'필수 요건 미충족']]}
+   ]},
+  {name:'광역 단위 지역 K', date:'2026.07.29', source:'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트',
+   summary:{total:2, pass:0, fail:1, hold:1, avg:65.8}, facilities:[
+    {n:'광역 단위 지역 K-1', cap:37, idx:68.6, vd:'fail', ty:[[null,'카페형 · Wi-Fi 미확인'],[null,'회의실 X'],[null,'장비 · 보안 · 운영시간'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 K-2', cap:10, idx:62.9, vd:'hold', ty:[[null,'정원 10석 · 해안 외곽'],[null,'정원 10석'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'숙박 품질 · 지역교통 제한']]}
    ]}
 ];
 
