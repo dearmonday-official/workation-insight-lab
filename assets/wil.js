@@ -134,7 +134,10 @@ function mountHeader(active){
       <a href="index.html" class="brand">
         <img class="brand-mark" src="assets/dear monday-04.png" alt="DearMonday">
         <span class="brand-div"></span>
-        <span class="brand-txt"><b>DearMonday</b><span>Workation Insight Lab</span></span>
+        <span class="brand-lockup" aria-label="Workation Insight Lab">
+          <span class="wil-monogram" aria-hidden="true">WIL</span>
+          <span class="brand-txt"><b>WORKATION</b><span>INSIGHT LAB</span><small>RESEARCH · DATA · STANDARD</small></span>
+        </span>
       </a>
       <nav class="nav" id="nav">${nav}</nav>
       <div class="hact">
