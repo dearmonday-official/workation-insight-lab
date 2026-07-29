@@ -42,7 +42,7 @@ const BRANCHES = [
 /* 전국 지자체 시설 - 광역 단위 지역 A 1차 테스트 진단
    출처: 한국관광공사 2025 디렉토리북 pp.5-11 + 시설 공식 웹사이트 (2026-07-29 확인)
    공개 화면에서는 시설명을 광역지자체별 익명 코드로 표기한다. */
-const MUNICIPAL_GROUPS = [
+const RAW_MUNICIPAL_GROUPS = [
   {name:'광역 단위 지역 A', date:'2026.07.29', source:'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트',
    summary:{total:9, pass:0, fail:5, hold:4, avg:55.2}, facilities:[
     {n:'광역 단위 지역 A-1', cap:60, idx:64.6, vd:'hold', ty:[[null,'Wi-Fi · 숙소 이동 미확인'],[null,'객실 품질 미확인'],[null,'Wi-Fi · 물리 보안 미확인'],[null,'객실 · 숙소 이동 미확인']]},
@@ -218,6 +218,35 @@ const MUNICIPAL_GROUPS = [
    ]}
 ];
 
+/* 행정구역 13개를 기업의 실제 이동·운영 단위인 7개 광역권으로 통합한다.
+   원본 진단값은 보존하고 개별 시설명만 권역별 일련번호로 다시 익명화한다. */
+const MUNICIPAL_GROUPS = [
+  ['인천/경기권', ['C','E']],
+  ['강원권', ['F']],
+  ['충청권', ['G','H']],
+  ['전라권', ['I','J']],
+  ['대구/경북권', ['B','K']],
+  ['부산/울산/경남권', ['A','D','L']],
+  ['제주권', ['M']]
+].map(([name, codes]) => {
+  const groups = codes.map(code => RAW_MUNICIPAL_GROUPS.find(g => g.name.endsWith(` ${code}`)));
+  const facilities = groups.flatMap(g => g.facilities).map((f, i) => ({
+    ...f, n:`${name} 시설 ${String(i + 1).padStart(2, '0')}`
+  }));
+  const total = facilities.length;
+  return {
+    name, date:'2026.07.29',
+    source:[...new Set(groups.map(g => g.source))].join(' · '),
+    summary:{
+      total,
+      pass:facilities.filter(f => f.vd === 'pass').length,
+      fail:facilities.filter(f => f.vd === 'fail').length,
+      hold:facilities.filter(f => f.vd === 'hold').length,
+      avg:Math.round(groups.reduce((sum, g) => sum + g.summary.avg * g.summary.total, 0) / total * 10) / 10
+    }, facilities
+  };
+});
+
 const TYPES = [
   {c:'BT', n:'출장 연계 업무형', d:'개인·소규모 출장 기반 단기 업무 워케이션',
    k:'대중교통 접근성 · 출퇴근 난이도 · 개인 업무 시설 · Wifi · 이용 절차 · 운영 시간 · 지역 내 교통', items:[10,12,2,1,5,6,11]},
@@ -275,10 +304,8 @@ function mountHeader(active){
     {href:'about.html', key:'about', label:'WIL 소개', mega:{h:'WIL 소개', items:[
       ['about.html#vision','비전과 목표'],['about.html#fields','4대 연구 분야'],['about.html#network','협력 네트워크']]}},
     {href:'indexes.html', key:'indexes', label:'Indexes', mega:{h:'INDEXES', items:[
-      ['indexes.html#w2bi','W2BI 기업 요구사항 만족 지수'],['indexes.html#wibi','WIBI 사업 적합성 지수'],
-      ['indexes.html#w2bi-method','W2BI 방법론'],['#','__SELF__W2BI 자가 진단']]}},
-    {href:'datalab.html', key:'datalab', label:'Workation<br>DataLab', mega:{h:'WORKATION DATALAB', items:[
-      ['datalab.html#results','W2BI 진단 결과'],['datalab.html#types','프로그램 유형별 시설'],['datalab.html#sources','지표 및 데이터 출처']]}},
+      ['w2bi.html','워케이션 시설의 기업 요구사항 만족 지수'],
+      ['wibi.html','기업의 워케이션 도입 가능성 지수']]}},
     {href:'research.html', key:'research', label:'Research', mega:{h:'RESEARCH', items:[
       ['research.html#list','연구보고서'],['research.html#list','실증 연구'],['research.html#list','학술 협력']]}}
   ];
@@ -474,10 +501,10 @@ function calcSelf(scroll){
     </div>
     <div class="res-verdict ${pass ? 'pass' : 'fail'}">
       ${pass
-        ? `필수 요건 충족 — 기업 매칭 추천 대상입니다. (필수 소계 ${reqSum}점 ≥ 33점)`
+        ? `기업 워케이션 적합 — 기업 매칭 추천 대상입니다. (필수 소계 ${reqSum}점 ≥ 33점)`
         : zero.length
-          ? `필수 요건 미충족 — ${zero.map(i => i + '번 항목').join(', ')}이 0점입니다. 0점 항목이 있으면 기업 매칭 추천 대상에서 제외됩니다.`
-          : `필수 요건 미충족 — 필수 소계 ${reqSum}점으로 기준 33점에 ${33 - reqSum}점 부족합니다.`}
+          ? `개선 필요 — ${zero.map(i => i + '번 항목').join(', ')}이 0점입니다. 0점 항목이 있으면 기업 매칭 추천 대상에서 제외됩니다.`
+          : `개선 필요 — 필수 소계 ${reqSum}점으로 기준 33점에 ${33 - reqSum}점 부족합니다.`}
     </div>
     <div class="res-types">
       ${tRes.map(t => `<div class="rt ${t.ok ? 'ok' : 'no'}">
