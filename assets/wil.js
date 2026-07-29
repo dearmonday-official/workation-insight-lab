@@ -340,7 +340,7 @@ function mountHeader(active){
     {href:'datalab.html', key:'datalab', label:'DATALAB', mega:{h:'DATALAB', items:[
       ['corporate-workation-status.html','기업 워케이션 현황'],['regional-workation-market.html','지역별 워케이션 시장 현황']]}} ,
     {href:'research.html', key:'research', label:'RESEARCH', mega:{h:'RESEARCH', items:[
-      ['research.html#list','연구보고서'],['research.html#list','실증 연구'],['research.html#list','학술 협력']]}}
+      ['research.html#list','연구보고서']]}}
   ];
   const nav = menus.map(m => `<a href="${m.href}" class="${m.key === active ? 'on' : ''}">${m.label}</a>`).join('');
   const mega = menus.map(m => `<div><h6>${m.h ? '' : ''}${m.mega.h}</h6><ul>${
@@ -567,6 +567,29 @@ function resetSelf(){
 function openSelf(){ document.getElementById('selfModal').classList.add('on'); document.body.style.overflow = 'hidden'; }
 function closeSelf(){ document.getElementById('selfModal').classList.remove('on'); document.body.style.overflow = ''; }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSelf(); });
+
+/* 화면 표기 원칙: 약칭 WIL은 풀어 쓰고 문장 종결 마침표는 노출하지 않는다 */
+function normalizeVisibleCopy(root = document.body){
+  if (!root) return;
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    if (node.parentElement && /^(SCRIPT|STYLE|NOSCRIPT)$/.test(node.parentElement.tagName)) return;
+    const next = node.nodeValue.replace(/\bWIL\b/g, 'WORKATION INSIGHT LAB').replace(/\.(?=\s|$)/g, '');
+    if (next !== node.nodeValue) node.nodeValue = next;
+  });
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.title = document.title.replace(/\bWIL\b/g, 'WORKATION INSIGHT LAB');
+  normalizeVisibleCopy();
+  new MutationObserver(changes => changes.forEach(change => change.addedNodes.forEach(node => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const next = node.nodeValue.replace(/\bWIL\b/g, 'WORKATION INSIGHT LAB').replace(/\.(?=\s|$)/g, '');
+      if (next !== node.nodeValue) node.nodeValue = next;
+    } else if (node.nodeType === Node.ELEMENT_NODE) normalizeVisibleCopy(node);
+  }))).observe(document.body, {childList:true, subtree:true});
+});
 
 /* ── 사업/지역별 그룹 아코디언 렌더링 (직영점 탭·전국 지자체 탭 공용) ──
    groups: [{name, date, source, summary:{total,pass,fail,hold,avg}, facilities:[{n,cap,idx,vd,ty}]}]

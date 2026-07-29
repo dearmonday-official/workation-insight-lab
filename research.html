@@ -16,7 +16,7 @@
 <section class="phead">
   <div class="container">
     <span class="eyebrow">Research</span>
-    <h1>WIL <em>연구보고서</em></h1>
+    <h1>WORKATION INSIGHT LAB <em>연구보고서</em></h1>
     <p>워케이션 시장, 기업 이용 현황 및 도입 효과, 지자체 기여 효과 실증, 각종 사례 분석 등 다양한 보고서를 제공합니다.</p>
   </div>
 </section>
@@ -38,29 +38,29 @@
   mountSelfModal();
 
   const REPORTS = [
-    {cat:'WIL INDEX', title:'워케이션 시설의 기업 요구사항 만족 지수(W2BI) 진단 기준 명세서 &amp; 직영 시설 2차 진단 결과',
+    {cat:'INDEX', title:'워케이션 시설의 기업 요구사항 만족 지수(W2BI) 진단 기준 명세서 &amp; 직영 시설 2차 진단 결과',
      desc:'11개 직영 워케이션 시설 · 12개 항목 채점 · 프로그램 유형별 해당 판정', date:'2026.07', done:true},
-    {cat:'WIL RESEARCH', title:'워케이션의 지역 경제 파급 효과: 실결제 데이터 기반 실증 연구 계획서',
+    {cat:'RESEARCH', title:'워케이션의 지역 경제 파급 효과: 실결제 데이터 기반 실증 연구 계획서',
      desc:'카드 승인 내역 연동 및 캐시백 리워드 메커니즘 설계', date:'2026.07', done:true},
-    {cat:'WIL ACADEMIC', title:'K-관광 산업 대전환 공동 프로젝트 협업계획서 — 산학 공동 연구 로드맵',
+    {cat:'ACADEMIC', title:'K-관광 산업 대전환 공동 프로젝트 협업계획서 — 산학 공동 연구 로드맵',
      desc:'동덕여자대학교 · 경기대학교 공동 연구 거버넌스 및 연도별 로드맵', date:'2026.07', done:true},
-    {cat:'WIL FORUM', title:'워케이션 데이터 포럼 — 기존 체류 데이터 기반 1차 실증 수치 발표',
+    {cat:'FORUM', title:'워케이션 데이터 포럼 — 기존 체류 데이터 기반 1차 실증 수치 발표',
      desc:'체류 박수·시설별 이용 패턴·기업 이용 비중 등 선행 지표 공개', date:'2026.11', done:false},
-    {cat:'WIL STATISTICS', title:'K-워케이션 생활인구 소비지출액 통계 — 신용카드 실측 1차 파일럿',
+    {cat:'STATISTICS', title:'K-워케이션 생활인구 소비지출액 통계 — 신용카드 실측 1차 파일럿',
      desc:'1인 1박당 실제 소비지출액 및 업종별 소비 구조 최초 실측', date:'2027.1Q', done:false},
-    {cat:'WIL INDEX', title:'K-Workation 종합 경쟁력 지수 2027 &amp; 2028 전망',
+    {cat:'INDEX', title:'K-Workation 종합 경쟁력 지수 2027 &amp; 2028 전망',
      desc:'경제효과·품질·수요잠재력·수용성 종합 지수 및 차년도 전망', date:'2027.4Q', done:false}
   ];
 
   const CATS = ['전체', ...[...new Set(REPORTS.map(r => r.cat))]];
   document.getElementById('catTabs').innerHTML = CATS.map((c, i) =>
-    `<button class="tab${i === 0 ? ' on' : ''}" data-cat="${c}">${c}</button>`).join('');
+    `<button class="tab cat-${c.toLowerCase()}${i === 0 ? ' on' : ''}" data-cat="${c}">${c}</button>`).join('');
 
   function renderList(filter){
     const items = filter === '전체' ? REPORTS : REPORTS.filter(r => r.cat === filter);
     document.getElementById('rlist').innerHTML = items.map(r => `
       <a href="mailto:research@dearmonday.io" class="ritem">
-        <span class="rcat">${r.cat}</span>
+        <span class="rcat cat-${r.cat.toLowerCase()}">${r.cat}</span>
         <div class="rbody"><h5>${r.title}</h5><p>${r.desc}</p></div>
         <div class="rdate"><b>${r.date}</b><span class="rstat ${r.done ? 'done' : 'plan'}">${r.done ? '발행 완료' : '발행 예정'}</span></div>
       </a>`).join('');
