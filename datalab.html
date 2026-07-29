@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Workation DataLab — Workation Insight Lab | DearMonday</title>
-<meta name="description" content="DearMonday 직영 워케이션 시설 11개소의 W2BI 2차 진단 결과와 프로그램 유형별 매칭 데이터를 공개합니다.">
+<meta name="description" content="DearMonday 직영점과 전국 지자체 워케이션 시설의 W2BI 진단 결과를 광역지자체별로 공개합니다.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/dear monday-07.png">
 <link rel="stylesheet" href="assets/wil.css">
@@ -27,7 +27,7 @@
     <div class="tabs" id="tabs">
       <button class="tab on" data-pane="p1">DearMonday 직영점<small>11개소 · 2026.07 진단 완료</small></button>
       <button class="tab" data-pane="p2">DearMonday 운영 지자체 시설<small>준비 중</small></button>
-      <button class="tab" data-pane="p3">전국 지자체 시설<small>준비 중</small></button>
+      <button class="tab" data-pane="p3">전국 지자체 시설<small>광역 단위 지역 A · 9개소 진단 완료</small></button>
     </div>
 
     <!-- TAB 1 -->
@@ -89,12 +89,13 @@
 
     <!-- TAB 3 -->
     <div class="tabpane" id="p3">
-      <div class="soon">
-        <b>전국 지자체 워케이션 시설 진단</b>
-        <p>전국 지방자치단체가 운영하는 공공 워케이션 시설을 대상으로 W2BI 진단을 확대하여,
-           지역별 공급 역량 격차와 기업 매칭 가능 시설을 파악할 수 있는 전국 단위 데이터를 구축할 예정입니다.</p>
-        <span class="tagline">진단 체계 준비 중</span>
+      <div class="note municipal-note">
+        <b>광역지자체별 진단 결과</b>
+        <p><b>한국관광공사 2025 전국 워케이션 디렉토리북</b>의 시설을 중복 제거한 뒤, 공식 웹사이트로 최신 정보를 보완했습니다.
+           DearMonday 직영·운영 시설은 제외하며, 광역 단위 지역은 <b>A·B·C</b>, 하위 시설은 <b>A-1·A-2</b> 방식으로 익명 공개합니다.
+           근거가 없는 항목은 점수를 부여하지 않았습니다.</p>
       </div>
+      <div class="municipal-groups" id="municipalGroups"></div>
     </div>
 
     <!-- 지표 출처 -->
@@ -196,6 +197,49 @@
         <div class="tcount">해당 ${hit.length} / 11개소${t.note ? ' · ' + t.note : ''}</div>
       </div>`;
     }).join('');
+  })();
+
+  /* 전국 지자체 시설 - 광역지자체 아코디언 */
+  (function(){
+    const VD = {pass:['충족','v-pass'], fail:['미충족','v-fail'], hold:['판정 보류','v-hold']};
+    const typeCodes = ['BT','TW','FP','RW'];
+    const host = document.getElementById('municipalGroups');
+    host.innerHTML = MUNICIPAL_GROUPS.map((g, gi) => `
+      <section class="municipal-group">
+        <button class="municipal-head" type="button" aria-expanded="false" aria-controls="municipal-panel-${gi}">
+          <span class="municipal-plus" aria-hidden="true">+</span>
+          <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}개소 · ${g.date} 진단</small></span>
+          <span class="municipal-stats">
+            <em>PASS ${g.summary.pass}</em><em>FAIL ${g.summary.fail}</em><em>보류 ${g.summary.hold}</em><em>평균 ${g.summary.avg.toFixed(1)}</em>
+          </span>
+        </button>
+        <div class="municipal-panel" id="municipal-panel-${gi}" hidden>
+          <div class="tablewrap municipal-tablewrap">
+            <table class="scoretable municipal-table">
+              <thead><tr><th>시설</th><th class="c">정원</th><th>W2BI 환산지수</th><th class="c">필수 요건</th>${typeCodes.map(c => `<th class="c ty">${c}</th>`).join('')}</tr></thead>
+              <tbody>${g.facilities.map(f => `
+                <tr><td><div class="bname">${f.n}</div></td><td class="c">${f.cap}석</td>
+                <td><span class="bar municipal-bar"><i><b style="width:${f.idx}%"></b></i><em>${f.idx.toFixed(1)}</em></span></td>
+                <td class="c"><span class="${VD[f.vd][1]}">${VD[f.vd][0]}</span></td>
+                ${f.ty.map(([mk, kw]) => `<td class="tyc">${
+                  mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${kw}</span>`
+                     : `<span class="x">–</span><span class="kw">${kw}</span>`
+                }</td>`).join('')}</tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+          <p class="municipal-source">${g.source} · W2BI 환산지수는 확정 점수 ÷ 평가 가능 배점의 잠정 비교 지표</p>
+        </div>
+      </section>`).join('');
+
+    host.addEventListener('click', e => {
+      const btn = e.target.closest('.municipal-head');
+      if (!btn) return;
+      const panel = document.getElementById(btn.getAttribute('aria-controls'));
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      panel.hidden = open;
+    });
   })();
 
   /* 탭 */

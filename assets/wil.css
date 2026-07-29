@@ -368,6 +368,30 @@ tbody tr:hover{background:var(--teal-50)}
 .mfoot .btn-fill:hover{background:var(--teal-ink)}
 .result{background:var(--white);border:2px solid var(--teal);border-radius:16px;padding:24px;margin-bottom:22px;display:none}
 .result.on{display:block}
+
+/* 전국 지자체 시설 - 광역지자체별 아코디언 */
+.municipal-note{margin-bottom:22px}
+.municipal-groups{display:grid;gap:12px}
+.municipal-group{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.municipal-head{width:100%;border:0;background:var(--white);padding:20px 22px;display:grid;
+                grid-template-columns:34px minmax(180px,1fr) auto;gap:14px;align-items:center;text-align:left;
+                font-family:inherit;color:var(--ink);cursor:pointer;transition:background .18s}
+.municipal-head:hover{background:var(--teal-50)}
+.municipal-plus{width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;
+                font-size:21px;font-weight:500;line-height:1;transition:transform .2s}
+.municipal-head[aria-expanded="true"] .municipal-plus{transform:rotate(45deg)}
+.municipal-title b{display:block;font-size:18px;font-weight:800;letter-spacing:-.03em}
+.municipal-title small{display:block;margin-top:4px;font-size:12px;color:var(--mute);font-weight:500}
+.municipal-stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.municipal-stats em{font-style:normal;font-size:11.5px;font-weight:700;color:var(--teal-ink);background:var(--teal-50);
+                    padding:6px 9px;border-radius:999px;white-space:nowrap}
+.municipal-panel{border-top:1px solid var(--line);padding:0 20px 18px}
+.municipal-panel[hidden]{display:none}
+.municipal-tablewrap{margin-top:18px}
+.municipal-table th:first-child{min-width:156px}
+.municipal-table .ty{width:112px;min-width:112px}
+.municipal-bar{min-width:118px}
+.municipal-source{font-size:11.5px;color:var(--mute);line-height:1.65;margin:12px 2px 0}
 .res-top{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line)}
 .res-top div b{display:block;font-size:26px;font-weight:800;color:var(--teal);letter-spacing:-.04em}
 .res-top div span{display:block;font-size:11.5px;color:var(--mute);margin-top:4px}
@@ -456,4 +480,7 @@ footer{background:#002522;color:rgba(255,255,255,.62);padding:26px 0 24px;font-s
   .qn span{font-size:10px}
   .f-row{flex-direction:column;align-items:flex-start;gap:16px}
   .dd-menu{left:0;right:auto}
+  .municipal-head{grid-template-columns:30px 1fr;padding:17px 16px}
+  .municipal-stats{grid-column:2;justify-content:flex-start}
+  .municipal-panel{padding-left:14px;padding-right:14px}
 }
