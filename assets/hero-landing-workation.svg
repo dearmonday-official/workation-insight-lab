@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#003734"/>
+      <stop offset="42%" stop-color="#00514F"/>
+      <stop offset="72%" stop-color="#086B77"/>
+      <stop offset="100%" stop-color="#0F8A8A"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FDF5DF" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#E9B300" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#E9B300" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0B7A80"/>
+      <stop offset="100%" stop-color="#003734"/>
+    </linearGradient>
+    <linearGradient id="sunpath" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F6D666" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#F6D666" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A5F62"/>
+      <stop offset="100%" stop-color="#003734"/>
+    </linearGradient>
+    <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00514F"/>
+      <stop offset="100%" stop-color="#00302E"/>
+    </linearGradient>
+    <linearGradient id="deckShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#001F1D"/>
+      <stop offset="100%" stop-color="#000E0D"/>
+    </linearGradient>
+    <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDF5DF"/>
+      <stop offset="100%" stop-color="#E9B300"/>
+    </linearGradient>
+  </defs>
+
+  <!-- sky -->
+  <rect x="0" y="0" width="1920" height="800" fill="url(#sky)"/>
+
+  <!-- sun glow, upper-right (behind headline gradient overlay fades it further on the left) -->
+  <circle cx="1420" cy="230" r="330" fill="url(#sun)"/>
+  <circle cx="1420" cy="230" r="86" fill="#FDF5DF" opacity="0.92"/>
+
+  <!-- distant birds -->
+  <g stroke="#0F8A8A" stroke-width="4" fill="none" opacity="0.55" stroke-linecap="round">
+    <path d="M180 150 q18 -16 36 0 q18 -16 36 0"/>
+    <path d="M260 190 q14 -13 28 0 q14 -13 28 0"/>
+    <path d="M980 120 q16 -14 32 0 q16 -14 32 0"/>
+  </g>
+
+  <!-- mountain layers -->
+  <path d="M0 430 L160 330 L300 400 L470 300 L640 410 L820 340 L980 420 L1180 320 L1360 410 L1560 350 L1760 430 L1920 380 L1920 560 L0 560 Z" fill="url(#mtn2)" opacity="0.75"/>
+  <path d="M0 480 L220 380 L420 460 L600 370 L800 470 L1020 390 L1240 470 L1460 400 L1680 480 L1920 430 L1920 600 L0 600 Z" fill="url(#mtn1)"/>
+
+  <!-- sea -->
+  <rect x="0" y="560" width="1920" height="240" fill="url(#sea)"/>
+  <polygon points="1170,560 1670,560 1920,800 920,800" fill="url(#sunpath)"/>
+  <g stroke="#0F8A8A" stroke-width="3" opacity="0.4" stroke-linecap="round">
+    <line x1="1050" y1="600" x2="1130" y2="600"/>
+    <line x1="1260" y1="630" x2="1400" y2="630"/>
+    <line x1="1120" y1="665" x2="1260" y2="665"/>
+    <line x1="1380" y1="700" x2="1560" y2="700"/>
+    <line x1="1180" y1="735" x2="1420" y2="735"/>
+    <line x1="1420" y1="770" x2="1680" y2="770"/>
+  </g>
+
+  <!-- terrace floor -->
+  <rect x="0" y="620" width="1920" height="180" fill="url(#deckShade)" opacity="0.88"/>
+  <g stroke="#0A2A28" stroke-width="2" opacity="0.5">
+    <line x1="0" y1="660" x2="1920" y2="660"/>
+    <line x1="0" y1="700" x2="1920" y2="700"/>
+    <line x1="0" y1="740" x2="1920" y2="740"/>
+  </g>
+
+  <!-- glass balustrade -->
+  <g stroke="#0F8A8A" stroke-width="3" opacity="0.5">
+    <line x1="1250" y1="560" x2="1250" y2="625"/>
+    <line x1="1330" y1="560" x2="1330" y2="625"/>
+    <line x1="1410" y1="560" x2="1410" y2="625"/>
+    <line x1="1490" y1="560" x2="1490" y2="625"/>
+    <line x1="1570" y1="560" x2="1570" y2="625"/>
+    <line x1="1650" y1="560" x2="1650" y2="625"/>
+    <line x1="1730" y1="560" x2="1730" y2="625"/>
+  </g>
+  <rect x="1230" y="618" width="530" height="8" rx="4" fill="#0F8A8A" opacity="0.6"/>
+
+  <!-- desk -->
+  <g>
+    <rect x="1140" y="660" width="640" height="16" rx="6" fill="#08403E"/>
+    <rect x="1170" y="676" width="14" height="90" fill="#062E2C"/>
+    <rect x="1730" y="676" width="14" height="90" fill="#062E2C"/>
+
+    <!-- coffee cup -->
+    <ellipse cx="1210" cy="655" rx="24" ry="7" fill="#00302E"/>
+    <rect x="1188" y="628" width="44" height="27" rx="7" fill="#0A5F62"/>
+    <path d="M1232 634 q22 4 4 22" stroke="#0A5F62" stroke-width="6" fill="none"/>
+
+    <!-- laptop -->
+    <g>
+      <rect x="1290" y="600" width="150" height="98" rx="6" fill="#062E2C"/>
+      <rect x="1298" y="608" width="134" height="82" rx="3" fill="url(#screenGlow)"/>
+      <rect x="1298" y="608" width="134" height="82" rx="3" fill="#003734" opacity="0.08"/>
+      <line x1="1314" y1="628" x2="1400" y2="628" stroke="#B98F00" stroke-width="4" opacity="0.55"/>
+      <line x1="1314" y1="644" x2="1416" y2="644" stroke="#B98F00" stroke-width="4" opacity="0.4"/>
+      <line x1="1314" y1="660" x2="1380" y2="660" stroke="#B98F00" stroke-width="4" opacity="0.4"/>
+      <path d="M1278 698 L1442 698 L1462 656 L1258 656 Z" fill="#08403E"/>
+      <rect x="1330" y="700" width="60" height="6" rx="3" fill="#03211F"/>
+    </g>
+
+    <!-- plant -->
+    <g>
+      <rect x="1620" y="640" width="46" height="34" rx="4" fill="#08403E"/>
+      <path d="M1643 640 C1600 600 1600 560 1643 540 C1686 560 1686 600 1643 640 Z" fill="#0F8A8A" opacity="0.85"/>
+      <path d="M1643 640 C1615 610 1615 580 1643 560" stroke="#0A5F62" stroke-width="4" fill="none" opacity="0.6"/>
+      <path d="M1643 640 C1671 610 1671 580 1643 560" stroke="#0A5F62" stroke-width="4" fill="none" opacity="0.6"/>
+    </g>
+
+    <!-- open notebook + pen -->
+    <g>
+      <rect x="1470" y="670" width="86" height="6" fill="#062E2C"/>
+      <rect x="1470" y="676" width="42" height="60" rx="2" fill="#EDF4F3" opacity="0.92"/>
+      <rect x="1514" y="676" width="42" height="60" rx="2" fill="#DCE9E7" opacity="0.92"/>
+      <line x1="1478" y1="690" x2="1504" y2="690" stroke="#8A9694" stroke-width="2"/>
+      <line x1="1478" y1="700" x2="1504" y2="700" stroke="#8A9694" stroke-width="2"/>
+      <line x1="1478" y1="710" x2="1500" y2="710" stroke="#8A9694" stroke-width="2"/>
+      <line x1="1522" y1="690" x2="1548" y2="690" stroke="#8A9694" stroke-width="2"/>
+      <line x1="1522" y1="700" x2="1548" y2="700" stroke="#8A9694" stroke-width="2"/>
+    </g>
+
+    <!-- chair silhouette -->
+    <path d="M1340 730 L1340 780 M1400 730 L1400 780 M1330 780 L1410 780" stroke="#03211F" stroke-width="8" fill="none" stroke-linecap="round" opacity="0.85"/>
+    <path d="M1325 720 Q1370 700 1415 720 L1415 735 Q1370 718 1325 735 Z" fill="#062E2C"/>
+  </g>
+
+  <!-- foreground palm silhouette, left, partially fading under the text-overlay gradient -->
+  <g opacity="0.5" fill="#001F1D">
+    <path d="M40 800 C40 620 90 520 130 470 C110 540 108 620 118 700 C90 700 60 740 40 800 Z"/>
+    <path d="M130 470 C70 440 30 400 10 350 C60 380 100 410 140 450 Z"/>
+    <path d="M130 470 C120 410 130 360 160 310 C170 370 165 420 150 460 Z"/>
+    <path d="M130 470 C170 420 220 400 280 400 C230 430 190 450 150 465 Z"/>
+    <path d="M130 470 C90 420 80 370 100 320 C120 360 130 410 140 460 Z"/>
+  </g>
+</svg>

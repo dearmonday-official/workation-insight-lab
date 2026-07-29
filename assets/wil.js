@@ -2,6 +2,393 @@
    WIL — Workation Insight Lab | 공통 데이터 · 컴포넌트 스크립트
    출처: DearMonday_W2BI_Official_Diagnosis_Results_v2.xlsx (2026-07-28)
    ═════════════════════════════════════════════════════════ */
+
+/* ── 다국어(i18n) — 1차 범위: 헤더/푸터(전 페이지 공통) + 홈 히어로·허브·진단 CTA
+   미번역 콘텐츠(하위 페이지 본문 등)는 data-i18n이 없으므로 한국어 그대로 유지된다 ── */
+const I18N = {
+  en: {
+    'header.subscribe': 'Subscribe',
+    'footer.terms': 'Terms of Service',
+    'footer.privacy': 'Privacy Policy',
+    'footer.links': 'DearMonday Links',
+    'home.hero.eyebrow': 'Workation Insight Lab · Private Workation Research Institute',
+    'home.hero.h1': 'Proving the Value of Workation <em>with Data</em>',
+    'home.hero.p': 'DearMonday, Korea’s dedicated workation platform, has accumulated workation usage data from a diverse customer base of companies, individuals, and local governments since the market’s earliest days. Beyond our own directly-operated locations, we also run private-partner and municipal public facilities — and use the data gathered across all of them to propose original workation indices, quantitatively proving the corporate and regional economic effects that workation creates.',
+    'home.hubs.eyebrow': 'ABOUT WORKATION INSIGHT LAB',
+    'home.hubs.h2': 'What <em>WORKATION INSIGHT LAB</em> Offers',
+    'home.hubs.p': 'From an introduction to the Lab, to our original index framework, data and published reports — the core research assets, all in one place',
+    'home.hub1.h3': 'About the LAB',
+    'home.hub1.p': 'Introducing WORKATION INSIGHT LAB’s vision, four core research fields, and partner network',
+    'home.hub1.li1': 'Our Vision',
+    'home.hub1.li2': '4 Core Research Fields',
+    'home.hub1.li3': 'Industry Partner Network',
+    'home.hub2.h3': 'Original Index Framework',
+    'home.hub2.p': 'Two indices that diagnose how well a workation facility meets corporate requirements, and how ready a company is to adopt workation.',
+    'home.hub2.li1': 'Workation-to-Business Index',
+    'home.hub2.li2': 'Workation-in-Business Index',
+    'home.hub2.li3': 'Overview, methodology and results for each index',
+    'home.hub3.h3': 'Workation DataLab',
+    'home.hub3.p': 'Check facility diagnosis data and the research materials and sources used in our workation research, all in one place',
+    'home.hub3.li1': 'Nationwide facility diagnosis data',
+    'home.hub3.li2': 'Aggregated by metro region',
+    'home.hub3.li3': 'Research data and sources',
+    'home.hub4.h3': 'Research Reports',
+    'home.hub4.p': 'See published research reports from WORKATION INSIGHT LAB and upcoming content',
+    'home.hub4.li1': 'Index development · empirical research',
+    'home.hub4.li2': 'Academic partnerships · data forums',
+    'home.hub4.li3': 'Subscribe',
+    'home.hub.go': 'Learn more →',
+    'home.diag.eyebrow': 'W2BI Self-Diagnosis',
+    'home.diag.h2': 'Diagnose how well your facility<br>meets <em>corporate requirements</em>',
+    'home.diag.p': 'A self-diagnosis that applies the same 12-item, 100-point system used in our official diagnosis. Answering the items alone instantly shows your W2BI total score, whether the facility fits corporate workation, and which program types it qualifies for.',
+    'home.diag.btn': 'Try the W2BI Self-Diagnosis →',
+    'home.diag.d1': 'Wifi & Information Security',
+    'home.diag.d2': 'Private Work Space',
+    'home.diag.d3': 'Experience Programs',
+    'home.diag.d4': 'Room Quality',
+    'home.diag.d5': 'Usage Process',
+    'home.diag.d6': 'Hours · Security · Meeting Space · Access, etc.',
+    'indexes.h1': 'An Index System Built for <em>Work-Focused Workation</em>',
+    'indexes.p': 'Two indices that separately diagnose how well a workation facility meets corporate requirements, and how ready a company is to adopt workation.',
+    'indexes.h2': 'WIL’s <em>Two Indices</em>',
+    'indexes.sechead.p': 'Each index page walks through overview, verification methodology, and diagnosis results in one flow.',
+    'indexes.w2bi.sub': 'Workation-to-Business Index',
+    'indexes.w2bi.desc': 'Diagnoses the work, stay, and operating conditions companies check when choosing a facility, across 12 items.',
+    'indexes.w2bi.li1': 'Overview and the 100-point diagnosis system',
+    'indexes.w2bi.li2': 'Partial-confirmation scoring and program-type methodology',
+    'indexes.w2bi.li3': 'Directly-operated locations · 7 metro-region results',
+    'indexes.wibi.sub': 'Workation-in-Business Index',
+    'indexes.wibi.desc': 'Combines organizational systems, work infrastructure, job fit, and employee acceptance to assess adoption readiness and priority steps.',
+    'indexes.wibi.li1': 'Overview from a corporate adoption-decision perspective',
+    'indexes.wibi.li2': 'Evaluation domains · verification · refinement methodology',
+    'indexes.wibi.li3': 'Diagnosis results — coming soon',
+    'indexes.go': 'View page →',
+    'wibi.h1': 'Corporate <em>Workation Adoption Readiness</em> Index',
+    'wibi.p': 'Diagnoses the real constraints companies face in adopting workation across 5 evaluation domains, and lays out a staged entry path suited to the organization.',
+    'wibi.overview.p': 'WIBI (Workation-in-Business Index) is a 100-point index that uses a multi-criteria decision model to diagnose the conditions and obstacles a company faces in adopting workation. After first classifying company size, industry, job function, work style, and welfare level, it evaluates 5 domains — offering not a simple possible/impossible verdict, but an actionable entry path and priority items to address.',
+    'wibi.domainA.b': 'A · Work Environment & System Maturity', 'wibi.domainA.p': 'Checks flexible-work policy, share of remotely-doable jobs, attendance management method, and related internal rules.',
+    'wibi.domainB.b': 'B · Security & IT Infrastructure', 'wibi.domainB.p': 'Diagnoses external system access, device removal, security policy, and work-device operating conditions.',
+    'wibi.domainC.b': 'C · Cost & Budget Structure', 'wibi.domainC.p': 'Looks at welfare budget, accounting treatment, cost sharing, and availability of government support.',
+    'wibi.domainD.b': 'D · Decision-Making & Culture', 'wibi.domainD.p': 'Checks approval stages, the authority of the person in charge, management understanding, and pilot willingness.',
+    'wibi.domainE.b': 'E · Adoption Experience & Information Level', 'wibi.domainE.p': 'Assesses prior remote-work experience, research into other companies’ cases, internal demand, and pilot readiness.',
+    'wibi.formula': 'WIBI = A(25) + B(20) + C(20) + D(20) + E(15) = 100 points total',
+    'wibi.method.p': 'Cross-verifies prior research, corporate inquiry/meeting data, quantitative surveys and in-depth interviews to refine the index and entry model.',
+    'wibi.step1.h4': 'Reflecting Company Profile', 'wibi.step1.p': 'Reflects that the same score can carry different constraints and execution conditions depending on size, industry, job function, work style, and welfare level.',
+    'wibi.step1.li1': 'Company size and approval structure', 'wibi.step1.li2': 'Security sensitivity by industry', 'wibi.step1.li3': 'Share of remotely-doable jobs',
+    'wibi.step2.h4': '5 Domains · 17 Questions', 'wibi.step2.p': 'Diagnoses adoption readiness across Work & System (25pt), Security & IT (20pt), Cost & Budget (20pt), Decision-Making (20pt), and Experience & Information (15pt).',
+    'wibi.step2.li1': '100-point structure total', 'wibi.step2.li2': 'Reviews security/remote-access disqualifying conditions', 'wibi.step2.li3': 'Identifies bottlenecks by domain',
+    'wibi.step3.h4': 'Interpreting the Reasons Behind the Score', 'wibi.step3.p': 'In-depth interviews confirm why a score came out the way it did and what conditions would enable adoption, to design a tailored entry path.',
+    'wibi.step3.li1': 'Success-reference analysis', 'wibi.step3.li2': 'Identifying organizational bottlenecks', 'wibi.step3.li3': 'Exploring re-entry conditions',
+    'wibi.stage.h2': 'Diagnosis Isn’t the End — the <em>5-Stage Entry Model</em>',
+    'wibi.stage.p': 'A low score isn’t a rejection — it’s a starting point for lowering organizational resistance and building adoption experience.',
+    'wibi.stage1.h4': 'Immediate Action', 'wibi.stage1.p': 'With flexible work, management support and budget in place, a pilot or full rollout can be designed right away.',
+    'wibi.stage2.h4': 'Conditional Action', 'wibi.stage2.p': 'Address the bottleneck in one or two weak domains, then enter via a small-scale pilot.',
+    'wibi.stage3.h4': 'Adoption Under Review', 'wibi.stage3.p': 'Build internal references and approval grounds through workshop- or business-trip-linked bridge programs.',
+    'wibi.stage4.h4': 'Mid- to Long-Term Task', 'wibi.stage4.p': 'First put structural fundamentals in place — policy, budget, management awareness — then re-diagnose.',
+    'wibi.stage5.h4': 'Latent Demand', 'wibi.stage5.p': 'Clarify constraints such as network segregation or HQ policy, and explore which roles, business trips, or team-building formats remain possible.',
+    'wibi.results.h2': 'WIBI Diagnosis Results',
+    'wibi.results.p': 'Published after refining domain weights and stage boundaries through in-depth corporate interviews and pilot verification.',
+    'wibi.results.tag': 'Verifying questions and weights',
+    'wibi.cta.h3': 'Self-Diagnose Your Company’s Workation Readiness',
+    'wibi.cta.p': 'A feature that checks your organization’s adoption stage and priority tasks against the 5 domains and 17 questions is in preparation.',
+    'wibi.cta.btn': 'Try the WIBI Self-Diagnosis →',
+    'research.h1': 'WORKATION INSIGHT LAB <em>Research Reports</em>',
+    'research.p': 'A range of reports on the workation market, corporate usage and adoption effects, empirical evidence of municipal contribution, and case studies.',
+    'about.h1': 'Tourism Is No Longer Measured by Visitor Count —<br>It’s Designed with <em>Stay, Spend, and Conversion Data</em>',
+    'about.p': 'WORKATION INSIGHT LAB is a private workation research organization operated by <b>DearMonday Inc.</b><br>Drawing on B2B/B2C stay data accumulated since 2024 and empirical operating data from workation facilities nationwide,<br>we produce the objective evidence companies and local governments need for workation adoption and policy decisions.',
+    'about.vision.h3': 'An International Research Hub Opening the<br><em>K-Workation Standard</em> through Workation Data',
+    'about.vision.p': 'As Korea’s first private research organization dedicated to workation, WIL builds the shared language of the workation industry through an evidence-based index system and joint academic-industry research.',
+    'about.axis1.b': 'Research', 'about.axis1.span': 'Practical, forward-looking empirical research<br>grounded in real payment and stay data',
+    'about.axis2.b': 'Index System', 'about.axis2.span': 'Operating an original index system (WIBI·W2BI)<br>that quantifies both demand and supply sides',
+    'about.axis3.b': 'Networking', 'about.axis3.span': 'Building an annual data platform<br>with academia, industry, and local government',
+    'about.vision.goal': 'Establishing and spreading corporate-fit workation facility standards · <em>proving regional economic impact</em> · leading the global K-Workation standard',
+    'about.field.h2': '11 Directly-Operated Locations Nationwide,<br><em>100+ Partner Workation Facilities</em> in Total',
+    'about.field.p': 'Beyond the workation packages DearMonday builds by directly combining offices and rooms, the stay, work, and spending data generated at the diverse private and public facilities listed on the DearMonday platform nationwide is the wellspring of WORKATION INSIGHT LAB’s research.',
+    'about.stat1.b': '11 Directly-Operated Locations', 'about.stat1.span': 'Operated directly by DearMonday',
+    'about.stat2.b': '98 Private/Public Partners', 'about.stat2.span': 'Workation facilities listed nationwide',
+    'about.stat3.b': '24 Population-Declining Areas', 'about.stat3.span': 'Linked to balanced regional development',
+    'about.stat4.b': '5,000+ Records', 'about.stat4.span': 'Cumulative usage data',
+    'about.stat5.b': '100+', 'about.stat5.span': 'Facilities in regular workation operation',
+    'about.fields.h2': 'WIL’s <em>4 Core Research Fields</em>',
+    'about.fields.p': 'From corporate adoption effects to regional economic evidence, standard index development, and policy guidance — we research the entire workation ecosystem.',
+    'about.network.h2': 'Building an Industry <em>Expert Partner Network</em>',
+    'about.network.p': 'We run a complementary governance model that combines the speed of a private data platform with the methodology and credibility of academia and research institutions.',
+    'w2bi.h1': 'The <em>Corporate Requirement Fit Index</em> for Workation Facilities',
+    'w2bi.p': 'Diagnoses how business-friendly a facility or program is and which program types it fits, based on conditions real companies actually required.',
+    'w2bi.overview.p': 'W2BI (Workation-to-Business Index) is a business-friendliness index that reverse-diagnoses municipal workation facilities and programs against requirements identified from real corporate usage and inquiry data from 2022–2026.<br>It is not a ranking table pitting individual facilities against each other —<br>it checks how well a facility meets the conditions companies need to adopt workation, and surfaces improvement priorities and matching program types.',
+    'w2bi.card1.b': 'Mandatory Requirements · 45pt', 'w2bi.card1.p': 'Evaluates Wifi & security, private work space, experience programs, room quality, and usage process. A disqualifying item directly affects whether the facility is recommended for corporate matching.',
+    'w2bi.card2.b': 'Recommended Requirements · 55pt', 'w2bi.card2.p': 'Evaluates operating hours, access control, meeting facilities, work-support equipment, transit access, and room-to-office distance.',
+    'w2bi.card3.b': 'Program Type Matching', 'w2bi.card3.p': 'Independently of the total score, determines fit for business-trip-linked, team/group workshop, immersive project, and regular-work program types.',
+    'w2bi.method.p': 'Only verifiable evidence is scored — unconfirmed information is never scored arbitrarily.',
+    'w2bi.step1.h4': 'Combining Research and Real Customer Data', 'w2bi.step1.p': 'Builds evaluation items by cross-referencing the KTO corporate guide and prior research against 2022–2026 corporate customer purchase, inquiry, and interview data.',
+    'w2bi.step1.li1': '5 mandatory requirements · 45 points', 'w2bi.step1.li2': '7 recommended requirements · 55 points',
+    'w2bi.step2.h4': 'Evidence-Based Converted Score', 'w2bi.step2.p': 'Only items confirmed via official websites, operator materials, or on-site visits are finalized. Unconfirmed items are excluded from the scorable total as well.',
+    'w2bi.formula': 'Converted Index = Confirmed Score ÷ Scorable Total × 100',
+    'w2bi.step3.h4': 'Mandatory Requirements & Program Fit, Judged Independently', 'w2bi.step3.p': 'After checking the mandatory subtotal and any zero-scored items, business-trip-linked, team workshop, immersive project, and regular-work types are each judged independently.',
+    'w2bi.step3.li1': 'Whether mandatory subtotal reaches 33+', 'w2bi.step3.li2': 'Type fit ≥ 80 · evidence coverage ≥ 60%',
+    'w2bi.progtypes.h2': '4 Program Types by <em>How Companies Use the Facility</em>',
+    'w2bi.progtypes.p': 'Types are defined not by facility form, but by work continuity, collaboration style, and purpose of stay.',
+    'w2bi.prog1.b': 'Business-Trip-Linked Work-Continuity', 'w2bi.prog1.p': 'An individual/small-group-focused type supporting work before and after a business trip and short stays.',
+    'w2bi.prog2.b': 'Team-Building / Culture', 'w2bi.prog2.p': 'A team/group-focused type supporting workshops, culture improvement, and stronger collaboration.',
+    'w2bi.prog3.b': 'Immersive Project / Deliverable-Focused', 'w2bi.prog3.p': 'A focused-work type for solving specific problems and for planning, development, and strategy work.',
+    'w2bi.prog4.b': 'Regular Work / Welfare Retention', 'w2bi.prog4.p': 'A type combining flexible-work policy and welfare benefits for repeated use.',
+    'w2bi.results.h2': 'W2BI Diagnosis Results',
+    'datalab.h1': 'Long-Accumulated Real Workation Usage Data',
+    'datalab.p': 'We accumulate and publish real data on workation usage and regional spending.',
+    'datalab.h2': 'Market Conditions from <em>Two Perspectives</em>',
+    'datalab.corp.title': 'Corporate Workation Status',
+    'datalab.corp.desc': 'We plan to publish a structured view of corporate adoption stages, demand by industry and company size, and key barriers.',
+    'datalab.reg.title': 'Regional Workation Market Status',
+    'datalab.reg.desc': 'We plan to publish facility supply, program operations, and market changes by metro region, on a rolling basis.',
+    'nav.about.vision': 'Vision & Goals', 'nav.about.fields': '4 Core Research Fields', 'nav.about.network': 'Partner Network',
+    'nav.indexes.w2bi': 'Workation-to-Business Index', 'nav.indexes.wibi': 'Workation-in-Business Index',
+    'nav.datalab.corp': 'Corporate Workation Status', 'nav.datalab.reg': 'Regional Workation Market Status',
+    'nav.research.list': 'Research Reports',
+    'nav.langAria': 'Select language', 'nav.menuAria': 'Menu',
+    'table.vdPass': 'Corporate Workation Fit', 'table.vdFail': 'Needs Improvement', 'table.vdHold': 'Needs Further Review',
+    'table.unitSeat': ' seats', 'table.notConfirmed': 'Not confirmed',
+    'table.thFacility': 'Facility', 'table.thCapacity': 'Capacity', 'table.thIndex': 'W2BI Converted Index', 'table.thMandatory': 'Mandatory Req.',
+    'table.lPass': 'Fit', 'table.lFail': 'Needs Improvement', 'table.lHold': 'Further Review', 'table.lAvg': 'Avg',
+    'table.unitFacilities': ' facilities',
+    'table.indexNote': 'The W2BI converted index is a provisional comparison metric (confirmed score ÷ scorable total)',
+    'research.tabAll': 'All', 'research.statDone': 'Published', 'research.statPlan': 'Upcoming',
+    'table.rank': 'Rank', 'table.facilityName': 'Workation Facility', 'table.officeCap': 'Office<br>Capacity',
+    'w2bi.tab1.note.b': 'Diagnosis Criteria',
+    'w2bi.tab1.note.p': '<b>The W2BI converted index</b> is not an absolute 100-point total, but a comparison metric — <b>confirmed score ÷ scorable total × 100</b>.\n          <b>Program types</b> are each judged independently; a facility may fit all 4, or none.\n          <b>V*</b> marks a tentative fit when the mandatory requirement is still under further review. The keyword in each type cell is the key evidence behind that judgment.',
+    'w2bi.tab1.thBT': 'Business-Trip<br>Linked BT', 'w2bi.tab1.thTW': 'Team/Group<br>Workshop TW',
+    'w2bi.tab1.thFP': 'Immersive<br>Project FP', 'w2bi.tab1.thRW': 'Regular<br>Work RW',
+    'w2bi.tab1.roomUnconfirmed': '— room details unconfirmed',
+    'w2bi.tab1.legendV': 'V = fits this type · V* = tentative fit',
+    'w2bi.types.h2': 'Facilities Fitting Each <em>Program Type</em>',
+    'w2bi.types.p': 'A high total score doesn’t mean a facility fits every program. Fit is re-tallied using only the items relevant to each type.',
+    'w2bi.tab2.note.b': 'DearMonday-Operated Municipal Facilities',
+    'w2bi.tab2.note.p': 'Facilities belonging to municipal workation support programs that DearMonday operates under commission or partnership. The same 12-item, program-type-fit system used for directly-operated locations applies here, grouped by program — click <b>+</b> to reveal the individual facilities under it by name.',
+    'w2bi.tab3.note.b': 'About These Results',
+    'w2bi.tab3.note.p': 'This W2BI diagnosis is not meant to rank individual facilities against each other — it is a reference for understanding what companies actually value when using workation, and for guiding improvement.<br>\n           Each facility was checked against its official website as of July 2026, and will be re-diagnosed periodically as information is updated.<br>\n           Only the metro region is named; results for individual facilities are published anonymously.<br>\n           Items that couldn’t be confirmed or lacked clear evidence were never scored arbitrarily.',
+    'w2bi.tab1.label': 'DearMonday Directly-Operated', 'w2bi.tab1.sub': '1 metro region · 11 locations',
+    'w2bi.tab2.label': 'DearMonday-Operated Municipal Facilities', 'w2bi.tab2.sub': '2 programs · 13 facilities diagnosed',
+    'w2bi.tab3.label': 'Nationwide Municipal Facilities', 'w2bi.tab3.sub': '7 metro regions · 134 facilities diagnosed'
+  },
+  ja: {
+    'header.subscribe': '登録する',
+    'footer.terms': '利用規約',
+    'footer.privacy': '個人情報処理方針',
+    'footer.links': 'DearMonday 関連リンク',
+    'home.hero.eyebrow': 'Workation Insight Lab・ワーケーション専門の民間研究所',
+    'home.hero.h1': 'ワーケーションの価値を<em>データで証明</em>します',
+    'home.hero.p': '韓国のワーケーション専門プラットフォームDearMondayは、市場初期から企業・個人・自治体など多様な顧客層のワーケーション利用データを蓄積してきました。自社直営拠点だけでなく、民間パートナー・自治体公共施設まで運営して蓄積したデータをもとに、独自のワーケーション指数を提案し、ワーケーションが生み出す企業効果と地域経済波及効果を定量的に実証します。',
+    'home.hubs.eyebrow': 'ABOUT WORKATION INSIGHT LAB',
+    'home.hubs.h2': 'WORKATION INSIGHT LABが<em>提供するもの</em>',
+    'home.hubs.p': 'LABの紹介から独自の指数体系、データと発行レポートまで、中核的な研究資産をご提供します',
+    'home.hub1.h3': 'LAB紹介',
+    'home.hub1.p': 'WORKATION INSIGHT LABのビジョン、4大研究分野、パートナーネットワークをご紹介します',
+    'home.hub1.li1': 'ビジョン',
+    'home.hub1.li2': '4大中核研究分野',
+    'home.hub1.li3': '業界パートナーネットワーク',
+    'home.hub2.h3': '独自の指数体系',
+    'home.hub2.p': 'ワーケーション施設が企業の要求事項をどれほど満たすか、企業がワーケーションをどれほど導入できるかを診断する2つの指数です。',
+    'home.hub2.li1': 'Workation-to-Business Index',
+    'home.hub2.li2': 'Workation-in-Business Index',
+    'home.hub2.li3': '指数別の概要・方法論・結果',
+    'home.hub3.h3': 'Workation DataLab',
+    'home.hub3.p': '施設診断データとワーケーション研究に活用した資料・出典を一でご確認いただけます',
+    'home.hub3.li1': '全国施設診断データ',
+    'home.hub3.li2': '圈域別集計',
+    'home.hub3.li3': '研究データ及び出典',
+    'home.hub4.h3': '研究レポート',
+    'home.hub4.p': 'WORKATION INSIGHT LABが発行した研究レポートと発行予定コンテンツをご確認いただけます',
+    'home.hub4.li1': '指数開発・実証研究',
+    'home.hub4.li2': '学術連携・データフォーラム',
+    'home.hub4.li3': '登録する',
+    'home.hub.go': '詳しく見る →',
+    'home.diag.eyebrow': 'W2BI Self-Diagnosis',
+    'home.diag.h2': '自社施設の<br><em>企業要求事項適合度</em>を診断してみましょう',
+    'home.diag.p': '12項目・100点满点の診断体系をそのまま適用した自己診断です。項目に回答するだけでW2BI合計スコア、企業ワーケーションに適合するか、プログラムタイプ別の該当にも即座に確認できます。',
+    'home.diag.btn': 'W2BI自己診断をやってみる →',
+    'home.diag.d1': 'Wifi環境・情報セキュリティ',
+    'home.diag.d2': '個人業務スペース',
+    'home.diag.d3': '体験プログラム',
+    'home.diag.d4': '客室の質',
+    'home.diag.d5': '利用手続き',
+    'home.diag.d6': '運営時間・セキュリティ・会議施設・アクセス　他',
+    'indexes.h1': '業務中心のワーケーションに特化した指数体系',
+    'indexes.p': 'ワーケーション施設が企業の要求事項をどれほど満たすか、企業がワーケーションをどれほど導入できるかをそれぞれ診断する2つの指数です。',
+    'indexes.h2': 'WILの<em>2つの指数</em>',
+    'indexes.sechead.p': '各指数ページで概要・検証方法論・診断結果を一連の流れで確認できます。',
+    'indexes.w2bi.sub': 'Workation-to-Business Index',
+    'indexes.w2bi.desc': '企業が施設を選ぶ際に確認する業務・滞在・運営条件を12項目で診断します。',
+    'indexes.w2bi.li1': '概要と100点診断体系',
+    'indexes.w2bi.li2': '部分確認採点及びタイプ別判定方法論',
+    'indexes.w2bi.li3': '直営拠点・全国7圏域診断結果',
+    'indexes.wibi.sub': 'Workation-in-Business Index',
+    'indexes.wibi.desc': '組織制度・業務インフラ・職務適合性・構成員受容性を総合し、導入可能性と先行課題を確認します。',
+    'indexes.wibi.li1': '企業導入意思決定の観点からの概要',
+    'indexes.wibi.li2': '評価領域・検証・高度化方法論',
+    'indexes.wibi.li3': '診断結果は近日公開予定',
+    'indexes.go': 'ページを見る →',
+    'wibi.h1': '企業の<em>ワーケーション導入可能性</em>指数',
+    'wibi.p': '企業の実際の導入制限要因を5大評価軸で診断し、組織に合った段階別の導入経路を提示します。',
+    'wibi.overview.p': 'WIBI(Workation-in-Business Index)は、企業がワーケーションを導入できる条件と障害要素を多基準意思決定方式で診断する100点指数です。企業規模・業種・職務・勤務形態・福利水準を先に分類した後5大領域を評価し、単純な可否判定ではなく、実行可能な導入経路と優先補完課題を提示します。',
+    'wibi.domainA.b': 'A・業務環境・制度成熟度', 'wibi.domainA.p': '柔軟勤務制度、リモート遂行可能な職務、勤怠管理方式、関連内規を確認します。',
+    'wibi.domainB.b': 'B・セキュリティ・ITインフラ', 'wibi.domainB.p': '外部システム接続、機器持ち出し、セキュリティ方針と業務機器の運用条件を診断します。',
+    'wibi.domainC.b': 'C・費用・予算構造', 'wibi.domainC.p': '福利予算、会計処理、費用分担と政府支援活用の可能性を確認します。',
+    'wibi.domainD.b': 'D・意思決定・組織文化', 'wibi.domainD.p': '承認段階、担当者の権限、経営陣の理解とパイロット実行意思を確認します。',
+    'wibi.domainE.b': 'E・導入経験・情報水準', 'wibi.domainE.p': '外部業務経験、他社事例の調査、内部需要と試験運用の準備度を評価します。',
+    'wibi.formula': 'WIBI = A(25) + B(20) + C(20) + D(20) + E(15) = 合計100点',
+    'wibi.method.p': '先行研究、企業問い合わせ・ミーティングデータ、定量アンケートと深層インタビューを相互検証し、指数と導入モデルを高度化します。',
+    'wibi.step1.h4': '企業プロファイルの反映', 'wibi.step1.p': '規模・業種・職務・勤務形態・福利水準により、同じ点数でも異なる制約と実行条件を持ちうることを反映します。',
+    'wibi.step1.li1': '企業規模と決裁構造', 'wibi.step1.li2': '業種別セキュリティ感度', 'wibi.step1.li3': 'リモート遂行可能な職務の比率',
+    'wibi.step2.h4': '5大領域・17項目', 'wibi.step2.p': '業務・制度25点、セキュリティ・IT20点、費用・予算20点、意思決定20点、経験・情報15点で導入可能性を診断します。',
+    'wibi.step2.li1': '合計100点の構造', 'wibi.step2.li2': 'セキュリティ・リモート接続の失格条件を検討', 'wibi.step2.li3': '領域別ボトルネックを確認',
+    'wibi.step3.h4': '点数の原因と条件の解釈', 'wibi.step3.p': '深層インタビューでなぜその点数になったのか、どんな条件が整えば導入可能かを確認し、オーダーメイドの導入経路を設計します。',
+    'wibi.step3.li1': '成功事例分析', 'wibi.step3.li2': '組織のボトルネック特定', 'wibi.step3.li3': '再導入条件の探索',
+    'wibi.stage.h2': '診断で終わらない<em>5段階導入モデル</em>',
+    'wibi.stage.p': '低い点数は脱落ではなく、組織の抵抗を下げ導入経験を蓄積するための出発点として解釈します。',
+    'wibi.stage1.h4': '即時実行', 'wibi.stage1.p': '柔軟勤務、経営陣の支持と予算が整っており、パイロットまたは正式導入をすぐに設計できます。',
+    'wibi.stage2.h4': '条件付き実行', 'wibi.stage2.p': '1〜2つの不足領域のボトルネックを補完し、小規模な試験運用で導入します。',
+    'wibi.stage3.h4': '導入検討', 'wibi.stage3.p': 'ワークショップ・出張連携型のブリッジプログラムで社内の実績と承認根拠を作ります。',
+    'wibi.stage4.h4': '中長期課題', 'wibi.stage4.p': '制度・予算・経営陣の認識など構造的な基盤を先に整備した後、再診断します。',
+    'wibi.stage5.h4': '潜在需要', 'wibi.stage5.p': 'ネットワーク分離や本社規定などの制約を明確にし、可能な職種・出張・チームビルディングの代案を探ります。',
+    'wibi.results.h2': 'WIBI診断結果',
+    'wibi.results.p': '企業への深層インタビューとパイロット検証を経て、領域別加重値と段階区間を補正した後公開します。',
+    'wibi.results.tag': '評価項目・加重値を検証中',
+    'wibi.cta.h3': '自社のワーケーション導入可能性を自己診断',
+    'wibi.cta.p': '5大評価軸と17項目を基準に、組織の導入段階と優先課題を確認できる機能を準備しています。',
+    'wibi.cta.btn': 'WIBI自己診断をやってみる →',
+    'research.h1': 'WORKATION INSIGHT LAB <em>研究レポート</em>',
+    'research.p': 'ワーケーション市場、企業利用現況及び導入効果、自治体貢献効果の実証、各種事例分析など多様なレポートを提供します。',
+    'about.h1': '観光は今や訪問者数ではなく、<br><em>滞在・消費・転換のデータ</em>で設計されます',
+    'about.p': 'WORKATION INSIGHT LABは<b>株式会社DearMonday</b>が運営するワーケーション専門の民間研究組織です<br>2024年から蓄積したB2B・B2C滞在データと全国ワーケーション施設の実証運営データを集大成し、<br>企業のワーケーション導入意思決定と自治体の政策設計に必要な客観的根拠を生産します。',
+    'about.vision.h3': 'ワーケーションデータで拓く<br><em>K-Workation標準の国際的研究ハブ</em>',
+    'about.vision.p': 'WILは国内初のワーケーション専門民間研究組織として、実証データに基づく指数体系と産学共同研究を通じ、ワーケーション産業の共通言語を作ります。',
+    'about.axis1.b': 'Research', 'about.axis1.span': '実決済・滞在データに基づく<br>実用的・先制的な実証研究の遂行',
+    'about.axis2.b': 'Index System', 'about.axis2.span': '需要者・供給者の両面を定量化する<br>独自の指数体系(WIBI・W2BI)の運用',
+    'about.axis3.b': 'Networking', 'about.axis3.span': '学界・業界・自治体が共に参加する<br>年間定例データプラットフォームの構築',
+    'about.vision.goal': '企業ワーケーション適合施設基準の確立と導入拡散・<em>地域経済波及効果の実証</em>・K-Workationグローバル標準の先導',
+    'about.field.h2': '全国11の直営拠点、<br><em>合計100以上のパートナーワーケーション施設</em>',
+    'about.field.p': 'DearMondayが直接構築したオフィスと客室を組み合わせたワーケーションパッケージだけでなく、DearMondayプラットフォームに掲載された全国の多様な民間・公共施設で発生する滞在・業務・消費データがWORKATION INSIGHT LAB研究の源泉です。',
+    'about.stat1.b': '直営11拠点', 'about.stat1.span': 'DearMonday直接運営',
+    'about.stat2.b': '民間/公共パートナー98拠点', 'about.stat2.span': '全国掲載ワーケーション施設',
+    'about.stat3.b': '人口減少地域24拠点', 'about.stat3.span': '地域均衡発展連携',
+    'about.stat4.b': '5,000件+', 'about.stat4.span': '累積利用データ',
+    'about.stat5.b': '100件+', 'about.stat5.span': 'ワーケーション定期運営',
+    'about.fields.h2': 'WILの<em>4大中核研究分野</em>',
+    'about.fields.p': '企業の導入効果から地域経済実証、標準指数開発、政策ガイドまで、ワーケーション生態系全過程を研究対象とします。',
+    'about.network.h2': '業界専門家<em>パートナーネットワーク構築</em>',
+    'about.network.p': '民間データプラットフォームの速度と学界・研究機関の方法論・信頼性を組み合わせた相互補完的ガバナンスを運営します。',
+    'w2bi.h1': 'ワーケーション施設の<em>企業要求事項満足指数</em>',
+    'w2bi.p': '企業が実際に要求した条件を基準に、施設とプログラムの企業親和度及び適合タイプを診断します。',
+    'w2bi.overview.p': 'W2BI(Workation-to-Business Index)は2022〜2026年の企業顧客の実際の利用・問い合わせデータから確認した要求事項を基準に、<br>自治体ワーケーション施設とプログラムを逆診断する企業親和指数です。<br>個別施設の優劣を決める順位表ではなく、<br>企業がワーケーションを導入する際に必要な条件を施設がどれほど満たしているかを確認し、改善優先順位とマッチング可能なプログラムタイプを提示します。',
+    'w2bi.card1.b': '必須要求事項・45点', 'w2bi.card1.p': 'Wi-Fi・セキュリティ、個人業務施設、体験プログラム、客室品質、利用手続きを評価します。欠格項目は企業マッチング推薦可否に直接影響します。',
+    'w2bi.card2.b': '推奨要求事項・55点', 'w2bi.card2.p': '運営時間、出入統制、会議施設、業務支援機器、交通アクセスと宿泊-オフィス間の移動条件を評価します。',
+    'w2bi.card3.b': 'プログラムタイプマッチング', 'w2bi.card3.p': '総合点とは別に、出張連携、チーム/団体ワークショップ、没入プロジェクト、正規勤務タイプの適合性をそれぞれ判定します。',
+    'w2bi.method.p': '検証可能な根拠のみを採点し、未確認情報を任意に点数化することはありません。',
+    'w2bi.step1.h4': '研究と実際の顧客データの結合', 'w2bi.step1.p': 'KTO企業向けガイドと先行研究に、2022〜2026年の企業顧客の購買・問い合わせ・インタビューデータを照合し評価項目を構成します。',
+    'w2bi.step1.li1': '必須要求事項5項目・45点', 'w2bi.step1.li2': '推奨要求事項7項目・55点',
+    'w2bi.step2.h4': '根拠に基づく換算指数', 'w2bi.step2.p': '公式ウェブサイト、運営機関資料と現場実査で確認された項目のみを確定します。未確認項目は評価可能配点からも除外します。',
+    'w2bi.formula': '換算指数 = 確定点数 ÷ 評価可能配点 × 100',
+    'w2bi.step3.h4': '必須要件とタイプ適合性の独立判定', 'w2bi.step3.p': '必須小計と0点項目を先に確認した後、出張連携、チームワークショップ、没入プロジェクト、正規勤務タイプをそれぞれ独立して判定します。',
+    'w2bi.step3.li1': '必須33点以上かどうか', 'w2bi.step3.li2': 'タイプ適合度80以上・根拠確保率60%以上',
+    'w2bi.progtypes.h2': '企業の利用方式による<em>4つのプログラムタイプ</em>',
+    'w2bi.progtypes.p': '施設形態ではなく、業務連続性、協業方式と滞在目的を基準にタイプを区分します。',
+    'w2bi.prog1.b': '出張連携業務継続型', 'w2bi.prog1.p': '出張前後の業務処理と短期滞在を支援する個人・小規模中心のタイプです。',
+    'w2bi.prog2.b': 'チームビルディング・組織文化型', 'w2bi.prog2.p': 'ワークショップ、組織文化改善と協業強化を支援するチーム・団体中心のタイプです。',
+    'w2bi.prog3.b': '没入プロジェクト・成果算出型', 'w2bi.prog3.p': '特定課題の解決と企画・開発・戦略立案のための集中勤務タイプです。',
+    'w2bi.prog4.b': '正規勤務・福利リテンション型', 'w2bi.prog4.p': '柔軟勤務制度と福利政策を組み合わせ、反復的に利用するタイプです。',
+    'w2bi.results.h2': 'W2BI診断結果',
+    'datalab.h1': '長期間蓄積されたワーケーション実利用データ',
+    'datalab.p': 'ワーケーション利用及び地域消費の実データを蓄積・公開します。',
+    'datalab.h2': '2つの観点から見る<em>市場現況</em>',
+    'datalab.corp.title': '企業ワーケーション現況',
+    'datalab.corp.desc': '企業の導入段階、業種・規模別需要と主な障壁要因を構造化して公開する予定です。',
+    'datalab.reg.title': '地域別ワーケーション市場現況',
+    'datalab.reg.desc': '圏域別施設供給、プログラム運営と市場変化を順次公開する予定です。',
+    'nav.about.vision': 'ビジョンと目標', 'nav.about.fields': '4大中核研究分野', 'nav.about.network': 'パートナーネットワーク',
+    'nav.indexes.w2bi': 'Workation-to-Business Index', 'nav.indexes.wibi': 'Workation-in-Business Index',
+    'nav.datalab.corp': '企業ワーケーション現況', 'nav.datalab.reg': '地域別ワーケーション市場現況',
+    'nav.research.list': '研究レポート',
+    'nav.langAria': '言語選択', 'nav.menuAria': 'メニュー',
+    'table.vdPass': '企業ワーケーション適合', 'table.vdFail': '改善必要', 'table.vdHold': '追加確認必要',
+    'table.unitSeat': '席', 'table.notConfirmed': '未確認',
+    'table.thFacility': '施設', 'table.thCapacity': '定員', 'table.thIndex': 'W2BI換算指数', 'table.thMandatory': '必須要件',
+    'table.lPass': '適合', 'table.lFail': '改善必要', 'table.lHold': '追加確認', 'table.lAvg': '平均',
+    'table.unitFacilities': '施設',
+    'table.indexNote': 'W2BI換算指数は確定点数÷評価可能配点の暫定比較指標',
+    'research.tabAll': '全体', 'research.statDone': '発行完了', 'research.statPlan': '発行予定',
+    'table.rank': '順位', 'table.facilityName': 'ワーケーション施設', 'table.officeCap': 'オフィス<br>定員',
+    'w2bi.tab1.note.b': '診断基準',
+    'w2bi.tab1.note.p': '<b>W2BI換算指数</b>は100点満点の絶対総点ではなく、<b>確定点数÷評価可能配点×100</b>の比較指標です。\n          <b>プログラムタイプ</b>はタイプごとに独立して判定し、1つの施設が4つ全てに該当したり、1つも該当しない場合もあります。\n          <b>V*</b>は必須要件が追加確認必要な状態の場合の暫定該当表記です。各タイプ欄のキーワードは判定を分けた核心根拠です。',
+    'w2bi.tab1.thBT': '出張連携<br>業務型 BT', 'w2bi.tab1.thTW': 'チーム/団体<br>ワークショップ型 TW',
+    'w2bi.tab1.thFP': '没入<br>プロジェクト型 FP', 'w2bi.tab1.thRW': '正規<br>勤務型 RW',
+    'w2bi.tab1.roomUnconfirmed': '— 客室情報未確認',
+    'w2bi.tab1.legendV': 'V = タイプ該当・V* = 暫定該当',
+    'w2bi.types.h2': 'プログラム<em>タイプ別該当施設</em>',
+    'w2bi.types.p': '総合点が高い施設が全てのプログラムに適合するわけではありません。タイプ別の核心項目のみ再集計して判定しました。',
+    'w2bi.tab2.note.b': 'DearMonday運営自治体施設診断',
+    'w2bi.tab2.note.p': 'DearMondayが受託・協力運営する自治体ワーケーション支援事業所属の施設です。直営拠点と同じ12項目・プログラムタイプ判定体系を適用し、事業単位でグループ化して<b>+</b>ボタンを押すと所属する個別施設が実名で表示されます。',
+    'w2bi.tab3.note.b': '診断結果案内',
+    'w2bi.tab3.note.p': '本W2BI指数診断は個別施設の相対評価を目的とするものではなく、企業がワーケーションを利用する際に何を重視するかへの理解を深め、改善に活用できる参考資料です。<br>\n           各施設の2026年7月時点の公式ウェブサイトを参照しており、今後最新情報を定期的に確認し再診断します。<br>\n           広域単位の地域のみを明示し、個別施設に関する診断結果は匿名で公開します。<br>\n           診断時に確認できない、または明確な根拠がない項目は、確認前に任意に点数を付与していません。',
+    'w2bi.tab1.label': 'DearMonday直営拠点', 'w2bi.tab1.sub': '1圏域・11施設',
+    'w2bi.tab2.label': 'DearMonday運営自治体施設', 'w2bi.tab2.sub': '2事業・13施設診断完了',
+    'w2bi.tab3.label': '全国自治体施設', 'w2bi.tab3.sub': '7圏域・134施設診断完了'
+  }
+};
+
+function getLang(){ return localStorage.getItem('wil_lang') || 'ko'; }
+
+/* 정적 마크업(data-i18n)이 아니라 JS가 매번 새로 그리는 동적 콘텐츠(표·모달 등)에서 쓰는 조회 함수.
+   ko이거나 키가 없으면 null을 반환하므로, 호출부에서 `t('key') || '한국어 기본값'` 형태로 사용한다 */
+function t(key){ const lang = getLang(); if (lang === 'ko') return null; return (I18N[lang] && I18N[lang][key]) || null; }
+
+/* 동적 렌더 함수(renderMunicipalGroups 등)가 언어 전환 시 자기 자신을 다시 그리도록 등록하는 콜백 목록 */
+const I18N_RERENDERS = [];
+
+function applyLang(lang){
+  localStorage.setItem('wil_lang', lang);
+  const dict = I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict && dict[key]) el.textContent = dict[key];
+    else if (!dict) el.textContent = el.getAttribute('data-i18n-ko') || el.textContent;
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict && dict[key]) el.innerHTML = dict[key];
+    else if (!dict) el.innerHTML = el.getAttribute('data-i18n-ko-html') || el.innerHTML;
+  });
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+    el.getAttribute('data-i18n-attr').split(';').forEach(pair => {
+      const [attr, key] = pair.split(':');
+      if (dict && dict[key]) el.setAttribute(attr, dict[key]);
+      else if (!dict) { const ko = el.getAttribute('data-i18n-ko-' + attr); if (ko) el.setAttribute(attr, ko); }
+    });
+  });
+  document.documentElement.lang = lang === 'ko' ? 'ko' : lang;
+  const btn = document.getElementById('langLabel');
+  if (btn) btn.textContent = lang === 'ko' ? 'KOR' : lang === 'en' ? 'ENG' : 'JPN';
+  document.querySelectorAll('.lang-menu button').forEach(b =>
+    b.classList.toggle('on', b.getAttribute('data-lang') === lang));
+  I18N_RERENDERS.forEach(fn => { try { fn(); } catch(e){} });
+}
+
+function mountLangSwitch(){
+  const sel = document.getElementById('langsel');
+  if (!sel) return;
+  document.querySelectorAll('[data-i18n]').forEach(el => { if (!el.hasAttribute('data-i18n-ko')) el.setAttribute('data-i18n-ko', el.textContent); });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { if (!el.hasAttribute('data-i18n-ko-html')) el.setAttribute('data-i18n-ko-html', el.innerHTML); });
+  document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+    el.getAttribute('data-i18n-attr').split(';').forEach(pair => {
+      const attr = pair.split(':')[0];
+      if (!el.hasAttribute('data-i18n-ko-' + attr)) el.setAttribute('data-i18n-ko-' + attr, el.getAttribute(attr) || '');
+    });
+  });
+  document.getElementById('langBtn').onclick = e => { e.stopPropagation(); sel.classList.toggle('open'); };
+  sel.querySelectorAll('.lang-menu button').forEach(b => {
+    b.onclick = e => { e.stopPropagation(); applyLang(b.getAttribute('data-lang')); sel.classList.remove('open'); };
+  });
+  document.addEventListener('click', () => sel.classList.remove('open'));
+  applyLang(getLang());
+}
 const S3 = 'https://dearmonday-prod-public.s3.ap-northeast-2.amazonaws.com/branch/';
 const BRANCHES = [
   {n:'DearMonday 경주 라한셀렉트호텔점', r:'경상북도 경주시', cap:25, got:61, den:70, vd:'pass',
@@ -333,20 +720,20 @@ const SELF_EXAMPLES = {
 function mountHeader(active){
   const menus = [
     {href:'about.html', key:'about', label:'ABOUT', mega:{h:'ABOUT', items:[
-      ['about.html#vision','비전과 목표'],['about.html#fields','4대 연구 분야'],['about.html#network','협력 네트워크']]}},
+      ['about.html#vision','비전과 목표','nav.about.vision'],['about.html#fields','4대 연구 분야','nav.about.fields'],['about.html#network','협력 네트워크','nav.about.network']]}},
     {href:'indexes.html', key:'indexes', label:'INDEXES', mega:{h:'INDEXES', items:[
-      ['w2bi.html','워케이션 시설의 기업 요구사항 만족 지수'],
-      ['wibi.html','기업의 워케이션 도입 가능성 지수']]}},
+      ['w2bi.html','워케이션 시설의 기업 요구사항 만족 지수','nav.indexes.w2bi'],
+      ['wibi.html','기업의 워케이션 도입 가능성 지수','nav.indexes.wibi']]}},
     {href:'datalab.html', key:'datalab', label:'DATALAB', mega:{h:'DATALAB', items:[
-      ['corporate-workation-status.html','기업 워케이션 현황'],['regional-workation-market.html','지역별 워케이션 시장 현황']]}} ,
+      ['corporate-workation-status.html','기업 워케이션 현황','nav.datalab.corp'],['regional-workation-market.html','지역별 워케이션 시장 현황','nav.datalab.reg']]}} ,
     {href:'research.html', key:'research', label:'RESEARCH', mega:{h:'RESEARCH', items:[
-      ['research.html#list','연구보고서']]}}
+      ['research.html#list','연구보고서','nav.research.list']]}}
   ];
   const nav = menus.map(m => `<a href="${m.href}" class="${m.key === active ? 'on' : ''}">${m.label}</a>`).join('');
   const mega = menus.map(m => `<div><h6>${m.h ? '' : ''}${m.mega.h}</h6><ul>${
-    m.mega.items.map(([href, label]) =>
-      href === '#' ? `<li><a onclick="openSelf()">${label.replace('__SELF__', '')}</a></li>`
-                   : `<li><a href="${href}">${label}</a></li>`).join('')
+    m.mega.items.map(([href, label, i18nKey]) =>
+      href === '#' ? `<li><a onclick="openSelf()"${i18nKey ? ` data-i18n="${i18nKey}"` : ''}>${label.replace('__SELF__', '')}</a></li>`
+                   : `<li><a href="${href}"${i18nKey ? ` data-i18n="${i18nKey}"` : ''}>${label}</a></li>`).join('')
   }</ul></div>`).join('');
 
   document.getElementById('wilHeader').innerHTML = `
@@ -357,8 +744,17 @@ function mountHeader(active){
       </a>
       <nav class="nav" id="nav">${nav}</nav>
       <div class="hact">
-        <a href="mailto:research@dearmonday.io" class="btn-sub">구독신청</a>
-        <button class="burger" id="burger" aria-label="메뉴">☰</button>
+        <div class="langsel" id="langsel">
+          <button class="lang-btn" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" aria-label="언어 선택" data-i18n-attr="aria-label:nav.langAria">
+            <span id="langLabel">KOR</span><svg class="lang-caret" width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="lang-menu">
+            <li><button type="button" data-lang="ko">한국어</button></li>
+            <li><button type="button" data-lang="en">English</button></li>
+            <li><button type="button" data-lang="ja">日本語</button></li>
+          </ul>
+        </div>
+        <button class="burger" id="burger" aria-label="메뉴" data-i18n-attr="aria-label:nav.menuAria">☰</button>
       </div>
     </div>
     <div class="mega"><div class="mega-in">${mega}</div></div>
@@ -368,6 +764,7 @@ function mountHeader(active){
   const nv = document.getElementById('nav');
   burger.onclick = () => nv.classList.toggle('open');
   nv.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nv.classList.remove('open')));
+  mountLangSwitch();
 }
 
 /* ── Footer: DearMonday 관련 링크 드롭다운 포함, 압축형 1단 구성 ── */
@@ -380,10 +777,10 @@ function mountFooter(){
           <img src="assets/dear monday-04-white.png" alt="DearMonday"><span class="fb-div"></span><div class="brand-lab footer-lab"><b>WORKATION</b><span>INSIGHT LAB</span></div>
         </div>
         <div class="f-act">
-          <a href="https://dearmonday.io/common/terms" target="_blank" rel="noopener">이용약관</a>
-          <a href="https://dearmonday.io/common/privacy" target="_blank" rel="noopener">개인정보 처리방침</a>
+          <a href="https://dearmonday.io/common/terms" target="_blank" rel="noopener" data-i18n="footer.terms">이용약관</a>
+          <a href="https://dearmonday.io/common/privacy" target="_blank" rel="noopener" data-i18n="footer.privacy">개인정보 처리방침</a>
           <div class="dd" id="dmDD">
-            <button class="dd-btn" id="dmDDBtn">디어먼데이 관련 링크 <i>▾</i></button>
+            <button class="dd-btn" id="dmDDBtn"><span data-i18n="footer.links">디어먼데이 관련 링크</span> <i>▾</i></button>
             <div class="dd-menu">
               <a href="https://dearmonday.io" target="_blank" rel="noopener">디어먼데이 플랫폼 <em>↗</em></a>
               <a href="https://www.youtube.com/@dearmonday" target="_blank" rel="noopener">YouTube <em>↗</em></a>
@@ -405,6 +802,7 @@ function mountFooter(){
   const dd = document.getElementById('dmDD');
   document.getElementById('dmDDBtn').onclick = e => { e.stopPropagation(); dd.classList.toggle('open'); };
   document.addEventListener('click', () => dd.classList.remove('open'));
+  applyLang(getLang());
 }
 
 /* ── 히어로/배너 쇼케이스 슬라이더 (여러 페이지 공용) ── */
@@ -594,26 +992,33 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ── 사업/지역별 그룹 아코디언 렌더링 (직영점 탭·전국 지자체 탭 공용) ──
    groups: [{name, date, source, summary:{total,pass,fail,hold,avg}, facilities:[{n,cap,idx,vd,ty}]}]
    containerId의 요소에 렌더링하고, 클릭 시 펼침/접힘 동작까지 바인딩한다. */
-function renderMunicipalGroups(groups, containerId, countLabel){
-  const VD = {pass:['기업 워케이션 적합','v-pass'], fail:['개선 필요','v-fail'], hold:['추가 확인 필요','v-hold']};
+function renderMunicipalGroups(groups, containerId, countLabel, _isRerender){
+  const VD = {pass:[t('table.vdPass') || '기업 워케이션 적합','v-pass'], fail:[t('table.vdFail') || '개선 필요','v-fail'], hold:[t('table.vdHold') || '추가 확인 필요','v-hold']};
   const typeCodes = ['BT','TW','FP','RW'];
+  const unitSuffix = t('table.unitSeat') || '석';
+  const notConfirmed = t('table.notConfirmed') || '확인 안 됨';
+  const thFacility = t('table.thFacility') || '시설', thCapacity = t('table.thCapacity') || '정원',
+        thIndex = t('table.thIndex') || 'W2BI 환산지수', thMandatory = t('table.thMandatory') || '필수 요건';
+  const lPass = t('table.lPass') || '적합', lFail = t('table.lFail') || '개선 필요', lHold = t('table.lHold') || '추가 확인', lAvg = t('table.lAvg') || '평균';
+  const countSuffix = t('table.unitFacilities') || countLabel || '개소';
+  const sourceSuffix = t('table.indexNote') || 'W2BI 환산지수는 확정 점수 ÷ 평가 가능 배점의 잠정 비교 지표';
   const host = document.getElementById(containerId);
   if (!host) return;
   host.innerHTML = groups.map((g, gi) => `
     <section class="municipal-group">
       <button class="municipal-head" type="button" aria-expanded="false" aria-controls="${containerId}-panel-${gi}">
         <span class="municipal-plus" aria-hidden="true">+</span>
-        <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}${countLabel || '개소'}</small></span>
+        <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}${countSuffix}</small></span>
         <span class="municipal-stats">
-          <em class="stat-pass">적합 ${g.summary.pass}</em><em class="stat-fail">개선 필요 ${g.summary.fail}</em><em class="stat-hold">추가 확인 ${g.summary.hold}</em><em>평균 ${g.summary.avg.toFixed(1)}</em>
+          <em class="stat-pass">${lPass} ${g.summary.pass}</em><em class="stat-fail">${lFail} ${g.summary.fail}</em><em class="stat-hold">${lHold} ${g.summary.hold}</em><em>${lAvg} ${g.summary.avg.toFixed(1)}</em>
         </span>
       </button>
       <div class="municipal-panel" id="${containerId}-panel-${gi}" hidden>
         <div class="tablewrap municipal-tablewrap">
           <table class="scoretable municipal-table">
-            <thead><tr><th>시설</th><th class="c">정원</th><th>W2BI 환산지수</th><th class="c">필수 요건</th>${typeCodes.map(c => `<th class="c ty">${c}</th>`).join('')}</tr></thead>
+            <thead><tr><th>${thFacility}</th><th class="c">${thCapacity}</th><th>${thIndex}</th><th class="c">${thMandatory}</th>${typeCodes.map(c => `<th class="c ty">${c}</th>`).join('')}</tr></thead>
             <tbody>${g.facilities.map(f => `
-              <tr><td><div class="bname">${f.n}</div></td><td class="c">${f.cap ? f.cap + '석' : '확인 안 됨'}</td>
+              <tr><td><div class="bname">${f.n}</div></td><td class="c">${f.cap ? f.cap + unitSuffix : notConfirmed}</td>
               <td><span class="bar municipal-bar"><i><b style="width:${f.idx}%"></b></i><em>${f.idx.toFixed(1)}</em></span></td>
               <td class="c"><span class="${VD[f.vd][1]}">${VD[f.vd][0]}</span></td>
               ${f.ty.map(([mk, kw]) => `<td class="tyc">${
@@ -623,7 +1028,7 @@ function renderMunicipalGroups(groups, containerId, countLabel){
             </tbody>
           </table>
         </div>
-        <p class="municipal-source">${g.source} · W2BI 환산지수는 확정 점수 ÷ 평가 가능 배점의 잠정 비교 지표</p>
+        <p class="municipal-source">${g.source} · ${sourceSuffix}</p>
       </div>
     </section>`).join('');
 
@@ -635,6 +1040,8 @@ function renderMunicipalGroups(groups, containerId, countLabel){
     btn.setAttribute('aria-expanded', String(!open));
     panel.hidden = open;
   });
+
+  if (!_isRerender) I18N_RERENDERS.push(() => renderMunicipalGroups(groups, containerId, countLabel, true));
 }
 
 /* ── 스크롤 스파이(같은 페이지 섹션 이동 시) ── */

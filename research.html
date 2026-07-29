@@ -7,7 +7,7 @@
 <meta name="description" content="WIL이 발행한 연구보고서와 발행 예정 콘텐츠를 카테고리별로 확인하세요.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/dear monday-07.png">
-<link rel="stylesheet" href="assets/wil.css?v=f3011a4">
+<link rel="stylesheet" href="assets/wil.css?v=202607291741">
 </head>
 <body class="page-research">
 
@@ -16,8 +16,8 @@
 <section class="phead">
   <div class="container">
     <span class="eyebrow">Research</span>
-    <h1>WORKATION INSIGHT LAB <em>연구보고서</em></h1>
-    <p>워케이션 시장, 기업 이용 현황 및 도입 효과, 지자체 기여 효과 실증, 각종 사례 분석 등 다양한 보고서를 제공합니다.</p>
+    <h1 data-i18n-html="research.h1">WORKATION INSIGHT LAB <em>연구보고서</em></h1>
+    <p data-i18n="research.p">워케이션 시장, 기업 이용 현황 및 도입 효과, 지자체 기여 효과 실증, 각종 사례 분석 등 다양한 보고서를 제공합니다.</p>
   </div>
 </section>
 
@@ -31,7 +31,7 @@
 <div id="wilFooter"></div>
 <div id="wilModal"></div>
 
-<script src="assets/wil.js?v=f3011a4"></script>
+<script src="assets/wil.js?v=202607291741"></script>
 <script>
   mountHeader('research');
   mountFooter();
@@ -53,25 +53,31 @@
   ];
 
   const CATS = ['전체', ...[...new Set(REPORTS.map(r => r.cat))]];
-  document.getElementById('catTabs').innerHTML = CATS.map((c, i) =>
-    `<button class="tab cat-${c.toLowerCase()}${i === 0 ? ' on' : ''}" data-cat="${c}">${c}</button>`).join('');
+  let currentFilter = '전체';
 
+  function renderTabs(){
+    document.getElementById('catTabs').innerHTML = CATS.map((c, i) =>
+      `<button class="tab cat-${c.toLowerCase()}${c === currentFilter ? ' on' : ''}" data-cat="${c}">${c === '전체' ? (t('research.tabAll') || c) : c}</button>`).join('');
+  }
   function renderList(filter){
+    currentFilter = filter;
     const items = filter === '전체' ? REPORTS : REPORTS.filter(r => r.cat === filter);
     document.getElementById('rlist').innerHTML = items.map(r => `
       <a href="mailto:research@dearmonday.io" class="ritem">
         <span class="rcat cat-${r.cat.toLowerCase()}">${r.cat}</span>
         <div class="rbody"><h5>${r.title}</h5><p>${r.desc}</p></div>
-        <div class="rdate"><b>${r.date}</b><span class="rstat ${r.done ? 'done' : 'plan'}">${r.done ? '발행 완료' : '발행 예정'}</span></div>
+        <div class="rdate"><b>${r.date}</b><span class="rstat ${r.done ? 'done' : 'plan'}">${r.done ? (t('research.statDone') || '발행 완료') : (t('research.statPlan') || '발행 예정')}</span></div>
       </a>`).join('');
   }
+  renderTabs();
   renderList('전체');
   document.getElementById('catTabs').addEventListener('click', e => {
     const btn = e.target.closest('.tab');
     if (!btn) return;
-    document.querySelectorAll('#catTabs .tab').forEach(t => t.classList.toggle('on', t === btn));
+    document.querySelectorAll('#catTabs .tab').forEach(el => el.classList.toggle('on', el === btn));
     renderList(btn.dataset.cat);
   });
+  I18N_RERENDERS.push(() => { renderTabs(); renderList(currentFilter); });
 </script>
 </body>
 </html>
