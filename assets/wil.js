@@ -247,6 +247,32 @@ const MUNICIPAL_GROUPS = [
   };
 });
 
+/* DearMonday 운영 지자체 시설 - 농식품부 농촌형 워케이션(10) + 가평 워케이션(3)
+   출처: 각 사업 공식 발표·디어먼데이 예약 페이지·지자체 공식 협력 숙소 목록 (2026-07-29 확인)
+   가평 3개소는 '자라섬 워케이션센터'를 공동 오피스로 이용하는 구조 — 업무 관련 항목은
+   센터 기준 공통 적용, 객실 품질은 숙소별 개별 평가, 나머지 항목은 두 정보를 조합해 판정. */
+const DM_MUNICIPAL_GROUPS = [
+  {name:'농식품부 농촌형 워케이션', date:'2026.07.29', source:'농림축산식품부 농촌 워케이션 사업 공식 발표 + 디어먼데이 예약 페이지 + 시설 공식/관광공사 정보',
+   summary:{total:10, pass:0, fail:4, hold:6, avg:56.8}, facilities:[
+    {n:'정읍 송죽마을', cap:0, idx:48.9, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
+    {n:'홍천 무네미마을', cap:0, idx:53.3, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
+    {n:'상주 객주촌', cap:0, idx:42.9, vd:'hold', ty:[[null,'근거 확보율 23%'], [null,'근거 확보율 33%'], [null,'근거 확보율 17%'], [null,'근거 확보율 38%']]},
+    {n:'강릉 오션그레이트', cap:15, idx:60.0, vd:'hold', ty:[[null,'근거 확보율 38%'], [null,'근거 확보율 50%'], [null,'근거 확보율 33%'], [null,'근거 확보율 38%']]},
+    {n:'영천 한의마을', cap:10, idx:64.3, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
+    {n:'남원 혼불체험관', cap:0, idx:33.3, vd:'hold', ty:[[null,'근거 확보율 38%'], [null,'근거 확보율 25%'], [null,'근거 확보율 0%'], [null,'근거 확보율 46%']]},
+    {n:'공주 힐스포레', cap:0, idx:62.9, vd:'hold', ty:[[null,'근거 확보율 23%'], [null,'근거 확보율 50%'], [null,'근거 확보율 17%'], [null,'근거 확보율 38%']]},
+    {n:'남해 오피스 닻', cap:24, idx:82.7, vd:'hold', ty:[['V','적합'], ['V','적합'], ['V','적합'], ['V','적합']]},
+    {n:'곡성 러스틱타운', cap:41, idx:61.8, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
+    {n:'이천 산수유마을', cap:0, idx:57.5, vd:'hold', ty:[[null,'근거 확보율 38%'], [null,'근거 확보율 58%'], [null,'근거 확보율 17%'], [null,'근거 확보율 46%']]}
+  ]},
+  {name:'가평 워케이션', date:'2026.07.29', source:'가평군 워케이션 공식 협력 숙박시설 목록 + 자라섬 워케이션센터 공식 안내 + 디어먼데이 예약 페이지',
+   summary:{total:3, pass:0, fail:3, hold:0, avg:56.0}, facilities:[
+    {n:'가평 호텔자라', cap:0, idx:62.5, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
+    {n:'가평 원스테이 쁘띠', cap:0, idx:43.1, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]},
+    {n:'가평 W지우리조트', cap:0, idx:62.4, vd:'fail', ty:[[null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족'], [null,'필수 요건 미충족']]}
+  ]},
+];
+
 const TYPES = [
   {c:'BT', n:'출장 연계 업무형', d:'개인·소규모 출장 기반 단기 업무 워케이션',
    k:'대중교통 접근성 · 출퇴근 난이도 · 개인 업무 시설 · Wifi · 이용 절차 · 운영 시간 · 지역 내 교통', items:[10,12,2,1,5,6,11]},
@@ -306,6 +332,8 @@ function mountHeader(active){
     {href:'indexes.html', key:'indexes', label:'Indexes', mega:{h:'INDEXES', items:[
       ['w2bi.html','워케이션 시설의 기업 요구사항 만족 지수'],
       ['wibi.html','기업의 워케이션 도입 가능성 지수']]}},
+    {href:'datalab.html', key:'datalab', label:'DataLab', mega:{h:'DATALAB', items:[
+      ['datalab.html#diagnosis','진단 데이터'],['datalab.html#research-data','연구 데이터'],['datalab.html#sources','데이터 출처']]}} ,
     {href:'research.html', key:'research', label:'Research', mega:{h:'RESEARCH', items:[
       ['research.html#list','연구보고서'],['research.html#list','실증 연구'],['research.html#list','학술 협력']]}}
   ];
@@ -525,6 +553,52 @@ function resetSelf(){
 function openSelf(){ document.getElementById('selfModal').classList.add('on'); document.body.style.overflow = 'hidden'; }
 function closeSelf(){ document.getElementById('selfModal').classList.remove('on'); document.body.style.overflow = ''; }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSelf(); });
+
+/* ── 사업/지역별 그룹 아코디언 렌더링 (직영점 탭·전국 지자체 탭 공용) ──
+   groups: [{name, date, source, summary:{total,pass,fail,hold,avg}, facilities:[{n,cap,idx,vd,ty}]}]
+   containerId의 요소에 렌더링하고, 클릭 시 펼침/접힘 동작까지 바인딩한다. */
+function renderMunicipalGroups(groups, containerId, countLabel){
+  const VD = {pass:['기업 워케이션 적합','v-pass'], fail:['개선 필요','v-fail'], hold:['추가 확인 필요','v-hold']};
+  const typeCodes = ['BT','TW','FP','RW'];
+  const host = document.getElementById(containerId);
+  if (!host) return;
+  host.innerHTML = groups.map((g, gi) => `
+    <section class="municipal-group">
+      <button class="municipal-head" type="button" aria-expanded="false" aria-controls="${containerId}-panel-${gi}">
+        <span class="municipal-plus" aria-hidden="true">+</span>
+        <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}${countLabel || '개소'} · ${g.date} 진단</small></span>
+        <span class="municipal-stats">
+          <em class="stat-pass">적합 ${g.summary.pass}</em><em class="stat-fail">개선 필요 ${g.summary.fail}</em><em class="stat-hold">추가 확인 ${g.summary.hold}</em><em>평균 ${g.summary.avg.toFixed(1)}</em>
+        </span>
+      </button>
+      <div class="municipal-panel" id="${containerId}-panel-${gi}" hidden>
+        <div class="tablewrap municipal-tablewrap">
+          <table class="scoretable municipal-table">
+            <thead><tr><th>시설</th><th class="c">정원</th><th>W2BI 환산지수</th><th class="c">필수 요건</th>${typeCodes.map(c => `<th class="c ty">${c}</th>`).join('')}</tr></thead>
+            <tbody>${g.facilities.map(f => `
+              <tr><td><div class="bname">${f.n}</div></td><td class="c">${f.cap ? f.cap + '석' : '확인 안 됨'}</td>
+              <td><span class="bar municipal-bar"><i><b style="width:${f.idx}%"></b></i><em>${f.idx.toFixed(1)}</em></span></td>
+              <td class="c"><span class="${VD[f.vd][1]}">${VD[f.vd][0]}</span></td>
+              ${f.ty.map(([mk, kw]) => `<td class="tyc">${
+                mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${kw}</span>`
+                   : `<span class="x">–</span><span class="kw">${kw}</span>`
+              }</td>`).join('')}</tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+        <p class="municipal-source">${g.source} · W2BI 환산지수는 확정 점수 ÷ 평가 가능 배점의 잠정 비교 지표</p>
+      </div>
+    </section>`).join('');
+
+  host.addEventListener('click', e => {
+    const btn = e.target.closest('.municipal-head');
+    if (!btn) return;
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    panel.hidden = open;
+  });
+}
 
 /* ── 스크롤 스파이(같은 페이지 섹션 이동 시) ── */
 function mountSpy(ids){
