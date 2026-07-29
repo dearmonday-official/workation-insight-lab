@@ -124,6 +124,24 @@ const MUNICIPAL_GROUPS = [
     {n:'광역 단위 지역 H-11', cap:10, idx:65.7, vd:'hold', ty:[[null,'정원 10석 · Wi-Fi 미확인'],[null,'정원 10석 · 회의실 X'],[null,'장비 · 보안 · 운영시간 미확인'],[null,'외곽 교통 · 운영시간 미확인']]},
     {n:'광역 단위 지역 H-12', cap:8, idx:73.3, vd:'hold', ty:[[null,'미팅룸형 · Wi-Fi 미확인'],[null,'정원 8석'],[null,'개인업무 좌석 · 보안 미확인'],[null,'운영시간 · 개인좌석 미확인']]},
     {n:'광역 단위 지역 H-13', cap:15, idx:64.0, vd:'hold', ty:[[null,'해안 외곽 · Wi-Fi 미확인'],[null,'숙소 이동 · 운영시간 미확인'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'지역교통 · 숙소 이동']]}
+   ]},
+  {name:'광역 단위 지역 I', date:'2026.07.29', source:'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트',
+   summary:{total:15, pass:2, fail:8, hold:5, avg:63.8}, facilities:[
+    {n:'광역 단위 지역 I-1', cap:64, idx:78.7, vd:'pass', ty:[[null,'Wi-Fi · 운영시간 미확인'],['V','64석 · 회의실·체험'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'산간 교통 · 운영시간 미확인']]},
+    {n:'광역 단위 지역 I-2', cap:179, idx:65.3, vd:'fail', ty:[[null,'회의실형 · Wi-Fi 미확인'],[null,'상시 전용좌석 미달'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-3', cap:40, idx:70.8, vd:'hold', ty:[[null,'선박 접근 · Wi-Fi 미확인'],[null,'회의실 · 객실 품질 한계'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'도서 교통 · 숙박 품질']]},
+    {n:'광역 단위 지역 I-4', cap:50, idx:64.0, vd:'fail', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'장비 · 숙소 이동 미확인'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-5', cap:50, idx:65.7, vd:'fail', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'장비 · 숙소 이동 미확인'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-6', cap:55, idx:60.0, vd:'fail', ty:[[null,'좌석관리 · Wi-Fi 미확인'],[null,'회의실 · 장비 미확인'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-7', cap:10, idx:56.0, vd:'fail', ty:[[null,'정원 10석 · 산간 교통'],[null,'정원 10석'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-8', cap:40, idx:55.4, vd:'fail', ty:[[null,'Wi-Fi · 산간 교통'],[null,'회의실 · 장비 미확인'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-9', cap:20, idx:66.3, vd:'pass', ty:[[null,'운영 09~18시 · 해안 교통'],[null,'숙소 이동 · Wi-Fi 미확인'],[null,'Wi-Fi · 장시간 운영 미달'],[null,'서류·카드키 절차']]},
+    {n:'광역 단위 지역 I-10', cap:46, idx:72.0, vd:'hold', ty:[[null,'Wi-Fi · 운영시간 미확인'],['V*','46석 · 회의실·장비'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'숙소 품질 편차 · 지역교통']]},
+    {n:'광역 단위 지역 I-11', cap:30, idx:62.7, vd:'hold', ty:[[null,'Wi-Fi · 산간 교통'],[null,'보안 · 운영시간 미확인'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'지역교통 제한 · 객실 18실']]},
+    {n:'광역 단위 지역 I-12', cap:50, idx:64.3, vd:'hold', ty:[[null,'Wi-Fi · 산악 교통'],[null,'업무 장비 미확인'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'지역교통 · 숙박 품질']]},
+    {n:'광역 단위 지역 I-13', cap:50, idx:72.9, vd:'hold', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'업무 장비 · 숙소 이동'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'서류 제출 · 숙소 이동']]},
+    {n:'광역 단위 지역 I-14', cap:100, idx:58.6, vd:'fail', ty:[[null,'세미나실형 · Wi-Fi 미확인'],[null,'개인 업무좌석 기준 미달'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'필수 요건 미충족']]},
+    {n:'광역 단위 지역 I-15', cap:30, idx:44.6, vd:'fail', ty:[[null,'카페형 · Wi-Fi 미확인'],[null,'객실 1실 · 회의실 X'],[null,'장비 · 보안 · 운영시간 미확인'],[null,'필수 요건 미충족']]}
    ]}
 ];
 
