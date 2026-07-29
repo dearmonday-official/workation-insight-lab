@@ -103,6 +103,11 @@ const MUNICIPAL_GROUPS = [
     {n:'광역 단위 지역 F-12', cap:64, idx:67.5, vd:'pass', ty:[[null,'숙소 이동 · 운영시간 미확인'],[null,'보안 · 운영시간 미확인'],[null,'보안 · 운영시간 미확인'],[null,'오피스·숙소 주소 분리']]},
     {n:'광역 단위 지역 F-13', cap:45, idx:73.3, vd:'pass', ty:[[null,'산악권 교통'],['V','45석 · 회의실·체험'],[null,'물리 보안 미확인'],[null,'지역교통 제한']]},
     {n:'광역 단위 지역 F-14', cap:10, idx:66.7, vd:'hold', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'정원 10석'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'산악권 교통 · 절차 미확인']]}
+   ]},
+  {name:'광역 단위 지역 G', date:'2026.07.29', source:'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트',
+   summary:{total:2, pass:0, fail:0, hold:2, avg:67.6}, facilities:[
+    {n:'광역 단위 지역 G-1', cap:12, idx:67.1, vd:'hold', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'정원 12석'],[null,'Wi-Fi · 장비 · 보안 미확인'],[null,'산악권 교통 · 운영시간 미확인']]},
+    {n:'광역 단위 지역 G-2', cap:45, idx:68.0, vd:'hold', ty:[[null,'Wi-Fi · 운영시간 미확인'],[null,'운영시간 · 보안 미확인'],[null,'Wi-Fi · 보안 · 운영시간'],[null,'청풍면 외곽 · 절차 미확인']]}
    ]}
 ];
 
