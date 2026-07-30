@@ -7,7 +7,7 @@
 <meta name="description" content="워케이션 시설의 기업 요구사항 만족 지수 개요, 방법론과 진단 결과를 제공합니다.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/dear monday-07.png">
-<link rel="stylesheet" href="assets/wil.css?v=202607291741">
+<link rel="stylesheet" href="assets/wil.css?v=202607301052">
 </head>
 <body class="page-w2bi">
 
@@ -187,50 +187,56 @@
 <div id="wilFooter"></div>
 <div id="wilModal"></div>
 
-<script src="assets/wil.js?v=202607291741"></script>
+<script src="assets/wil.js?v=202607301052"></script>
 <script>
   mountHeader('indexes');
   mountFooter();
   mountSelfModal();
 
   /* 진단 결과 표 */
-  (function(){
+  function renderW2biBody(){
     const rows = BRANCHES.map(b => { const idx=Math.round(b.got / b.den * 1000) / 10; return {...b,idx,vd:(b.vd==='hold'&&idx>=80?'pass':b.vd)}; })
                          .sort((a, b) => b.idx - a.idx);
     const max = Math.max(...rows.map(r => r.idx));
-    const VD = {pass:['기업 워케이션 적합','v-pass'], fail:['개선 필요','v-fail'], hold:['추가 확인 필요','v-hold']};
+    const VD = {pass:[t('table.vdPass')||'기업 워케이션 적합','v-pass'], fail:[t('table.vdFail')||'개선 필요','v-fail'], hold:[t('table.vdHold')||'추가 확인 필요','v-hold']};
+    const unitSeat = t('table.unitSeat')||'석';
     document.getElementById('w2biBody').innerHTML = rows.map((b, i) => `
       <tr>
         <td class="c" style="font-weight:800;color:var(--gold-deep)">${i + 1}</td>
-        <td><div class="bname">${b.n}</div><div class="bregion">${b.r} · ${b.tag}</div></td>
-        <td class="c">${b.cap}석</td>
+        <td><div class="bname">${trK(b.n)}</div><div class="bregion">${trK(b.r)} · ${trK(b.tag)}</div></td>
+        <td class="c">${b.cap}${unitSeat}</td>
         <td><span class="bar"><i><b style="width:${(b.idx / max * 100).toFixed(1)}%"></b></i><em>${b.idx.toFixed(1)}</em></span></td>
         <td class="c"><span class="${VD[b.vd][1]}">${VD[b.vd][0]}</span></td>
         ${b.ty.map(([mk, kw]) => `<td class="tyc">${
-          mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${kw}</span>`
-             : `<span class="x">–</span><span class="kw">${kw}</span>`
+          mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${trK(kw)}</span>`
+             : `<span class="x">–</span><span class="kw">${trK(kw)}</span>`
         }</td>`).join('')}
       </tr>`).join('');
-  })();
+  }
+  renderW2biBody();
+  I18N_RERENDERS.push(renderW2biBody);
 
   /* 유형별 해당 시설 카드 */
-  (function(){
-    document.getElementById('typeGrid').innerHTML = TYPES.map((t, ti) => {
+  function renderTypeGrid(){
+    const unitFac = t('table.unitFacilities')||'개소';
+    document.getElementById('typeGrid').innerHTML = TYPES.map((t2, ti) => {
       const hit = BRANCHES.filter(b => b.ty[ti][0])
-                          .map(b => ({n: b.n.replace('DearMonday ', ''), m: b.ty[ti][0]}));
+                          .map(b => ({n: trK(b.n).replace('DearMonday ', ''), m: b.ty[ti][0]}));
       return `<div class="tcard">
-        <div><span class="tcode">${t.c}</span></div>
-        <h4>${t.n}</h4>
-        <p>${t.d}</p>
-        <div class="tkeys"><b style="color:var(--teal)">판정 항목</b><br>${t.k}</div>
+        <div><span class="tcode">${t2.c}</span></div>
+        <h4>${trK(t2.n)}</h4>
+        <p>${trK(t2.d)}</p>
+        <div class="tkeys"><b style="color:var(--teal)">${trK('판정 항목')}</b><br>${trK(t2.k)}</div>
         <div class="thits">${
-          hit.length ? hit.map(x => `<div class="thit"><i>${x.m}</i><span>${x.n}</span></div>`).join('')
-                     : '<div style="font-size:12.5px;color:var(--mute);padding:6px 0">해당 시설 없음</div>'
+          hit.length ? hit.map(x => `<div class="thit"><i>${trK(x.m)}</i><span>${x.n}</span></div>`).join('')
+                     : `<div style="font-size:12.5px;color:var(--mute);padding:6px 0">${trK('해당 시설 없음')}</div>`
         }</div>
-        <div class="tcount">해당 ${hit.length} / 11개소${t.note ? ' · ' + t.note : ''}</div>
+        <div class="tcount">${trK('해당')} ${hit.length} / 11${unitFac}${t2.note ? ' · ' + trK(t2.note) : ''}</div>
       </div>`;
     }).join('');
-  })();
+  }
+  renderTypeGrid();
+  I18N_RERENDERS.push(renderTypeGrid);
 
   /* DearMonday 운영 지자체 시설 - 사업별 아코디언(실명 공개) */
   renderMunicipalGroups(DM_MUNICIPAL_GROUPS, 'dmMunicipalGroups');

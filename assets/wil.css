@@ -21,6 +21,10 @@
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{font-family:'Pretendard',-apple-system,'Malgun Gothic',sans-serif;background:var(--paper);color:var(--ink);
      line-height:1.6;-webkit-font-smoothing:antialiased;letter-spacing:-.015em;word-break:keep-all;overflow-wrap:break-word}
+/* word-break:keep-all은 한국어 전용 타이포그래피 최적화(음절 단위 유지)라서
+   일본어·중국어에는 오히려 줄바꿈 지점이 없어져 넘침을 유발한다.
+   :lang(ko)에서만 keep-all을 쓰고, 그 외 언어는 표준 break-word로 되돌린다 */
+html:not([lang="ko"]) body{word-break:normal;overflow-wrap:break-word}
 a{text-decoration:none;color:inherit}
 li{list-style:none}
 img{max-width:100%;display:block}

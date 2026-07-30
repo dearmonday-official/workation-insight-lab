@@ -167,7 +167,44 @@ const I18N = {
     'w2bi.tab3.note.p': 'This W2BI diagnosis is not meant to rank individual facilities against each other — it is a reference for understanding what companies actually value when using workation, and for guiding improvement.<br>\n           Each facility was checked against its official website as of July 2026, and will be re-diagnosed periodically as information is updated.<br>\n           Only the metro region is named; results for individual facilities are published anonymously.<br>\n           Items that couldn’t be confirmed or lacked clear evidence were never scored arbitrarily.',
     'w2bi.tab1.label': 'DearMonday Directly-Operated', 'w2bi.tab1.sub': '1 metro region · 11 locations',
     'w2bi.tab2.label': 'DearMonday-Operated Municipal Facilities', 'w2bi.tab2.sub': '2 programs · 13 facilities diagnosed',
-    'w2bi.tab3.label': 'Nationwide Municipal Facilities', 'w2bi.tab3.sub': '7 metro regions · 134 facilities diagnosed'
+    'w2bi.tab3.label': 'Nationwide Municipal Facilities', 'w2bi.tab3.sub': '7 metro regions · 134 facilities diagnosed',
+    'corp.h1': 'Corporate Workation <em>Status</em>', 'corp.p': 'Analyzes companies’ workation adoption stages and shifts in demand.', 'corp.soon': 'Publishing after data verification and taxonomy work.',
+    'market.h1': 'Regional Workation <em>Market Status</em>', 'market.p': 'Analyzes facility supply and program-operation changes by metro region.', 'market.soon': 'Publishing after regional data verification and time-series work.',
+    'about.field1.h4': 'Corporate Workation<br>Adoption Effect Research', 'about.field1.p': 'Quantifies work engagement, productivity, and talent-retention effects through stay-data analysis by job function and work type.',
+    'about.field2.h4': 'Regional Economic<br>Impact Evidence', 'about.field2.p': 'Measures per-guest-night spending using real payment data, and calculates production-inducement effects using Bank of Korea regional industry-linkage coefficients.',
+    'about.field3.h4': 'K-Workation<br>Standard Index Development', 'about.field3.p': 'Refines the original WIBI·W2BI indices and pursues academic output and global standards through joint academic research.',
+    'about.field4.h4': 'Municipal Case Studies<br>&amp; Policy Guides', 'about.field4.p': 'Moves beyond the limits of headcount-driven subsidy policy, proposing policy-redesign guides based on per-person spending.',
+    'about.whatwedo': 'What We Do',
+    'about.work1.h4': 'Industry Trends', 'about.work1.p': 'Data-driven analysis of workation market trends and outlook',
+    'about.work1.li1': 'Workation demand·supply trend analysis', 'about.work1.li2': 'Regular aggregation of facility operating metrics', 'about.work1.li3': 'Quarterly trend report publication',
+    'about.work2.h4': 'Empirical Research', 'about.work2.p': 'In-depth empirical research on key workation issues',
+    'about.work2.li1': 'Real-payment-based spending measurement', 'about.work2.li2': 'Regional economic production-inducement effect calculation', 'about.work2.li3': 'Joint research with academia and outside institutions',
+    'about.work3.h4': 'Index Platform', 'about.work3.p': 'Provides a diagnosis/data platform usable by companies and local governments',
+    'about.work3.li1': 'Operating the Workation-to-Business Index', 'about.work3.li2': 'Developing the Workation-in-Business Index', 'about.work3.li3': 'Program-type match determination',
+    'about.work4.h4': 'Knowledge Network', 'about.work4.p': 'Operating an expert network for workation, tourism, and regional regeneration',
+    'about.work4.li1': 'Hosting the Workation Data Forum', 'about.work4.li2': 'Regular seminars and workshops', 'about.work4.li3': 'Publishing academic papers and policy briefs',
+    'about.net.dm': 'Workation usage data<br>platform·AI analytics team',
+    'about.net.tdi': 'Korea Tourism Development Institute<br>WIBI·W2BI joint development',
+    'about.net.dongduk': 'Dongduk Women’s University', 'about.net.dongduk.role': 'Prof. Heo Jun<br>Methodology · academic credibility',
+    'about.net.kyonggi': 'Kyonggi University', 'about.net.kyonggi.role': 'Prof. Lee Byeongcheol<br>Statistical verification · ongoing refinement',
+    'about.net.structure': 'Collaboration Structure',
+    'about.net.p1': 'Based on its internal workation usage data, DearMonday co-develops the WIBI·W2BI diagnosis system with the <b>Korea Tourism Development Institute (TDI)</b>, and works broadly with a leading group of industry experts — continuously verifying and refining the system together with <b>Dongduk Women’s University and Kyonggi University</b>.',
+    'about.net.p2': 'The resulting research output is disseminated through regular reports, the Workation Data Forum, academic papers, and municipal policy briefs.',
+    'about.net.tdi.full': 'Korea Tourism Development Institute (TDI)', 'about.net.assoc': 'Tourism academic societies', 'about.net.public': 'Public research institutes',
+    'about.net.dataTitle': 'Data Rights &amp; Security Principles',
+    'about.net.data1': '· Ownership and management of raw booking, stay, and payment data rests with DearMonday.',
+    'about.net.data2': '· Personal data is processed only in a local environment, with mandatory de-identification.',
+    'about.net.data3': '· Disclosure is limited to averages, ratios, indices, and summary statistics; raw data and individual responses are never disclosed.',
+    'about.net.out1': '1. Corporate Workation Activation', 'about.net.out2': '2. Workation Standard Refinement',
+    'about.net.out3': '3. Tourism Policy Proposals', 'about.net.out4': '4. Publication in Leading Academic Journals',
+    'modal.title': 'W2BI Self-Diagnosis',
+    'modal.desc': 'Applies the exact same 12-item, 100-point system used in our official diagnosis. Your answers are never saved — everything is calculated locally in your browser.',
+    'modal.close': 'Close', 'modal.capLabel': 'Office Capacity',
+    'modal.capHint': 'seats — used for the Team/Group Workshop (TW) judgment (15+ required)',
+    'modal.reqLabel': 'Mandatory Items · 5 · 45pt — Excluded from corporate matching if subtotal is below 33',
+    'modal.recLabel': 'Recommended Items · 7 · 55pt',
+    'modal.footHint': 'Please select all items, then click View Results.',
+    'modal.reset': 'Reset', 'modal.viewResult': 'View Results'
   },
   ja: {
     'header.subscribe': '登録する',
@@ -330,7 +367,244 @@ const I18N = {
     'w2bi.tab3.note.p': '本W2BI指数診断は個別施設の相対評価を目的とするものではなく、企業がワーケーションを利用する際に何を重視するかへの理解を深め、改善に活用できる参考資料です。<br>\n           各施設の2026年7月時点の公式ウェブサイトを参照しており、今後最新情報を定期的に確認し再診断します。<br>\n           広域単位の地域のみを明示し、個別施設に関する診断結果は匿名で公開します。<br>\n           診断時に確認できない、または明確な根拠がない項目は、確認前に任意に点数を付与していません。',
     'w2bi.tab1.label': 'DearMonday直営拠点', 'w2bi.tab1.sub': '1圏域・11施設',
     'w2bi.tab2.label': 'DearMonday運営自治体施設', 'w2bi.tab2.sub': '2事業・13施設診断完了',
-    'w2bi.tab3.label': '全国自治体施設', 'w2bi.tab3.sub': '7圏域・134施設診断完了'
+    'w2bi.tab3.label': '全国自治体施設', 'w2bi.tab3.sub': '7圏域・134施設診断完了',
+    'corp.h1': '企業ワーケーション<em>現況</em>', 'corp.p': '企業のワーケーション導入段階と需要の変化を分析します。', 'corp.soon': 'データ検証と分類体系の整備後に公開します。',
+    'market.h1': '地域別ワーケーション<em>市場現況</em>', 'market.p': '圏域別施設供給とプログラム運営の変化を分析します。', 'market.soon': '地域データ検証と時系列整備後に公開します。',
+    'about.field1.h4': '企業のワーケーション<br>導入効果研究', 'about.field1.p': '職種・業務タイプ別滞在データ分析により、業務没入度、生産性、人材維持効果を定量的に提示します。',
+    'about.field2.h4': '地域経済<br>波及効果実証', 'about.field2.p': '実決済データで1人1泊あたりの消費支出を測定し、韓国銀行の地域産業連関係数で生産誘発効果を算出します。',
+    'about.field3.h4': 'K-Workation<br>標準指数開発', 'about.field3.p': '独自指数WIBI・W2BIを高度化し、学界共同研究を通じて学術成果とグローバル標準を目指します。',
+    'about.field4.h4': '自治体事例分析<br>&amp;政策ガイド', 'about.field4.p': '人員動員中心の支援金政策の限界を超え、1人当たり消費支出に基づく政策再編ガイドを提案します。',
+    'about.whatwedo': '私たちが行うこと',
+    'about.work1.h4': '産業動向', 'about.work1.p': 'データに基づくワーケーション市場動向及び展望分析',
+    'about.work1.li1': 'ワーケーション需要・供給トレンド分析', 'about.work1.li2': '施設運営指標の定期集計', 'about.work1.li3': '四半期動向レポート発行',
+    'about.work2.h4': '実証研究', 'about.work2.p': 'ワーケーションの主要課題に関する深化した実証研究',
+    'about.work2.li1': '実決済ベースの消費支出実測', 'about.work2.li2': '地域経済生産誘発効果の算出', 'about.work2.li3': '学界・外部機関との共同研究',
+    'about.work3.h4': '指数プラットフォーム', 'about.work3.p': '企業・自治体が活用可能な診断・データプラットフォームの提供',
+    'about.work3.li1': 'ワーケーション施設の企業要求事項満足指数の運営', 'about.work3.li2': '企業のワーケーション導入可能性指数の開発', 'about.work3.li3': 'プログラムタイプ別マッチング判定',
+    'about.work4.h4': '知識ネットワーク', 'about.work4.p': 'ワーケーション・観光・地域再生専門家ネットワークの運営',
+    'about.work4.li1': 'ワーケーションデータフォーラムの開催', 'about.work4.li2': '定期セミナー及びワークショップ', 'about.work4.li3': '学術論文及び政策ブリーフの発表',
+    'about.net.dm': 'ワーケーション利用データ<br>プラットフォーム・AI分析組織',
+    'about.net.tdi': '韓国観光開発研究院<br>WIBI・W2BI共同開発',
+    'about.net.dongduk': '同徳女子大学', 'about.net.dongduk.role': 'ホ・ジュン教授<br>方法論・学術的信頼性',
+    'about.net.kyonggi': '京畿大学', 'about.net.kyonggi.role': 'イ・ビョンチョル教授<br>統計検証・継続的高度化',
+    'about.net.structure': '協力構造',
+    'about.net.p1': 'DearMondayは、社内のワーケーション利用データをもとに<b>韓国観光開発研究院(TDI)</b>とWIBI・W2BI診断体系を共同開発し、<b>同徳女子大学・京畿大学</b>とともに継続的な検証と高度化を進めるなど、業界最高水準の専門家集団と幅広く協業しています。',
+    'about.net.p2': 'これによる研究成果は定期レポート、ワーケーションデータフォーラム、学術論文、自治体政策ブリーフとして発信されます。',
+    'about.net.tdi.full': '韓国観光開発研究院(TDI)', 'about.net.assoc': '観光学会', 'about.net.public': '公共研究機関',
+    'about.net.dataTitle': 'データ権利及びセキュリティ原則',
+    'about.net.data1': '・予約・滞在・決済の原データの所有及び管理権限はDearMondayに帰属します。',
+    'about.net.data2': '・個人情報はローカル環境でのみ処理し、非識別化を必須で適用します。',
+    'about.net.data3': '・公開範囲は平均値・比率・指数・要約統計に限定し、原データと個人回答は非公開です。',
+    'about.net.out1': '1. 企業ワーケーション活性化', 'about.net.out2': '2. ワーケーション標準の高度化',
+    'about.net.out3': '3. 観光政策立案の提案', 'about.net.out4': '4. 世界的学術誌への論文掲載',
+    'modal.title': 'W2BI自己診断',
+    'modal.desc': '実際の診断に使用する12項目・100点満点体系をそのまま適用します。回答結果は保存されず、ブラウザ内でのみ計算されます。',
+    'modal.close': '閉じる', 'modal.capLabel': 'オフィス定員',
+    'modal.capHint': '席 — チーム/団体ワークショップ型(TW)判定に使用されます(15席以上必要)',
+    'modal.reqLabel': '必須項目・5項目・45点 — 小計33点未満の場合、企業マッチング推薦対象から除外',
+    'modal.recLabel': '推奨項目・7項目・55点',
+    'modal.footHint': 'すべての項目を選択した後、結果を見るを押してください。',
+    'modal.reset': 'リセット', 'modal.viewResult': '結果を見る'
+  },
+  zh: {
+    'header.subscribe': '订阅',
+    'footer.terms': '使用条款',
+    'footer.privacy': '隐私政策',
+    'footer.links': 'DearMonday 相关链接',
+    'home.hero.eyebrow': 'Workation Insight Lab · 工作度假专业民间研究所',
+    'home.hero.h1': '用数据<em>证明工作度假的价值</em>',
+    'home.hero.p': '韩国工作度假专业平台DearMonday，自市场萌芽期起便积累了企业、个人、地方政府等多样客户群体的工作度假使用数据。除直营设施外，还运营民间合作伙伴及地方政府公共设施，并基于这些数据积累提出独有的工作度假指数，以定量方式证明工作度假带来的企业效应与地区经济波及效应。',
+    'home.hubs.eyebrow': 'ABOUT WORKATION INSIGHT LAB',
+    'home.hubs.h2': 'WORKATION INSIGHT LAB<em>提供的内容</em>',
+    'home.hubs.p': '从LAB介绍到独有指数体系、数据与发布报告，一站式提供核心研究资产',
+    'home.hub1.h3': 'LAB简介',
+    'home.hub1.p': '介绍WORKATION INSIGHT LAB的愿景、四大核心研究领域与合作网络',
+    'home.hub1.li1': '愿景',
+    'home.hub1.li2': '4大核心研究领域',
+    'home.hub1.li3': '行业合作伙伴网络',
+    'home.hub2.h3': '独有指数体系',
+    'home.hub2.p': '分别诊断工作度假设施满足企业需求的程度，以及企业采纳工作度假的可能性的两大指数。',
+    'home.hub2.li1': 'Workation-to-Business Index',
+    'home.hub2.li2': 'Workation-in-Business Index',
+    'home.hub2.li3': '各指数的概要·方法论·诊断结果',
+    'home.hub3.h3': 'Workation DataLab',
+    'home.hub3.p': '在这里可以确认设施诊断数据以及工作度假研究所使用的资料与出处',
+    'home.hub3.li1': '全国设施诊断数据',
+    'home.hub3.li2': '按都市圈汇总',
+    'home.hub3.li3': '研究数据及出处',
+    'home.hub4.h3': '研究报告',
+    'home.hub4.p': '查看WORKATION INSIGHT LAB发布的研究报告及即将发布的内容',
+    'home.hub4.li1': '指数开发·实证研究',
+    'home.hub4.li2': '学术合作·数据论坛',
+    'home.hub4.li3': '订阅',
+    'home.hub.go': '查看详情 →',
+    'home.diag.eyebrow': 'W2BI Self-Diagnosis',
+    'home.diag.h2': '诊断我方设施<br>对<em>企业需求</em>的满足程度',
+    'home.diag.p': '这是套用官方诊断所用12项、100分体系的自我诊断。仅需回答各项目，即可立即查看W2BI总分、是否符合企业工作度假需求，以及适配的项目类型。',
+    'home.diag.btn': '试试W2BI自我诊断 →',
+    'home.diag.d1': 'Wifi与信息安保',
+    'home.diag.d2': '个人办公空间',
+    'home.diag.d3': '体验项目',
+    'home.diag.d4': '客房品质',
+    'home.diag.d5': '使用流程',
+    'home.diag.d6': '营业时间·安保·会议空间·交通等',
+    'indexes.h1': '为<em>以办公为中心的工作度假</em>打造的指数体系',
+    'indexes.p': '分别诊断工作度假设施满足企业需求的程度，以及企业采纳工作度假可能性的两大指数。',
+    'indexes.h2': 'WIL的<em>两大指数</em>',
+    'indexes.sechead.p': '各指数页面可以一次性查看概要、验证方法论与诊断结果。',
+    'indexes.w2bi.sub': 'Workation-to-Business Index',
+    'indexes.w2bi.desc': '以12项指标诊断企业选择设施时关注的办公、住宿、运营条件。',
+    'indexes.w2bi.li1': '概要与100分诊断体系',
+    'indexes.w2bi.li2': '部分确认评分及项目类型判定方法论',
+    'indexes.w2bi.li3': '直营设施·全国7大都市圈诊断结果',
+    'indexes.wibi.sub': 'Workation-in-Business Index',
+    'indexes.wibi.desc': '综合组织制度、办公基础设施、职务适配性与员工接受度，评估导入可能性及优先课题。',
+    'indexes.wibi.li1': '从企业导入决策视角出发的概要',
+    'indexes.wibi.li2': '评估领域·验证·优化方法论',
+    'indexes.wibi.li3': '诊断结果即将公开',
+    'indexes.go': '查看页面 →',
+    'wibi.h1': '企业<em>工作度假导入可能性</em>指数',
+    'wibi.p': '以5大评估领域诊断企业导入工作度假时面临的实际制约，并提出适合该组织的分阶段导入路径。',
+    'wibi.overview.p': 'WIBI(Workation-in-Business Index)是运用多准则决策模型，诊断企业导入工作度假所需条件与障碍因素的100分指数。先对企业规模·行业·职务·工作方式·福利水平进行分类，再评估5大领域——提供的不是简单的可否判定，而是可执行的导入路径与优先补充课题。',
+    'wibi.domainA.b': 'A·办公环境·制度成熟度', 'wibi.domainA.p': '确认灵活办公制度、可远程执行的职务比例、考勤管理方式及相关内部规定。',
+    'wibi.domainB.b': 'B·安保·IT基础设施', 'wibi.domainB.p': '诊断外部系统接入、设备携出、安保政策与办公设备运营条件。',
+    'wibi.domainC.b': 'C·费用·预算结构', 'wibi.domainC.p': '查看福利预算、会计处理、费用分摊及政府支持利用可能性。',
+    'wibi.domainD.b': 'D·决策·组织文化', 'wibi.domainD.p': '确认审批阶段、负责人权限、管理层理解程度及试点执行意愿。',
+    'wibi.domainE.b': 'E·导入经验·信息水平', 'wibi.domainE.p': '评估外部办公经验、其他企业案例调研、内部需求及试点准备程度。',
+    'wibi.formula': 'WIBI = A(25) + B(20) + C(20) + D(20) + E(15) = 总计100分',
+    'wibi.method.p': '交叉验证先行研究、企业咨询·会议数据、定量问卷与深度访谈，持续优化指数与导入模型。',
+    'wibi.step1.h4': '反映企业档案', 'wibi.step1.p': '反映规模·行业·职务·工作方式·福利水平不同，同一分数也可能对应不同的制约与执行条件。',
+    'wibi.step1.li1': '企业规模与审批结构', 'wibi.step1.li2': '各行业安保敏感度', 'wibi.step1.li3': '可远程执行的职务比例',
+    'wibi.step2.h4': '5大领域·17项问题', 'wibi.step2.p': '以办公·制度(25分)、安保·IT(20分)、费用·预算(20分)、决策(20分)、经验·信息(15分)诊断导入可能性。',
+    'wibi.step2.li1': '总计100分结构', 'wibi.step2.li2': '审查安保·远程接入的不合格条件', 'wibi.step2.li3': '确认各领域瓶颈',
+    'wibi.step3.h4': '解读分数背后的原因与条件', 'wibi.step3.p': '通过深度访谈确认该分数产生的原因以及在何种条件下可以导入，从而设计定制化的导入路径。',
+    'wibi.step3.li1': '成功案例分析', 'wibi.step3.li2': '锁定组织瓶颈', 'wibi.step3.li3': '探索再导入条件',
+    'wibi.stage.h2': '诊断并非终点——<em>5阶段导入模型</em>',
+    'wibi.stage.p': '低分并非被淘汰，而是降低组织抵触、积累导入经验的起点。',
+    'wibi.stage1.h4': '立即执行', 'wibi.stage1.p': '灵活办公、管理层支持与预算均已具备，可立即设计试点或正式导入方案。',
+    'wibi.stage2.h4': '有条件执行', 'wibi.stage2.p': '补足一两个薄弱领域的瓶颈后，以小规模试点方式导入。',
+    'wibi.stage3.h4': '导入审议中', 'wibi.stage3.p': '通过工作坊或出差关联型桥接项目，积累内部案例与审批依据。',
+    'wibi.stage4.h4': '中长期课题', 'wibi.stage4.p': '先完善制度·预算·管理层认知等结构性基础，再重新诊断。',
+    'wibi.stage5.h4': '潜在需求', 'wibi.stage5.p': '明确网络隔离或总部规定等制约因素，探索可行的职种、出差或团队建设形式。',
+    'wibi.results.h2': 'WIBI诊断结果',
+    'wibi.results.p': '将在通过企业深度访谈和试点验证，完善各领域权重与阶段区间后公开。',
+    'wibi.results.tag': '评估项目·权重验证中',
+    'wibi.cta.h3': '自我诊断本公司的工作度假导入可能性',
+    'wibi.cta.p': '正在准备一项功能，可依据5大评估领域与17项问题，确认组织的导入阶段与优先课题。',
+    'wibi.cta.btn': '试试WIBI自我诊断 →',
+    'research.h1': 'WORKATION INSIGHT LAB<em>研究报告</em>',
+    'research.p': '提供关于工作度假市场、企业使用现况及导入效果、地方政府贡献效果实证、各类案例分析等多种报告。',
+    'about.h1': '旅游不再以访客人数衡量——<br>而是以<em>停留、消费与转化数据</em>来设计',
+    'about.p': 'WORKATION INSIGHT LAB是由<b>DearMonday股份公司</b>运营的工作度假专业民间研究组织。<br>基于自2024年积累的B2B·B2C停留数据以及全国工作度假设施的实证运营数据，<br>为企业的工作度假导入决策与地方政府的政策设计提供所需的客观依据。',
+    'about.vision.h3': '以工作度假数据开启的<br><em>K-Workation标准</em>国际研究枢纽',
+    'about.vision.p': 'WIL作为韩国首个工作度假专业民间研究组织，通过基于实证数据的指数体系与产学联合研究，构建工作度假产业的通用语言。',
+    'about.axis1.b': 'Research', 'about.axis1.span': '基于真实支付与停留数据的<br>实用性·前瞻性实证研究',
+    'about.axis2.b': 'Index System', 'about.axis2.span': '运营量化需求方与供给方两端的<br>独有指数体系(WIBI·W2BI)',
+    'about.axis3.b': 'Networking', 'about.axis3.span': '与学界、产业界、地方政府共同构建的<br>年度定期数据平台',
+    'about.vision.goal': '确立并推广符合企业需求的工作度假设施标准·<em>证明地区经济波及效应</em>·引领K-Workation全球标准',
+    'about.field.h2': '全国11家直营设施，<br>共计<em>100余家合作工作度假设施</em>',
+    'about.field.p': '除DearMonday直接构建的办公与客房结合型工作度假套餐外，DearMonday平台上线的全国各类民间及公共设施所产生的停留、办公、消费数据，正是WORKATION INSIGHT LAB研究的源泉。',
+    'about.stat1.b': '11家直营设施', 'about.stat1.span': 'DearMonday直接运营',
+    'about.stat2.b': '98家民间/公共合作设施', 'about.stat2.span': '全国上线工作度假设施',
+    'about.stat3.b': '24个人口流失地区', 'about.stat3.span': '联动地区均衡发展',
+    'about.stat4.b': '5,000+件', 'about.stat4.span': '累计使用数据',
+    'about.stat5.b': '100+', 'about.stat5.span': '定期运营的工作度假设施',
+    'about.fields.h2': 'WIL的<em>4大核心研究领域</em>',
+    'about.fields.p': '从企业导入效果到地区经济实证、标准指数开发、政策指南，我们研究工作度假生态系统的全过程。',
+    'about.network.h2': '构建行业<em>专家合作网络</em>',
+    'about.network.p': '我们运营一种互补型治理模式，将民间数据平台的速度与学界·研究机构的方法论及公信力相结合。',
+    'w2bi.h1': '工作度假设施的<em>企业需求满足指数</em>',
+    'w2bi.p': '以企业实际提出的要求为基准，诊断设施与项目的企业友好程度及适配类型。',
+    'w2bi.overview.p': 'W2BI(Workation-to-Business Index)是以2022~2026年企业客户实际使用与咨询数据中确认的需求为基准，<br>对地方政府工作度假设施与项目进行逆向诊断的企业友好指数。<br>它并非用于比较各设施优劣的排名表，<br>而是确认设施在多大程度上满足企业导入工作度假所需的条件，并提出改进优先事项与可匹配的项目类型。',
+    'w2bi.card1.b': '必需要求事项·45分', 'w2bi.card1.p': '评估Wi-Fi·安保、个人办公空间、体验项目、客房品质、使用流程。不合格项目将直接影响是否推荐企业匹配。',
+    'w2bi.card2.b': '推荐要求事项·55分', 'w2bi.card2.p': '评估营业时间、出入管制、会议设施、办公支持设备、交通可达性以及住宿-办公室间的移动条件。',
+    'w2bi.card3.b': '项目类型匹配', 'w2bi.card3.p': '与总分无关，分别判定出差关联、团队/团体工作坊、沉浸式项目、正式办公类型的适配性。',
+    'w2bi.method.p': '仅对可验证的依据进行评分，未确认的信息绝不会被随意计分。',
+    'w2bi.step1.h4': '结合研究与实际客户数据', 'w2bi.step1.p': '将KTO企业定制指南与先行研究，对照2022~2026年企业客户的购买·咨询·访谈数据，构成评估项目。',
+    'w2bi.step1.li1': '5项必需要求事项·45分', 'w2bi.step1.li2': '7项推荐要求事项·55分',
+    'w2bi.step2.h4': '基于依据的换算指数', 'w2bi.step2.p': '仅确定通过官方网站、运营机构资料及现场实地考察确认的项目。未确认项目也将从可评估配点中排除。',
+    'w2bi.formula': '换算指数 = 确定分数 ÷ 可评估配点 × 100',
+    'w2bi.step3.h4': '独立判定必需要件与类型适配性', 'w2bi.step3.p': '先确认必需项小计与0分项目，再分别独立判定出差关联、团队工作坊、沉浸式项目、正式办公类型。',
+    'w2bi.step3.li1': '必需项小计是否达到33分以上', 'w2bi.step3.li2': '类型适配度80以上·依据确认率60%以上',
+    'w2bi.progtypes.h2': '依企业使用方式划分的<em>4大项目类型</em>',
+    'w2bi.progtypes.p': '类型划分并非依据设施形态，而是依据办公连续性、协作方式与停留目的。',
+    'w2bi.prog1.b': '出差关联办公连续型', 'w2bi.prog1.p': '支持出差前后办公处理及短期停留的个人·小规模为主的类型。',
+    'w2bi.prog2.b': '团队建设·组织文化型', 'w2bi.prog2.p': '支持工作坊、组织文化改善及协作强化的团队·团体为主的类型。',
+    'w2bi.prog3.b': '沉浸式项目·成果产出型', 'w2bi.prog3.p': '为解决特定课题、进行企划·开发·战略制定而设的集中办公类型。',
+    'w2bi.prog4.b': '正式办公·福利留存型', 'w2bi.prog4.p': '结合灵活办公制度与福利政策，用于反复使用的类型。',
+    'w2bi.results.h2': 'W2BI诊断结果',
+    'datalab.h1': '长期积累的工作度假实际使用数据',
+    'datalab.p': '我们积累并公开工作度假使用及地区消费的实际数据。',
+    'datalab.h2': '两大视角下的<em>市场现况</em>',
+    'datalab.corp.title': '企业工作度假现况',
+    'datalab.corp.desc': '我们计划公开结构化呈现的企业导入阶段、各行业·规模需求及主要障碍因素。',
+    'datalab.reg.title': '地区工作度假市场现况',
+    'datalab.reg.desc': '我们计划按都市圈依次公开设施供给、项目运营及市场变化情况。',
+    'nav.about.vision': '愿景与目标', 'nav.about.fields': '4大核心研究领域', 'nav.about.network': '合作伙伴网络',
+    'nav.indexes.w2bi': 'Workation-to-Business Index', 'nav.indexes.wibi': 'Workation-in-Business Index',
+    'nav.datalab.corp': '企业工作度假现况', 'nav.datalab.reg': '地区工作度假市场现况',
+    'nav.research.list': '研究报告',
+    'nav.langAria': '选择语言', 'nav.menuAria': '菜单',
+    'table.vdPass': '企业工作度假适合', 'table.vdFail': '需要改善', 'table.vdHold': '需要进一步确认',
+    'table.unitSeat': '座', 'table.notConfirmed': '未确认',
+    'table.thFacility': '设施', 'table.thCapacity': '定员', 'table.thIndex': 'W2BI换算指数', 'table.thMandatory': '必需要件',
+    'table.lPass': '适合', 'table.lFail': '需要改善', 'table.lHold': '需进一步确认', 'table.lAvg': '平均',
+    'table.unitFacilities': '家',
+    'table.indexNote': 'W2BI换算指数是确定分数÷可评估配点得出的暂定比较指标',
+    'research.tabAll': '全部', 'research.statDone': '已发布', 'research.statPlan': '即将发布',
+    'table.rank': '排名', 'table.facilityName': '工作度假设施', 'table.officeCap': '办公室<br>定员',
+    'w2bi.tab1.note.b': '诊断标准',
+    'w2bi.tab1.note.p': '<b>W2BI换算指数</b>并非满分100分的绝对总分，而是<b>确定分数÷可评估配点×100</b>得出的比较指标。<br>          <b>项目类型</b>各自独立判定，一个设施可能符合全部4种类型，也可能一种都不符合。<br>          <b>V*</b>表示必需要件仍处于需进一步确认状态时的暂定适配标记。各类型栏中的关键词是判定所依据的核心证据。',
+    'w2bi.tab1.thBT': '出差关联<br>办公型 BT', 'w2bi.tab1.thTW': '团队/团体<br>工作坊型 TW',
+    'w2bi.tab1.thFP': '沉浸式<br>项目型 FP', 'w2bi.tab1.thRW': '正式<br>办公型 RW',
+    'w2bi.tab1.roomUnconfirmed': '— 客房信息未确认',
+    'w2bi.tab1.legendV': 'V = 符合该类型 · V* = 暂定符合',
+    'w2bi.types.h2': '符合各<em>项目类型</em>的设施',
+    'w2bi.types.p': '总分高并不代表该设施适合所有项目。适配度是仅以各类型相关项目重新统计得出的。',
+    'w2bi.tab2.note.b': 'DearMonday运营的地方政府设施',
+    'w2bi.tab2.note.p': '这些设施属于DearMonday受托或以合作方式运营的地方政府工作度假支持项目。此处套用与直营设施相同的12项目·项目类型适配体系，并按项目分组——点击<b>+</b>即可展开其下属各设施的实名信息。',
+    'w2bi.tab3.note.b': '关于本结果',
+    'w2bi.tab3.note.p': '本W2BI指数诊断并非用于对各设施进行相对评价，而是帮助理解企业使用工作度假时真正重视的因素，并作为改善参考的资料。<br>\n           各设施均参照截至2026年7月的官方网站信息，未来将定期确认最新信息并重新诊断。<br>\n           仅标注所属都市圈，各设施的诊断结果以匿名方式公开。<br>\n           诊断时无法确认或缺乏明确依据的项目，在确认前不会被随意赋分。',
+    'w2bi.tab1.label': 'DearMonday直营设施', 'w2bi.tab1.sub': '1个都市圈·11家设施',
+    'w2bi.tab2.label': 'DearMonday运营地方政府设施', 'w2bi.tab2.sub': '2个项目·13家设施已诊断',
+    'w2bi.tab3.label': '全国地方政府设施', 'w2bi.tab3.sub': '7个都市圈·134家设施已诊断',
+    'corp.h1': '企业工作度假<em>现况</em>', 'corp.p': '分析企业的工作度假导入阶段与需求变化。', 'corp.soon': '将在数据验证与分类体系整理完成后公开。',
+    'market.h1': '地区工作度假<em>市场现况</em>', 'market.p': '分析各都市圈的设施供给与项目运营变化。', 'market.soon': '将在地区数据验证与时间序列整理完成后公开。',
+    'about.field1.h4': '企业工作度假<br>导入效果研究', 'about.field1.p': '通过按职种·业务类型分析停留数据，定量呈现办公投入度、生产力及人才留存效果。',
+    'about.field2.h4': '地区经济<br>波及效果实证', 'about.field2.p': '以真实支付数据测算人均每晚消费支出，并利用韩国银行地区产业关联系数计算生产诱发效果。',
+    'about.field3.h4': 'K-Workation<br>标准指数开发', 'about.field3.p': '优化独有指数WIBI·W2BI，并通过学界联合研究追求学术成果与全球标准。',
+    'about.field4.h4': '地方政府案例分析<br>&amp;政策指南', 'about.field4.p': '超越以人数招募为中心的补贴政策局限，提出基于人均消费支出的政策改革指南。',
+    'about.whatwedo': '我们所做的事',
+    'about.work1.h4': '行业动向', 'about.work1.p': '基于数据的工作度假市场动向及展望分析',
+    'about.work1.li1': '工作度假需求·供给趋势分析', 'about.work1.li2': '设施运营指标定期汇总', 'about.work1.li3': '发布季度动向报告',
+    'about.work2.h4': '实证研究', 'about.work2.p': '针对工作度假主要议题的深度实证研究',
+    'about.work2.li1': '基于真实支付的消费支出实测', 'about.work2.li2': '计算地区经济生产诱发效果', 'about.work2.li3': '与学界·外部机构联合研究',
+    'about.work3.h4': '指数平台', 'about.work3.p': '为企业·地方政府提供可用的诊断·数据平台',
+    'about.work3.li1': '运营工作度假设施企业需求满足指数', 'about.work3.li2': '开发企业工作度假导入可能性指数', 'about.work3.li3': '各项目类型匹配判定',
+    'about.work4.h4': '知识网络', 'about.work4.p': '运营工作度假·旅游·地区振兴专家网络',
+    'about.work4.li1': '举办工作度假数据论坛', 'about.work4.li2': '定期研讨会及工作坊', 'about.work4.li3': '发表学术论文及政策简报',
+    'about.net.dm': '工作度假使用数据<br>平台·AI分析组织',
+    'about.net.tdi': '韩国观光开发研究院<br>WIBI·W2BI联合开发',
+    'about.net.dongduk': '同德女子大学', 'about.net.dongduk.role': '许俊教授<br>方法论·学术公信力',
+    'about.net.kyonggi': '京畿大学', 'about.net.kyonggi.role': '李炳哲教授<br>统计验证·持续优化',
+    'about.net.structure': '合作结构',
+    'about.net.p1': 'DearMonday基于内部工作度假使用数据，与<b>韩国观光开发研究院(TDI)</b>联合开发WIBI·W2BI诊断体系，并与<b>同德女子大学·京畿大学</b>持续进行验证与优化，与业界顶尖专家群体展开广泛合作。',
+    'about.net.p2': '由此产生的研究成果通过定期报告、工作度假数据论坛、学术论文及地方政府政策简报进行传播。',
+    'about.net.tdi.full': '韩国观光开发研究院(TDI)', 'about.net.assoc': '旅游学会', 'about.net.public': '公共研究机构',
+    'about.net.dataTitle': '数据权利及安全原则',
+    'about.net.data1': '· 预订·停留·结算原始数据的所有权及管理权限归DearMonday所有。',
+    'about.net.data2': '· 个人信息仅在本地环境处理，并必须进行去标识化处理。',
+    'about.net.data3': '· 公开范围仅限平均值·比率·指数·汇总统计，原始数据及个人回答不予公开。',
+    'about.net.out1': '1. 企业工作度假活性化', 'about.net.out2': '2. 工作度假标准优化',
+    'about.net.out3': '3. 提出旅游政策建议', 'about.net.out4': '4. 在世界级学术期刊发表论文',
+    'modal.title': 'W2BI自我诊断',
+    'modal.desc': '完全套用官方诊断所用的12项、100分体系。回答结果不会被保存，仅在浏览器内进行计算。',
+    'modal.close': '关闭', 'modal.capLabel': '办公室定员',
+    'modal.capHint': '座 — 用于团队/团体工作坊型(TW)判定(需15座以上)',
+    'modal.reqLabel': '必需项目·5项·45分 — 小计低于33分时将被排除在企业匹配推荐之外',
+    'modal.recLabel': '推荐项目·7项·55分',
+    'modal.footHint': '请选择所有项目后点击查看结果。',
+    'modal.reset': '重置', 'modal.viewResult': '查看结果'
   }
 };
 
@@ -346,6 +620,10 @@ const I18N_RERENDERS = [];
 function applyLang(lang){
   localStorage.setItem('wil_lang', lang);
   const dict = I18N[lang];
+  /* 동적 렌더 함수(모달·표 등)를 먼저 다시 그려야, 그 결과로 새로 생긴 data-i18n
+     엘리먼트도 아래 정적 스왑 단계에서 함께 번역된다(순서를 반대로 하면 새로 그려진
+     엘리먼트는 이번 호출에서 번역되지 못하고 다음 언어 전환까지 원문으로 남는다) */
+  I18N_RERENDERS.forEach(fn => { try { fn(); } catch(e){} });
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict && dict[key]) el.textContent = dict[key];
@@ -365,10 +643,9 @@ function applyLang(lang){
   });
   document.documentElement.lang = lang === 'ko' ? 'ko' : lang;
   const btn = document.getElementById('langLabel');
-  if (btn) btn.textContent = lang === 'ko' ? 'KOR' : lang === 'en' ? 'ENG' : 'JPN';
+  if (btn) btn.textContent = lang === 'ko' ? 'KOR' : lang === 'en' ? 'ENG' : lang === 'ja' ? 'JPN' : 'CHN';
   document.querySelectorAll('.lang-menu button').forEach(b =>
     b.classList.toggle('on', b.getAttribute('data-lang') === lang));
-  I18N_RERENDERS.forEach(fn => { try { fn(); } catch(e){} });
 }
 
 function mountLangSwitch(){
@@ -390,6 +667,362 @@ function mountLangSwitch(){
   applyLang(getLang());
 }
 const S3 = 'https://dearmonday-prod-public.s3.ap-northeast-2.amazonaws.com/branch/';
+/* ── KW: 자치체/직영점 결과 표에 반복 등장하는 판정 키워드 사전 (동적 렌더 전용, data-i18n 미적용 영역)
+   trK(kr) 로 조회. 없으면 원문(한국어) 그대로 반환 — 실존 지명은 로마자 표기, 판정 문구는 의미 번역. ── */
+const KW = {
+'15석 · 회의실 예약 X':['15 seats · no meeting room booking','15席・会議室予約不可','15座·无法预约会议室'],
+'15석 · 회의실·장비':['15 seats · meeting room·equipment','15席・会議室・機器','15座·会议室·设备'],
+'15석·회의실':['15 seats·meeting room','15席・会議室','15座·会议室'],
+'15석·회의실·장비':['15 seats·meeting room·equipment','15席・会議室・機器','15座·会议室·设备'],
+'18석 · 엑스포권 숙소':['18 seats · Expo-area lodging','18席・エキスポ圏宿泊','18座·世博园区住宿'],
+'20석 · 동일 호텔':['20 seats · same hotel','20席・同一ホテル','20座·同一酒店'],
+'20석·회의실':['20 seats·meeting room','20席・会議室','20座·会议室'],
+'22석·회의실·폰부스':['22 seats·meeting room·phone booth','22席・会議室・電話ブース','22座·会议室·电话亭'],
+'24h · 전 좌석 모니터':['24h · monitor at every seat','24時間・全席モニター','24小时·全座位配显示器'],
+'24h · 회의실 2개':['24h · 2 meeting rooms','24時間・会議室2室','24小时·2个会议室'],
+'24h 미운영':['not open 24h','24時間営業なし','非24小时运营'],
+'24h 미운영 · 미팅룸 X':['not open 24h · no meeting room','24時間営業なし・会議室なし','非24小时运营·无会议室'],
+'24h 운영':['24h operation','24時間営業','24小时运营'],
+'24석·회의실':['24 seats·meeting room','24席・会議室','24座·会议室'],
+'25석 · 8인 협업석':['25 seats · 8-person collab area','25席・8人用コラボ席','25座·8人协作席'],
+'25석·회의실':['25 seats·meeting room','25席・会議室','25座·会议室'],
+'30석 · 체험 프로그램':['30 seats · experience program','30席・体験プログラム','30座·体验项目'],
+'30석 · 회의실·장비':['30 seats · meeting room·equipment','30席・会議室・機器','30座·会议室·设备'],
+'30석·회의실':['30 seats·meeting room','30席・会議室','30座·会议室'],
+'40객실+ · 셀프세탁':['40+ rooms · self-laundry','40室以上・セルフランドリー','40间以上客房·自助洗衣'],
+'40석·회의실':['40 seats·meeting room','40席・会議室','40座·会议室'],
+'44석·회의실·장비':['44 seats·meeting room·equipment','44席・会議室・機器','44座·会议室·设备'],
+'45석 · 회의실·체험':['45 seats · meeting room·experience','45席・会議室・体験','45座·会议室·体验'],
+'45석·회의실':['45 seats·meeting room','45席・会議室','45座·会议室'],
+'46석 · 회의실·장비':['46 seats · meeting room·equipment','46席・会議室・機器','46座·会议室·设备'],
+'50석 · 회의실·복합기':['50 seats · meeting room·copier','50席・会議室・複合機','50座·会议室·复合机'],
+'50석·회의실':['50 seats·meeting room','50席・会議室','50座·会议室'],
+'5성급 · 뷔페':['5-star · buffet','5つ星・ビュッフェ','5星级·自助餐'],
+'60석 · 회의실·장비':['60 seats · meeting room·equipment','60席・会議室・機器','60座·会议室·设备'],
+'64석 · 회의실·체험':['64 seats · meeting room·experience','64席・会議室・体験','64座·会议室·体验'],
+'75석 · 미팅룸 수 미확인':['75 seats · meeting room count unconfirmed','75席・会議室数未確認','75座·会议室数量未确认'],
+'90석 · 회의실·체험':['90 seats · meeting room·experience','90席・会議室・体験','90座·会议室·体验'],
+'Wi-Fi · 교통 미확인':['Wi-Fi · transit unconfirmed','Wi-Fi・交通未確認','Wi-Fi·交通未确认'],
+'Wi-Fi · 물리 보안 미확인':['Wi-Fi · physical security unconfirmed','Wi-Fi・物理セキュリティ未確認','Wi-Fi·物理安保未确认'],
+'Wi-Fi · 보안 · 운영시간':['Wi-Fi · security · hours','Wi-Fi・セキュリティ・営業時間','Wi-Fi·安保·营业时间'],
+'Wi-Fi · 보안 미확인':['Wi-Fi · security unconfirmed','Wi-Fi・セキュリティ未確認','Wi-Fi·安保未确认'],
+'Wi-Fi · 산간 교통':['Wi-Fi · mountain-area transit','Wi-Fi・山間交通','Wi-Fi·山区交通'],
+'Wi-Fi · 산간 교통 미확인':['Wi-Fi · mountain-area transit unconfirmed','Wi-Fi・山間交通未確認','Wi-Fi·山区交通未确认'],
+'Wi-Fi · 산악 교통':['Wi-Fi · mountain transit','Wi-Fi・山岳交通','Wi-Fi·山地交通'],
+'Wi-Fi · 숙소 이동 미확인':['Wi-Fi · lodging commute unconfirmed','Wi-Fi・宿泊施設移動未確認','Wi-Fi·住宿往返未确认'],
+'Wi-Fi · 운영 09~18시':['Wi-Fi · open 09:00–18:00','Wi-Fi・営業9〜18時','Wi-Fi·营业09:00–18:00'],
+'Wi-Fi · 운영 시간 미확인':['Wi-Fi · operating hours unconfirmed','Wi-Fi・営業時間未確認','Wi-Fi·营业时间未确认'],
+'Wi-Fi · 운영시간 미확인':['Wi-Fi · operating hours unconfirmed','Wi-Fi・営業時間未確認','Wi-Fi·营业时间未确认'],
+'Wi-Fi · 장비 · 보안 미확인':['Wi-Fi · equipment · security unconfirmed','Wi-Fi・機器・セキュリティ未確認','Wi-Fi·设备·安保未确认'],
+'Wi-Fi · 장시간 운영 미달':['Wi-Fi · extended hours not met','Wi-Fi・長時間営業未達','Wi-Fi·长时间营业未达标'],
+'Wi-Fi · 전용좌석 미확인':['Wi-Fi · dedicated seat unconfirmed','Wi-Fi・専用席未確認','Wi-Fi·专用座位未确认'],
+'Wi-Fi · 지역교통 제한':['Wi-Fi · limited local transit','Wi-Fi・地域交通制限','Wi-Fi·当地交通受限'],
+'Wi-Fi · 해안 외곽':['Wi-Fi · coastal outskirts','Wi-Fi・海岸外れ','Wi-Fi·海岸边缘地区'],
+'Wi-Fi 미확인':['Wi-Fi unconfirmed','Wi-Fi未確認','Wi-Fi未确认'],
+'Wi-Fi 미확인 · 필수 미달':['Wi-Fi unconfirmed · mandatory not met','Wi-Fi未確認・必須未達','Wi-Fi未确认·未达必需项'],
+'Wi-Fi 보안 · 장비 미확인':['Wi-Fi security · equipment unconfirmed','Wi-Fiセキュリティ・機器未確認','Wi-Fi安保·设备未确认'],
+'Wi-Fi·보안':['Wi-Fi·security','Wi-Fi・セキュリティ','Wi-Fi·安保'],
+'Wi-Fi·보안 미확인':['Wi-Fi·security unconfirmed','Wi-Fi・セキュリティ未確認','Wi-Fi·安保未确认'],
+'Wi-Fi·보안·운영시간':['Wi-Fi·security·hours','Wi-Fi・セキュリティ・営業時間','Wi-Fi·安保·营业时间'],
+'Wi-Fi·운영시간':['Wi-Fi·hours','Wi-Fi・営業時間','Wi-Fi·营业时间'],
+'Wi-Fi·장비 미확인':['Wi-Fi·equipment unconfirmed','Wi-Fi・機器未確認','Wi-Fi·设备未确认'],
+'개방형 회의공간':['open-plan meeting space','オープン型会議スペース','开放式会议空间'],
+'개인 업무좌석 기준 미달':['personal workspace standard not met','個人業務席基準未達','个人办公席位未达标'],
+'개인업무 좌석 · 보안 미확인':['personal work seat · security unconfirmed','個人業務席・セキュリティ未確認','个人办公席·安保未确认'],
+'객실 1실 · 회의실 X':['1 room · no meeting room','客室1室・会議室なし','1间客房·无会议室'],
+'객실 22실 · 회의실 미확인':['22 rooms · meeting room unconfirmed','客室22室・会議室未確認','22间客房·会议室未确认'],
+'객실 2실 · 지역교통 제한':['2 rooms · limited local transit','客室2室・地域交通制限','2间客房·当地交通受限'],
+'객실 4실':['4 rooms','客室4室','4间客房'],
+'객실 4실 · 복합기 미확인':['4 rooms · copier unconfirmed','客室4室・複合機未確認','4间客房·复合机未确认'],
+'객실 · 교통 미확인':['room · transit unconfirmed','客室・交通未確認','客房·交通未确认'],
+'객실 · 미팅룸 미확인':['room · meeting room unconfirmed','客室・会議室未確認','客房·会议室未确认'],
+'객실 · 숙소 이동 미확인':['room · lodging commute unconfirmed','客室・宿泊施設移動未確認','客房·住宿往返未确认'],
+'객실 기준 · 절차 미달':['room standard · procedure not met','客室基準・手続き未達','客房标准·流程未达标'],
+'객실 세탁·주방 완비':['room laundry·kitchen fully equipped','客室洗濯・キッチン完備','客房洗衣·厨房齐全'],
+'객실 정보 미확인':['room details unconfirmed','客室情報未確認','客房信息未确认'],
+'객실 품질 미확인':['room quality unconfirmed','客室品質未確認','客房品质未确认'],
+'객실과 같은 건물':['same building as room','客室と同じ建物','与客房同楼'],
+'거제 남부 교통':['South Geoje transit','巨済南部交通','巨济南部交通'],
+'고객대기실형 · Wi-Fi 미확인':['waiting-room type · Wi-Fi unconfirmed','客待合室型・Wi-Fi未確認','客户等候室型·Wi-Fi未确认'],
+'광역교통 · 숙소 이동':['regional transit · lodging commute','広域交通・宿泊施設移動','区域交通·住宿往返'],
+'교통 · 객실 품질 한계':['transit · room quality limits','交通・客室品質限界','交通·客房品质有限'],
+'교통 · 운영시간 미확인':['transit · hours unconfirmed','交通・営業時間未確認','交通·营业时间未确认'],
+'근거 확보율 0%':['evidence coverage 0%','根拠確保率0%','证据确认率0%'],
+'근거 확보율 17%':['evidence coverage 17%','根拠確保率17%','证据确认率17%'],
+'근거 확보율 23%':['evidence coverage 23%','根拠確保率23%','证据确认率23%'],
+'근거 확보율 25%':['evidence coverage 25%','根拠確保率25%','证据确认率25%'],
+'근거 확보율 33%':['evidence coverage 33%','根拠確保率33%','证据确认率33%'],
+'근거 확보율 38%':['evidence coverage 38%','根拠確保率38%','证据确认率38%'],
+'근거 확보율 46%':['evidence coverage 46%','根拠確保率46%','证据确认率46%'],
+'근거 확보율 50%':['evidence coverage 50%','根拠確保率50%','证据确认率50%'],
+'근거 확보율 58%':['evidence coverage 58%','根拠確保率58%','证据确认率58%'],
+'김녕 해안 외곽':['Gimnyeong coastal outskirts','キムニョン海岸外れ','金宁海岸边缘地区'],
+'농촌 외곽·Wi-Fi':['rural outskirts·Wi-Fi','農村外れ・Wi-Fi','农村边缘地区·Wi-Fi'],
+'농촌 외곽·숙박 3실':['rural outskirts·3 rooms','農村外れ・宿泊3室','农村边缘地区·3间客房'],
+'대규모 회의·숙박':['large-scale meeting·lodging','大規模会議・宿泊','大型会议·住宿'],
+'도서 교통 · 숙박 품질':['island transit · lodging quality','島嶼交通・宿泊品質','岛屿交通·住宿品质'],
+'도서 접근 · Wi-Fi 미확인':['island access · Wi-Fi unconfirmed','島嶼アクセス・Wi-Fi未確認','岛屿交通·Wi-Fi未确认'],
+'도심·82석':['city center·82 seats','都心・82席','市中心·82座'],
+'동일 건물 90실':['same building, 90 rooms','同一建物90室','同楼90间客房'],
+'동일 건물 · 24h':['same building · 24h','同一建物・24時間','同楼·24小时'],
+'동일 부지 · Wi-Fi':['same site · Wi-Fi','同一敷地・Wi-Fi','同一场地·Wi-Fi'],
+'동일 부지 · 온라인 신청':['same site · online application','同一敷地・オンライン申請','同一场地·在线申请'],
+'모니터 미확인':['monitor unconfirmed','モニター未確認','显示器未确认'],
+'모니터·Wi-Fi 미확인':['monitor·Wi-Fi unconfirmed','モニター・Wi-Fi未確認','显示器·Wi-Fi未确认'],
+'물리 보안 미확인':['physical security unconfirmed','物理セキュリティ未確認','物理安保未确认'],
+'미팅룸 X':['no meeting room','会議室なし','无会议室'],
+'미팅룸 X · 12석':['no meeting room · 12 seats','会議室なし・12席','无会议室·12座'],
+'미팅룸 X · 8석':['no meeting room · 8 seats','会議室なし・8席','无会议室·8座'],
+'미팅룸 X · 정원 10석':['no meeting room · capacity 10','会議室なし・定員10席','无会议室·定员10座'],
+'미팅룸 · 장비 미확인':['meeting room · equipment unconfirmed','会議室・機器未確認','会议室·设备未确认'],
+'미팅룸형 · Wi-Fi 미확인':['meeting-room type · Wi-Fi unconfirmed','会議室型・Wi-Fi未確認','会议室型·Wi-Fi未确认'],
+'보안 · 운영시간 미확인':['security · hours unconfirmed','セキュリティ・営業時間未確認','安保·营业时间未确认'],
+'보안 · 장시간 운영 미달':['security · extended hours not met','セキュリティ・長時間営業未達','安保·长时间营业未达标'],
+'보안·운영시간':['security·hours','セキュリティ・営業時間','安保·营业时间'],
+'복합기·미팅룸 X':['copier·no meeting room','複合機・会議室なし','复合机·无会议室'],
+'사계 해안 외곽':['Sagye coastal outskirts','サゲ海岸外れ','沙溪海岸边缘地区'],
+'산간 교통 · 운영시간 미확인':['mountain-area transit · hours unconfirmed','山間交通・営業時間未確認','山区交通·营业时间未确认'],
+'산간 교통·Wi-Fi':['mountain-area transit·Wi-Fi','山間交通・Wi-Fi','山区交通·Wi-Fi'],
+'산악권 교통':['mountain-region transit','山岳圏交通','山区交通'],
+'산악권 교통 · 운영 09~18시':['mountain-region transit · open 09:00–18:00','山岳圏交通・営業9〜18時','山区交通·营业09:00–18:00'],
+'산악권 교통 · 운영시간 미확인':['mountain-region transit · hours unconfirmed','山岳圏交通・営業時間未確認','山区交通·营业时间未确认'],
+'산악권 교통 · 절차 미확인':['mountain-region transit · procedure unconfirmed','山岳圏交通・手続き未確認','山区交通·流程未确认'],
+'상시 전용좌석 미달':['always-on dedicated seat not met','常時専用席未達','常设专用座位未达标'],
+'상시 좌석관리 미확인':['ongoing seat management unconfirmed','常時席管理未確認','常态座位管理未确认'],
+'서류 절차 · 장시간 운영 미달':['paperwork · extended hours not met','書類手続き・長時間営業未達','书面流程·长时间营业未达标'],
+'서류 제출 · 숙소 이동':['paperwork submission · lodging commute','書類提出・宿泊施設移動','提交材料·住宿往返'],
+'서류·증빙사진 절차':['paperwork·proof-photo procedure','書類・証明写真手続き','材料·凭证照片流程'],
+'서류·카드키 절차':['paperwork·keycard procedure','書類・カードキー手続き','材料·门卡流程'],
+'선박 접근 · Wi-Fi 미확인':['boat access · Wi-Fi unconfirmed','船舶アクセス・Wi-Fi未確認','船舶交通·Wi-Fi未确认'],
+'선박 접근 · 섬 교통 제한':['boat access · limited island transit','船舶アクセス・島交通制限','船舶交通·岛内交通受限'],
+'세미나실형 · Wi-Fi 미확인':['seminar-room type · Wi-Fi unconfirmed','セミナー室型・Wi-Fi未確認','研讨室型·Wi-Fi未确认'],
+'센터·숙소 이동':['center·lodging commute','センター・宿泊施設移動','中心·住宿往返'],
+'수영장·워시가든 무료':['free pool·wash garden','プール・ウォッシュガーデン無料','免费泳池·洗涤花园'],
+'숙박 3실':['3 rooms','宿泊3室','3间客房'],
+'숙박 5실 · 지역교통 제한':['5 rooms · limited local transit','宿泊5室・地域交通制限','5间客房·当地交通受限'],
+'숙박 수용력 · 지역교통 제한':['lodging capacity · limited local transit','宿泊収容力・地域交通制限','住宿容量·当地交通受限'],
+'숙박 품질 0점':['lodging quality score 0','宿泊品質0点','住宿品质0分'],
+'숙박 품질 · 지역교통 제한':['lodging quality · limited local transit','宿泊品質・地域交通制限','住宿品质·当地交通受限'],
+'숙소 이동 · Wi-Fi 미확인':['lodging commute · Wi-Fi unconfirmed','宿泊施設移動・Wi-Fi未確認','住宿往返·Wi-Fi未确认'],
+'숙소 이동 · 보안 미확인':['lodging commute · security unconfirmed','宿泊施設移動・セキュリティ未確認','住宿往返·安保未确认'],
+'숙소 이동 · 서류 절차':['lodging commute · paperwork','宿泊施設移動・書類手続き','住宿往返·材料流程'],
+'숙소 이동 · 운영시간 미확인':['lodging commute · hours unconfirmed','宿泊施設移動・営業時間未確認','住宿往返·营业时间未确认'],
+'숙소 이동·Wi-Fi':['lodging commute·Wi-Fi','宿泊施設移動・Wi-Fi','住宿往返·Wi-Fi'],
+'숙소 품질 편차':['lodging quality varies','宿泊品質のばらつき','住宿品质参差不齐'],
+'숙소 품질 편차 · 지역교통':['lodging quality varies · local transit','宿泊品質のばらつき・地域交通','住宿品质参差不齐·当地交通'],
+'숙소별 이동시간 미확인':['per-lodging commute time unconfirmed','宿泊施設別移動時間未確認','各住宿往返时间未确认'],
+'신경주역 KTX 2시간':['Singyeongju Sta. KTX 2h','新慶州駅KTX2時間','新庆州站KTX 2小时'],
+'안덕면 교통':['Andeok-myeon transit','アンドク面交通','安德面交通'],
+'업무 장비 · 숙소 이동':['work equipment · lodging commute','業務機器・宿泊施設移動','办公设备·住宿往返'],
+'업무 장비 미확인':['work equipment unconfirmed','業務機器未確認','办公设备未确认'],
+'업무 장비 제한':['limited work equipment','業務機器制限','办公设备有限'],
+'업무공간·숙소 분리':['workspace·lodging separate','業務空間・宿泊施設分離','办公空间·住宿分离'],
+'연계 숙소 없음':['no linked lodging','連携宿泊施設なし','无配套住宿'],
+'오피스 도보 10분':['10-min walk to office','オフィス徒歩10分','步行10分钟至办公室'],
+'오피스·숙소 주소 분리':['office·lodging different addresses','オフィス・宿泊施設住所分離','办公室·住宿地址不同'],
+'외곽 교통 · Wi-Fi 미확인':['outskirts transit · Wi-Fi unconfirmed','外れ交通・Wi-Fi未確認','郊区交通·Wi-Fi未确认'],
+'외곽 교통 · 운영시간 미확인':['outskirts transit · hours unconfirmed','外れ交通・営業時間未確認','郊区交通·营业时间未确认'],
+'운영 08~23시':['open 08:00–23:00','営業8〜23時','营业08:00–23:00'],
+'운영 09~18시':['open 09:00–18:00','営業9〜18時','营业09:00–18:00'],
+'운영 09~18시 · 미팅룸 X':['open 09:00–18:00 · no meeting room','営業9〜18時・会議室なし','营业09:00–18:00·无会议室'],
+'운영 09~18시 · 숙소 이동':['open 09:00–18:00 · lodging commute','営業9〜18時・宿泊施設移動','营业09:00–18:00·住宿往返'],
+'운영 09~18시 · 해안 교통':['open 09:00–18:00 · coastal transit','営業9〜18時・海岸交通','营业09:00–18:00·海岸交通'],
+'운영 09~22시':['open 09:00–22:00','営業9〜22時','营业09:00–22:00'],
+'운영 10~21시 · Wi-Fi':['open 10:00–21:00 · Wi-Fi','営業10〜21時・Wi-Fi','营业10:00–21:00·Wi-Fi'],
+'운영시간 · 개인좌석 미확인':['hours · personal seat unconfirmed','営業時間・個人席未確認','营业时间·个人座位未确认'],
+'운영시간 · 보안 미확인':['hours · security unconfirmed','営業時間・セキュリティ未確認','营业时间·安保未确认'],
+'운영시간 미확인':['hours unconfirmed','営業時間未確認','营业时间未确认'],
+'운영시간·보안':['hours·security','営業時間・セキュリティ','营业时间·安保'],
+'운영시간·보안 미확인':['hours·security unconfirmed','営業時間・セキュリティ未確認','营业时间·安保未确认'],
+'일부 숙소 이동':['partial lodging commute','一部宿泊施設移動','部分住宿往返'],
+'장비 · 보안 · 운영시간':['equipment · security · hours','機器・セキュリティ・営業時間','设备·安保·营业时间'],
+'장비 · 보안 · 운영시간 미확인':['equipment · security · hours unconfirmed','機器・セキュリティ・営業時間未確認','设备·安保·营业时间未确认'],
+'장비 · 보안 미확인':['equipment · security unconfirmed','機器・セキュリティ未確認','设备·安保未确认'],
+'장비 · 숙소 이동 미확인':['equipment · lodging commute unconfirmed','機器・宿泊施設移動未確認','设备·住宿往返未确认'],
+'장비 · 회의실 최신정보 부족':['equipment · meeting room info outdated','機器・会議室の最新情報不足','设备·会议室信息不全'],
+'장비 미확인':['equipment unconfirmed','機器未確認','设备未确认'],
+'장비 충실 · 숙박 품질 한계':['equipment adequate · lodging quality limited','機器充実・宿泊品質限界','设备齐全·住宿品质有限'],
+'장비·Wi-Fi 미확인':['equipment·Wi-Fi unconfirmed','機器・Wi-Fi未確認','设备·Wi-Fi未确认'],
+'장비·보안':['equipment·security','機器・セキュリティ','设备·安保'],
+'장비·보안 미확인':['equipment·security unconfirmed','機器・セキュリティ未確認','设备·安保未确认'],
+'장비·운영시간':['equipment·hours','機器・営業時間','设备·营业时间'],
+'장시간 운영 미확인':['extended hours unconfirmed','長時間営業未確認','长时间营业未确认'],
+'적합':['Fit','適合','适合'],
+'전 좌석 27인치':['27" monitor at every seat','全席27インチ','全座位27英寸显示器'],
+'전 좌석 모션데스크':['motorized desk at every seat','全席昇降デスク','全座位升降桌'],
+'전용좌석 · 운영시간 미확인':['dedicated seat · hours unconfirmed','専用席・営業時間未確認','专用座位·营业时间未确认'],
+'정원 10석':['Capacity 10','定員10席','定员10座'],
+'정원 10석 · Wi-Fi 미확인':['Capacity 10 · Wi-Fi unconfirmed','定員10席・Wi-Fi未確認','定员10座·Wi-Fi未确认'],
+'정원 10석 · 객실 미확인':['Capacity 10 · room unconfirmed','定員10席・客室未確認','定员10座·客房未确认'],
+'정원 10석 · 산간 교통':['Capacity 10 · mountain-area transit','定員10席・山間交通','定员10座·山区交通'],
+'정원 10석 · 외곽 교통':['Capacity 10 · outskirts transit','定員10席・外れ交通','定员10座·郊区交通'],
+'정원 10석 · 해안 외곽':['Capacity 10 · coastal outskirts','定員10席・海岸外れ','定员10座·海岸边缘地区'],
+'정원 10석 · 회의실 X':['Capacity 10 · no meeting room','定員10席・会議室なし','定员10座·无会议室'],
+'정원 10석·Wi-Fi':['Capacity 10·Wi-Fi','定員10席・Wi-Fi','定员10座·Wi-Fi'],
+'정원 10석·교통':['Capacity 10·transit','定員10席・交通','定员10座·交通'],
+'정원 11석':['Capacity 11','定員11席','定员11座'],
+'정원 12석':['Capacity 12','定員12席','定员12座'],
+'정원 13석':['Capacity 13','定員13席','定员13座'],
+'정원 14석':['Capacity 14','定員14席','定员14座'],
+'정원 4석 · Wi-Fi 미확인':['Capacity 4 · Wi-Fi unconfirmed','定員4席・Wi-Fi未確認','定员4座·Wi-Fi未确认'],
+'정원 4석 · 회의실 X':['Capacity 4 · no meeting room','定員4席・会議室なし','定员4座·无会议室'],
+'정원 5석':['Capacity 5','定員5席','定员5座'],
+'정원 5석 · Wi-Fi 미확인':['Capacity 5 · Wi-Fi unconfirmed','定員5席・Wi-Fi未確認','定员5座·Wi-Fi未确认'],
+'정원 5석 · 회의실 X':['Capacity 5 · no meeting room','定員5席・会議室なし','定员5座·无会议室'],
+'정원 6석 · Wi-Fi 미확인':['Capacity 6 · Wi-Fi unconfirmed','定員6席・Wi-Fi未確認','定员6座·Wi-Fi未确认'],
+'정원 6석 · 회의실 X':['Capacity 6 · no meeting room','定員6席・会議室なし','定员6座·无会议室'],
+'정원 7석 · 운영시간 미확인':['Capacity 7 · hours unconfirmed','定員7席・営業時間未確認','定员7座·营业时间未确认'],
+'정원 7석 · 회의실 X':['Capacity 7 · no meeting room','定員7席・会議室なし','定员7座·无会议室'],
+'정원 8석':['Capacity 8','定員8席','定员8座'],
+'정원 8석 · Wi-Fi 미확인':['Capacity 8 · Wi-Fi unconfirmed','定員8席・Wi-Fi未確認','定员8座·Wi-Fi未确认'],
+'정원 8석·구좌 외곽':['Capacity 8·Gujwa outskirts','定員8席・グジュア外れ','定员8座·旧左郊区'],
+'정원 8석·남원 외곽':['Capacity 8·Namwon outskirts','定員8席・南元外れ','定员8座·南元郊区'],
+'정원 8석·장비 없음':['Capacity 8·no equipment','定員8席・機器なし','定员8座·无设备'],
+'정원 9석':['Capacity 9','定員9席','定员9座'],
+'정원 9석·숙소 이동':['Capacity 9·lodging commute','定員9席・宿泊施設移動','定员9座·住宿往返'],
+'제주시 도심·15석':['Jeju City center·15 seats','済州市都心・15席','济州市市中心·15座'],
+'제주시 도심·장비':['Jeju City center·equipment','済州市都心・機器','济州市市中心·设备'],
+'조식 예약 · 24h':['breakfast booking · 24h','朝食予約・24時間','早餐预约·24小时'],
+'조식·프런트 미확인':['breakfast·front desk unconfirmed','朝食・フロント未確認','早餐·前台未确认'],
+'조천읍 교통':['Jocheon-eup transit','ジョチョン邑交通','朝天邑交通'],
+'좌석관리 · Wi-Fi 미확인':['seat management · Wi-Fi unconfirmed','席管理・Wi-Fi未確認','座位管理·Wi-Fi未确认'],
+'좌석관리 · 회의실 미확인':['seat management · meeting room unconfirmed','席管理・会議室未確認','座位管理·会议室未确认'],
+'지역교통 · 숙박 품질':['local transit · lodging quality','地域交通・宿泊品質','当地交通·住宿品质'],
+'지역교통 · 숙소 이동':['local transit · lodging commute','地域交通・宿泊施設移動','当地交通·住宿往返'],
+'지역교통 · 운영시간 미확인':['local transit · hours unconfirmed','地域交通・営業時間未確認','当地交通·营业时间未确认'],
+'지역교통 제한':['limited local transit','地域交通制限','当地交通受限'],
+'지역교통 제한 · 객실 18실':['limited local transit · 18 rooms','地域交通制限・客室18室','当地交通受限·18间客房'],
+'지하 1층 동일 건물':['same building, basement 1','地下1階同一建物','同楼地下一层'],
+'진주 외곽·Wi-Fi':['Jinju outskirts·Wi-Fi','晋州外れ・Wi-Fi','晋州郊区·Wi-Fi'],
+'참가신청서·증빙사진 절차':['application form·proof-photo procedure','参加申請書・証明写真手続き','参加申请表·凭证照片流程'],
+'창원 외곽·Wi-Fi':['Changwon outskirts·Wi-Fi','昌原外れ・Wi-Fi','昌原郊区·Wi-Fi'],
+'청풍면 외곽 · 절차 미확인':['Cheongpung-myeon outskirts · procedure unconfirmed','チョンプン面外れ・手続き未確認','青风面郊区·流程未确认'],
+'체험 프로그램 X':['no experience program','体験プログラムなし','无体验项目'],
+'카페형 · Wi-Fi 미확인':['cafe-type · Wi-Fi unconfirmed','カフェ型・Wi-Fi未確認','咖啡厅型·Wi-Fi未确认'],
+'카페형 · 보안 · 운영시간':['cafe-type · security · hours','カフェ型・セキュリティ・営業時間','咖啡厅型·安保·营业时间'],
+'카페형 · 운영 09~18시':['cafe-type · open 09:00–18:00','カフェ型・営業9〜18時','咖啡厅型·营业09:00–18:00'],
+'카페형 · 해안 외곽':['cafe-type · coastal outskirts','カフェ型・海岸外れ','咖啡厅型·海岸边缘地区'],
+'카페형 · 휴무일 다수':['cafe-type · frequently closed','カフェ型・休業日多数','咖啡厅型·休息日较多'],
+'캠핑 숙소 · 센터 이동':['camping lodging · center commute','キャンプ宿泊・センター移動','露营住宿·中心往返'],
+'캠핑 숙소 · 예약체계 미확인':['camping lodging · booking system unconfirmed','キャンプ宿泊・予約体系未確認','露营住宿·预约系统未确认'],
+'캠핑장 · Wi-Fi 미확인':['campsite · Wi-Fi unconfirmed','キャンプ場・Wi-Fi未確認','露营地·Wi-Fi未确认'],
+'터미널 5분 · 6층':['5-min to terminal · 6th floor','ターミナル5分・6階','距客运站5分钟·6层'],
+'피트니스 · 셀프빨래방':['fitness · self-service laundromat','フィットネス・セルフランドリー','健身房·自助洗衣房'],
+'필수 요건 미충족':['mandatory requirement not met','必須要件未達','未达必需条件'],
+'한경면 외곽':['Hangyeong-myeon outskirts','ハンギョン面外れ','翰京面郊区'],
+'해안 외곽 · Wi-Fi 미확인':['coastal outskirts · Wi-Fi unconfirmed','海岸外れ・Wi-Fi未確認','海岸边缘地区·Wi-Fi未确认'],
+'해안 외곽 · 운영 09~18시':['coastal outskirts · open 09:00–18:00','海岸外れ・営業9〜18時','海岸边缘地区·营业09:00–18:00'],
+'해안 외곽·Wi-Fi':['coastal outskirts·Wi-Fi','海岸外れ・Wi-Fi','海岸边缘地区·Wi-Fi'],
+'해안 외곽·숙소 이동':['coastal outskirts·lodging commute','海岸外れ・宿泊施設移動','海岸边缘地区·住宿往返'],
+'호텔 1층 · 24h':['hotel 1F · 24h','ホテル1階・24時間','酒店1层·24小时'],
+'호텔 30석·회의실':['hotel, 30 seats·meeting room','ホテル30席・会議室','酒店30座·会议室'],
+'호텔 내 숙박':['lodging within hotel','ホテル内宿泊','酒店内住宿'],
+'회의실 1개 (15석)':['1 meeting room (15 seats)','会議室1室(15席)','1个会议室(15座)'],
+'회의실 X':['no meeting room','会議室なし','无会议室'],
+'회의실 X · 보안 미확인':['no meeting room · security unconfirmed','会議室なし・セキュリティ未確認','无会议室·安保未确认'],
+'회의실 X · 운영 09~18시':['no meeting room · open 09:00–18:00','会議室なし・営業9〜18時','无会议室·营业09:00–18:00'],
+'회의실 X · 장비 제한':['no meeting room · limited equipment','会議室なし・機器制限','无会议室·设备有限'],
+'회의실 · 객실 품질 한계':['meeting room · room quality limits','会議室・客室品質限界','会议室·客房品质有限'],
+'회의실 · 복합기 미확인':['meeting room · copier unconfirmed','会議室・複合機未確認','会议室·复合机未确认'],
+'회의실 · 빔프로젝터':['meeting room · projector','会議室・プロジェクター','会议室·投影仪'],
+'회의실 · 장비 미확인':['meeting room · equipment unconfirmed','会議室・機器未確認','会议室·设备未确认'],
+'회의실 미확인':['meeting room unconfirmed','会議室未確認','会议室未确认'],
+'회의실 수 · 예약 미확인':['meeting room count · booking unconfirmed','会議室数・予約未確認','会议室数量·预约未确认'],
+'회의실 수 미확인':['meeting room count unconfirmed','会議室数未確認','会议室数量未确认'],
+'회의실·장비 X':['no meeting room·equipment','会議室・機器なし','无会议室·设备'],
+'회의실형 · Wi-Fi 미확인':['meeting-room type · Wi-Fi unconfirmed','会議室型・Wi-Fi未確認','会议室型·Wi-Fi未确认'],
+'해당 시설 없음':['no facilities match','該当施設なし','暂无符合条件设施']
+};
+Object.assign(KW, {
+/* 직영점(BRANCHES) 명칭·지역·부제 */
+'DearMonday 경주 라한셀렉트호텔점':['DearMonday Gyeongju Lahan Select Hotel','DearMonday 慶州ラハンセレクトホテル店','DearMonday 庆州拉韩精选酒店店'],
+'DearMonday 경주 체스터톤스호텔점':['DearMonday Gyeongju Chestertons Hotel','DearMonday 慶州チェスタートンズホテル店','DearMonday 庆州切斯特顿酒店店'],
+'DearMonday 제주 마레보비치호텔점':['DearMonday Jeju Mare Beach Hotel','DearMonday 済州マレボビーチホテル店','DearMonday 济州玛雷海滩酒店店'],
+'DearMonday 시흥 르컬렉티브점':['DearMonday Siheung Le Collective','DearMonday 始興ルコレクティブ店','DearMonday 始兴Le Collective店'],
+'DearMonday 경주 춘추관점':['DearMonday Gyeongju Chunchugwan','DearMonday 慶州春秋館店','DearMonday 庆州春秋馆店'],
+'DearMonday 제주 풀빌라소랑점':['DearMonday Jeju Pool Villa Sorang','DearMonday 済州プールヴィラソラン店','DearMonday 济州泳池别墅Sorang店'],
+'DearMonday 시흥 어반스테이 거북섬점':['DearMonday Siheung Urbanstay Geobuk Island','DearMonday 始興アーバンステイ亀島店','DearMonday 始兴Urbanstay龟岛店'],
+'DearMonday 어반스테이 당진터미널점':['DearMonday Urbanstay Dangjin Terminal','DearMonday アーバンステイ唐津ターミナル店','DearMonday Urbanstay唐津客运站店'],
+'DearMonday 해남126 호텔점':['DearMonday Haenam126 Hotel','DearMonday 海南126ホテル店','DearMonday 海南126酒店店'],
+'DearMonday 춘천 남이섬 호텔 정관루점':['DearMonday Chuncheon Nami Island Jeonggwanru Hotel','DearMonday 春川南怡島ホテル・チョングァンル店','DearMonday 春川南怡岛酒店井观楼店'],
+'DearMonday 제주 소노캄 제주점':['DearMonday Jeju Sono Calm Jeju','DearMonday 済州ソノカム済州店','DearMonday 济州索诺卡姆济州店'],
+'경상북도 경주시':['Gyeongju, Gyeongsangbuk-do','慶尚北道慶州市','庆尚北道庆州市'],
+'제주도 제주시':['Jeju City, Jeju-do','済州道済州市','济州道济州市'],
+'경기도 시흥시':['Siheung, Gyeonggi-do','京畿道始興市','京畿道始兴市'],
+'충청남도 당진시':['Dangjin, Chungcheongnam-do','忠清南道唐津市','忠清南道唐津市'],
+'전라남도 해남군':['Haenam, Jeollanam-do','全羅南道海南郡','全罗南道海南郡'],
+'강원도 춘천시':['Chuncheon, Gangwon-do','江原道春川市','江原道春川市'],
+'제주도 서귀포시':['Seogwipo, Jeju-do','済州道西帰浦市','济州道西归浦市'],
+'5성 호텔 프리미엄 오피스':['5-star hotel premium office','5つ星ホテルのプレミアムオフィス','5星级酒店高端办公室'],
+'경주 중심지 신규 호텔':['New hotel in central Gyeongju','慶州中心部の新規ホテル','庆州市中心新开酒店'],
+'곽지해변 애월 오션뷰':['Ocean view near Gwakji Beach, Aewol','クァクチ海水浴場・涯月オーシャンビュー','涯月郭支海滩海景'],
+'서울 근교 웨이브파크':['Wave Park near Seoul','ソウル近郊ウェーブパーク','首尔近郊冲浪公园'],
+'황리단길 독채 한옥':['Private hanok on Hwangnidan-gil','皇理団キル一棟貸し韓屋','皇理团街独栋韩屋'],
+'제주 풀빌라 워케이션':['Jeju pool-villa workation','済州プールヴィラワーケーション','济州泳池别墅式工作度假'],
+'탁 트인 바다 조망':['Open ocean view','開けた海の眺望','开阔海景'],
+'24석 최대 규모 오피스':['Largest office, 24 seats','24席の最大規模オフィス','24座最大规模办公室'],
+'서해 석양 파노라마':['West Sea sunset panorama','西海夕日パノラマ','西海夕阳全景'],
+'남이섬 한옥 호텔':['Nami Island hanok hotel','南怡島韓屋ホテル','南怡岛韩屋酒店'],
+'표선 바다와 맞닿은 곳':['Right on Pyoseon Beach','表善の海に面した場所','紧邻表善海边'],
+/* DM_MUNICIPAL_GROUPS 사업명·시설명·출처 */
+'농식품부 농촌형 워케이션':['MAFRA Rural-Type Workation','農林畜産食品部 農村型ワーケーション','农林畜产食品部 农村型工作度假'],
+'가평 워케이션':['Gapyeong Workation','加平ワーケーション','加平工作度假'],
+'정읍 송죽마을':['Jeongeup Songjuk Village','井邑ソンジュク村','井邑松竹村'],
+'홍천 무네미마을':['Hongcheon Munemi Village','洪川ムネミ村','洪川无泥美村'],
+'상주 객주촌':['Sangju Gaekju Village','尚州客主村','尚州客主村'],
+'강릉 오션그레이트':['Gangneung Ocean Great','江陵オーシャングレート','江陵Ocean Great'],
+'영천 한의마을':['Yeongcheon Hanui (Herbal Medicine) Village','永川ハニ村(漢方村)','永川韩医村'],
+'남원 혼불체험관':['Namwon Honbul Experience Center','南原ホンブル体験館','南原魂火体验馆'],
+'공주 힐스포레':['Gongju Hills Forest','公州ヒルズフォーレ','公州Hills Forest'],
+'남해 오피스 닻':['Namhae Office Anchor','南海オフィス・タッ','南海Office锚'],
+'곡성 러스틱타운':['Gokseong Rustic Town','谷城ラスティックタウン','谷城Rustic Town'],
+'이천 산수유마을':['Icheon Sansuyu (Cornel) Village','利川サンスユ村(山茱萸村)','利川山茱萸村'],
+'가평 호텔자라':['Gapyeong Hotel Jara','加平ホテルジャラ','加平Jara酒店'],
+'가평 원스테이 쁘띠':['Gapyeong Onestay Petit','加平ワンステイプティ','加平Onestay Petit'],
+'가평 W지우리조트':['Gapyeong W-Jiu Resort','加平Wジウリゾート','加平W智友度假村'],
+'농림축산식품부 농촌 워케이션 사업 공식 발표 + 디어먼데이 예약 페이지 + 시설 공식/관광공사 정보':['MAFRA Rural Workation Program official announcement + DearMonday booking page + facility official site/KTO info','農林畜産食品部 農村ワーケーション事業公式発表 + DearMonday予約ページ + 施設公式/観光公社情報','农林畜产食品部 农村工作度假项目官方公告 + DearMonday预订页面 + 设施官网/韩国观光公社信息'],
+'가평군 워케이션 공식 협력 숙박시설 목록 + 자라섬 워케이션센터 공식 안내 + 디어먼데이 예약 페이지':['Gapyeong County official partner lodging list + Jara Island Workation Center official guide + DearMonday booking page','加平郡ワーケーション公式協力宿泊施設リスト + チャラソムワーケーションセンター公式案内 + DearMonday予約ページ','加平郡工作度假官方合作住宿设施名单 + Jara岛工作度假中心官方指南 + DearMonday预订页面'],
+/* 전국 지자체 광역권명(익명 표기) + 출처 */
+'인천/경기권':['Incheon/Gyeonggi Region','仁川・京畿圏','仁川/京畿圈'],
+'강원권':['Gangwon Region','江原圏','江原圈'],
+'충청권':['Chungcheong Region','忠清圏','忠清圈'],
+'전라권':['Jeolla Region','全羅圏','全罗圈'],
+'대구/경북권':['Daegu/Gyeongbuk Region','大邱・慶北圏','大邱/庆北圈'],
+'부산/울산/경남권':['Busan/Ulsan/Gyeongnam Region','釜山・蔚山・慶南圏','釜山/蔚山/庆南圈'],
+'제주권':['Jeju Region','済州圏','济州圈'],
+'시설':['Facility','施設','设施'],
+'한국관광공사 2025 디렉토리북 · 시설 공식 웹사이트':['KTO 2025 Directory Book · facility official website','韓国観光公社2025ディレクトリブック・施設公式ウェブサイト','韩国观光公社2025年名录手册·设施官网'],
+'한국관광공사 2025 디렉토리북 · 2026 제주 워케이션 공식 공고 · 시설 공식 웹사이트':['KTO 2025 Directory Book · 2026 Jeju Workation official notice · facility official website','韓国観光公社2025ディレクトリブック・2026済州ワーケーション公式公告・施設公式ウェブサイト','韩国观光公社2025年名录手册·2026济州工作度假官方公告·设施官网'],
+/* 프로그램 유형(TYPES) 및 유형 카드 부속 문구 */
+'출장 연계 업무형':['Business-Trip-Linked Work','出張連携業務型','出差关联办公型'],
+'개인·소규모 출장 기반 단기 업무 워케이션':['Short-term work workation based on individual/small-group business trips','個人・小規模出張ベースの短期業務ワーケーション','以个人/小规模出差为基础的短期办公工作度假'],
+'대중교통 접근성 · 출퇴근 난이도 · 개인 업무 시설 · Wifi · 이용 절차 · 운영 시간 · 지역 내 교통':['Transit access · Commute difficulty · Private workspace · Wifi · Usage process · Operating hours · Local transit','公共交通アクセス・通勤難易度・個人業務施設・Wifi・利用手続き・営業時間・地域内交通','公共交通可达性·通勤难度·个人办公设施·Wifi·使用流程·营业时间·当地交通'],
+'팀/단체 워크샵형':['Team/Group Workshop','チーム/団体ワークショップ型','团队/团体工作坊型'],
+'팀 단위 오프라인 협업 및 워크샵 집중':['Team-based offline collaboration and workshop focus','チーム単位のオフライン協業とワークショップに集中','以团队为单位的线下协作与工作坊集中型'],
+'협업 시설 · 개인 업무 시설 · 객실 품질 · 체험 프로그램 · 이용 절차 · 출퇴근 난이도 · 업무 지원 장비':['Collaboration facilities · Private workspace · Room quality · Experience programs · Usage process · Commute difficulty · Work-support equipment','協業施設・個人業務施設・客室品質・体験プログラム・利用手続き・通勤難易度・業務支援機器','协作设施·个人办公设施·客房品质·体验项目·使用流程·通勤难度·办公支持设备'],
+'정원 15석 이상만 해당':['Only fits capacity 15+','定員15席以上のみ該当','仅限定员15座以上'],
+'몰입 프로젝트형':['Immersive Project','没入プロジェクト型','沉浸式项目型'],
+'스프린트·집중 개발·프로젝트 완수형 체류':['Sprint-style, focused-development, project-completion stays','スプリント・集中開発・プロジェクト完遂型の滞在','冲刺式·集中开发·项目完成型停留'],
+'개인 업무 시설 · 운영 시간 · Wifi · 업무 지원 장비 · 출퇴근 난이도 · 물리적 보안 · 협업 시설':['Private workspace · Operating hours · Wifi · Work-support equipment · Commute difficulty · Physical security · Collaboration facilities','個人業務施設・営業時間・Wifi・業務支援機器・通勤難易度・物理的セキュリティ・協業施設','个人办公设施·营业时间·Wifi·办公支持设备·通勤难度·物理安保·协作设施'],
+'정규 근무형':['Regular Work','正規勤務型','正式办公型'],
+'월 단위 분산 근무·리텐션 복지형 장기 체류':['Monthly distributed work, welfare-retention long-term stays','月単位の分散勤務・リテンション福利型長期滞在','按月分散办公·留存福利型长期停留'],
+'객실 품질 · 운영 시간 · 이용 절차 · 지역 내 교통 · 체험 프로그램 · 대중교통 접근성 · 개인 업무 시설':['Room quality · Operating hours · Usage process · Local transit · Experience programs · Transit access · Private workspace','客室品質・営業時間・利用手続き・地域内交通・体験プログラム・公共交通アクセス・個人業務施設','客房品质·营业时间·使用流程·当地交通·体验项目·公共交通可达性·个人办公设施'],
+'판정 항목':['Judgment Criteria','判定項目','判定项目'],
+'해당':['Fits','該当','符合']
+});
+
+function trK(kr){
+  if (kr == null) return kr;
+  const lang = getLang();
+  if (lang === 'ko') return kr;
+  const idx = lang === 'en' ? 0 : lang === 'ja' ? 1 : 2;
+  const hit = KW[kr];
+  if (hit) return hit[idx];
+  /* 지역명 접두어 + " 시설 " + 번호 패턴(예: "인천/경기권 시설 01")을 분해해 번역 */
+  const m = /^(.+) 시설 (\d+)$/.exec(kr);
+  if (m && KW[m[1]]) return `${KW[m[1]][idx]} ${KW['시설'][idx]} ${m[2]}`;
+  return kr;
+}
 const BRANCHES = [
   {n:'DearMonday 경주 라한셀렉트호텔점', r:'경상북도 경주시', cap:25, got:61, den:70, vd:'pass',
    tag:'5성 호텔 프리미엄 오피스', img:'assets/hero-indexes-clean.webp',
@@ -752,6 +1385,7 @@ function mountHeader(active){
             <li><button type="button" data-lang="ko">한국어</button></li>
             <li><button type="button" data-lang="en">English</button></li>
             <li><button type="button" data-lang="ja">日本語</button></li>
+            <li><button type="button" data-lang="zh">中文</button></li>
           </ul>
         </div>
         <button class="burger" id="burger" aria-label="메뉴" data-i18n-attr="aria-label:nav.menuAria">☰</button>
@@ -836,7 +1470,7 @@ function mountShowcase(elId, dotsId, pickIdx){
 }
 
 /* ── W2BI 자가 진단 모달 마운트 (모든 페이지 공용) ── */
-function mountSelfModal(){
+function mountSelfModal(_isRerender){
   const req = QUESTIONS.filter(q => q.req), rec = QUESTIONS.filter(q => !q.req);
   const mk = q => `<div class="q">
       <div class="qt"><b>${q.id}. ${q.t}</b></div>
@@ -849,36 +1483,37 @@ function mountSelfModal(){
     <div class="mbox">
       <div class="mhead">
         <div>
-          <h3>W2BI 자가 진단</h3>
-          <p>실제 진단에 사용하는 12개 항목·100점 만점 체계를 그대로 적용합니다.
+          <h3 data-i18n="modal.title">W2BI 자가 진단</h3>
+          <p data-i18n="modal.desc">실제 진단에 사용하는 12개 항목·100점 만점 체계를 그대로 적용합니다.
              응답 결과는 저장되지 않으며 브라우저 안에서만 계산됩니다.</p>
         </div>
-        <button class="mclose" onclick="closeSelf()" aria-label="닫기">✕</button>
+        <button class="mclose" onclick="closeSelf()" aria-label="닫기" data-i18n-attr="aria-label:modal.close">✕</button>
       </div>
       <div class="mbody">
         <div class="cap-row">
-          <label for="capIn">오피스 정원</label>
+          <label for="capIn" data-i18n="modal.capLabel">오피스 정원</label>
           <input type="number" id="capIn" value="12" min="1" max="200">
-          <small>석 — 팀/단체 워크샵형(TW) 판정에 사용됩니다 (15석 이상 필요)</small>
+          <small data-i18n="modal.capHint">석 — 팀/단체 워크샵형(TW) 판정에 사용됩니다 (15석 이상 필요)</small>
         </div>
         <div id="qWrap">
-          <div class="qlabel">필수 항목 · 5개 · 45점 — 소계 33점 미만 시 기업 매칭 추천 대상 제외</div>
+          <div class="qlabel" data-i18n="modal.reqLabel">필수 항목 · 5개 · 45점 — 소계 33점 미만 시 기업 매칭 추천 대상 제외</div>
           ${req.map(mk).join('')}
-          <div class="qlabel">권장 항목 · 7개 · 55점</div>
+          <div class="qlabel" data-i18n="modal.recLabel">권장 항목 · 7개 · 55점</div>
           ${rec.map(mk).join('')}
         </div>
         <div class="result" id="selfResult"></div>
       </div>
       <div class="mfoot">
-        <span style="font-size:12px;color:var(--mute)">모든 항목을 선택한 후 결과 보기를 눌러주세요.</span>
+        <span style="font-size:12px;color:var(--mute)" data-i18n="modal.footHint">모든 항목을 선택한 후 결과 보기를 눌러주세요.</span>
         <div style="display:flex;gap:10px">
-          <button class="btn-line" style="border-color:var(--line);color:var(--body)" onclick="resetSelf()">초기화</button>
-          <button class="btn-fill" onclick="calcSelf(true)">결과 보기</button>
+          <button class="btn-line" style="border-color:var(--line);color:var(--body)" onclick="resetSelf()" data-i18n="modal.reset">초기화</button>
+          <button class="btn-fill" onclick="calcSelf(true)" data-i18n="modal.viewResult">결과 보기</button>
         </div>
       </div>
     </div>
   </div>`;
   document.getElementById('selfModal').addEventListener('click', e => { if (e.target.id === 'selfModal') closeSelf(); });
+  if (!_isRerender) I18N_RERENDERS.push(() => mountSelfModal(true));
 }
 
 function getScores(){
@@ -1008,7 +1643,7 @@ function renderMunicipalGroups(groups, containerId, countLabel, _isRerender){
     <section class="municipal-group">
       <button class="municipal-head" type="button" aria-expanded="false" aria-controls="${containerId}-panel-${gi}">
         <span class="municipal-plus" aria-hidden="true">+</span>
-        <span class="municipal-title"><b>${g.name}</b><small>${g.summary.total}${countSuffix}</small></span>
+        <span class="municipal-title"><b>${trK(g.name)}</b><small>${g.summary.total}${countSuffix}</small></span>
         <span class="municipal-stats">
           <em class="stat-pass">${lPass} ${g.summary.pass}</em><em class="stat-fail">${lFail} ${g.summary.fail}</em><em class="stat-hold">${lHold} ${g.summary.hold}</em><em>${lAvg} ${g.summary.avg.toFixed(1)}</em>
         </span>
@@ -1018,17 +1653,17 @@ function renderMunicipalGroups(groups, containerId, countLabel, _isRerender){
           <table class="scoretable municipal-table">
             <thead><tr><th>${thFacility}</th><th class="c">${thCapacity}</th><th>${thIndex}</th><th class="c">${thMandatory}</th>${typeCodes.map(c => `<th class="c ty">${c}</th>`).join('')}</tr></thead>
             <tbody>${g.facilities.map(f => `
-              <tr><td><div class="bname">${f.n}</div></td><td class="c">${f.cap ? f.cap + unitSuffix : notConfirmed}</td>
+              <tr><td><div class="bname">${trK(f.n)}</div></td><td class="c">${f.cap ? f.cap + unitSuffix : notConfirmed}</td>
               <td><span class="bar municipal-bar"><i><b style="width:${f.idx}%"></b></i><em>${f.idx.toFixed(1)}</em></span></td>
               <td class="c"><span class="${VD[f.vd][1]}">${VD[f.vd][0]}</span></td>
               ${f.ty.map(([mk, kw]) => `<td class="tyc">${
-                mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${kw}</span>`
-                   : `<span class="x">–</span><span class="kw">${kw}</span>`
+                mk ? `<span class="v${mk === 'V*' ? ' tent' : ''}">${mk}</span><span class="kw good">${trK(kw)}</span>`
+                   : `<span class="x">–</span><span class="kw">${trK(kw)}</span>`
               }</td>`).join('')}</tr>`).join('')}
             </tbody>
           </table>
         </div>
-        <p class="municipal-source">${g.source} · ${sourceSuffix}</p>
+        <p class="municipal-source">${trK(g.source)} · ${sourceSuffix}</p>
       </div>
     </section>`).join('');
 
