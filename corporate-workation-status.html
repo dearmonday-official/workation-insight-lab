@@ -1,1 +1,122 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>기업 워케이션 현황 — WIL DataLab</title><link rel="stylesheet" href="assets/wil.css?v=202607301052"></head><body class="page-datalab"><div id="wilHeader"></div><section class="phead"><div class="container"><span class="eyebrow">DATALAB · CORPORATE</span><h1 data-i18n-html="corp.h1">기업 워케이션 <em>현황</em></h1><p data-i18n="corp.p">기업의 워케이션 도입 단계와 수요 변화를 분석합니다.</p></div></section><section class="section tint"><div class="container"><div class="soon"><b>Coming Soon</b><p data-i18n="corp.soon">데이터 검증과 분류 체계 정비 후 공개합니다.</p></div></div></section><div id="wilFooter"></div><script src="assets/wil.js?v=202607301052"></script><script>mountHeader('datalab');mountFooter();</script></body></html>
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>기업 워케이션 현황 — WIL DataLab</title><meta name="robots" content="noindex, nofollow"><link rel="icon" href="assets/dear monday-07.png"><link rel="stylesheet" href="assets/wil.css?v=202607301548"></head>
+<body class="page-datalab">
+<div id="wilHeader"></div>
+<section class="phead"><div class="container"><span class="eyebrow">DATALAB · CORPORATE</span><h1 data-i18n-html="corp.h1">기업 워케이션 <em>현황</em></h1><p data-i18n="corp.p">기업의 워케이션 도입 단계와 수요 변화를 분석합니다.</p></div></section>
+
+<section class="section tint"><div class="container">
+  <div id="dashCorp"><div class="data-loading" data-i18n="dash.loading">데이터를 불러오는 중입니다…</div></div>
+</div></section>
+
+<div id="wilFooter"></div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script src="assets/wil.js?v=202607301548"></script>
+<script>
+mountHeader('datalab');mountFooter();
+
+function srcCaption(d){
+  return `${t('dash.sourceLabel')||'출처'}: DearMonday ${t('dash.reservationData')||'예약 데이터'} (${d.dataRangeStart||'-'} ~ ${d.dataRangeEnd||'-'})`;
+}
+let __period = 'all';
+function updatePeriodView(d, L){
+  const p = d.periods[__period];
+  const fmt = (v, unit) => (v === null || v === undefined) ? '–' : `${v}${unit}`;
+  document.getElementById('cmpNightsB2B').textContent = fmt(p.metrics.B2B.avgNightsPerMember, '');
+  document.getElementById('cmpNightsB2C').textContent = fmt(p.metrics.B2C.avgNightsPerMember, '');
+  document.getElementById('cmpPayB2B').textContent = fmt(p.metrics.B2B.avgCostPerMemberManwon, '');
+  document.getElementById('cmpPayB2C').textContent = fmt(p.metrics.B2C.avgCostPerMemberManwon, '');
+  document.getElementById('cmpSupportB2B').textContent = fmt(p.metrics.B2B.supportPct, '%');
+  document.getElementById('cmpSupportB2C').textContent = fmt(p.metrics.B2C.supportPct, '%');
+  document.querySelectorAll('#periodTabs .tab').forEach(b => b.classList.toggle('on', b.dataset.period === __period));
+
+  const ctx = document.getElementById('corpChart');
+  if (window.__corpChart) window.__corpChart.destroy();
+  window.__corpChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: d.months.map(trK),
+      datasets: [
+        {label: L.b2bSeries, data: p.seasonality.corporate.monthSharePct, backgroundColor: '#006969', borderRadius: 5},
+        {label: L.b2cSeries, data: p.seasonality.individual.monthSharePct, backgroundColor: '#E9B300', borderRadius: 5}
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true, ticks: { callback: v => v + '%' } } },
+      plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y}%` } } }
+    }
+  });
+}
+function renderCorpDashboard(d){
+  const host = document.getElementById('dashCorp');
+  if (!d){ host.innerHTML = '<div class="data-loading">'+(t('dash.error')||'데이터를 불러오지 못했습니다.')+'</div>'; return; }
+  const L = {
+    periodAll: t('dash.corp.periodAll') || '전체 기간',
+    cmp1Title: t('dash.corp.cmp1Title') || '평균 숙박 기간 비교',
+    cmp1Unit: t('dash.corp.cmp1Unit') || '1인당 (박)',
+    cmp2Title: t('dash.corp.cmp2Title') || '평균 예약 비용 비교',
+    cmp2Unit: t('dash.corp.cmp2Unit') || '1인당',
+    cmp3Title: t('dash.corp.cmp3Title') || '지자체 지원 참가 비중',
+    cmp3Unit: t('dash.corp.cmp3Unit') || '전체 예약 중 지자체 지원금 이용 비율',
+    chartTitle: t('dash.corp.chartTitle') || '월별 워케이션 이용 계절성 (캘린더 월 기준)',
+    chartSub: t('dash.corp.chartSub') || '기업 회원(B2B)·개인 회원(B2C) 각각의 연간 예약을 100%로 두었을 때, 월별 비중 비교',
+    b2bSeries: t('dash.corp.b2bSeries') || '기업(B2B) 예약',
+    b2cSeries: t('dash.corp.b2cSeries') || '개인(B2C) 예약'
+  };
+  host.innerHTML = `
+    <div class="tabs" id="periodTabs">
+      <button class="tab" data-period="all">${L.periodAll}</button>
+      <button class="tab" data-period="2024">2024</button>
+      <button class="tab" data-period="2025">2025</button>
+      <button class="tab" data-period="2026">2026</button>
+    </div>
+    <div class="cmp-row">
+      <div class="cmp-box">
+        <h4 class="cmp-title">${L.cmp1Title}</h4>
+        <div class="cmp-mid">
+          <div class="cmp-val"><div class="cmp-num" id="cmpNightsB2B">–</div><div class="cmp-seg">B2B</div></div>
+          <div class="cmp-vs">vs</div>
+          <div class="cmp-val"><div class="cmp-num" id="cmpNightsB2C">–</div><div class="cmp-seg">B2C</div></div>
+        </div>
+        <div class="cmp-unit">${L.cmp1Unit}</div>
+      </div>
+      <div class="cmp-box">
+        <h4 class="cmp-title">${L.cmp2Title}</h4>
+        <div class="cmp-mid">
+          <div class="cmp-val"><div class="cmp-num" id="cmpPayB2B">–</div><div class="cmp-seg">B2B</div></div>
+          <div class="cmp-vs">vs</div>
+          <div class="cmp-val"><div class="cmp-num" id="cmpPayB2C">–</div><div class="cmp-seg">B2C</div></div>
+        </div>
+        <div class="cmp-unit">${L.cmp2Unit}</div>
+      </div>
+      <div class="cmp-box">
+        <h4 class="cmp-title">${L.cmp3Title}</h4>
+        <div class="cmp-mid">
+          <div class="cmp-val"><div class="cmp-num" id="cmpSupportB2B">–</div><div class="cmp-seg">B2B</div></div>
+          <div class="cmp-vs">vs</div>
+          <div class="cmp-val"><div class="cmp-num" id="cmpSupportB2C">–</div><div class="cmp-seg">B2C</div></div>
+        </div>
+        <div class="cmp-unit">${L.cmp3Unit}</div>
+      </div>
+    </div>
+    <div class="chart-card">
+      <h3>${L.chartTitle}</h3><p class="sub">${L.chartSub}</p>
+      <div class="chart-wrap"><canvas id="corpChart"></canvas></div>
+      <p class="src-note">${srcCaption(d)}</p>
+    </div>`;
+  document.getElementById('periodTabs').addEventListener('click', e => {
+    const btn = e.target.closest('.tab');
+    if (!btn) return;
+    __period = btn.dataset.period;
+    updatePeriodView(d, L);
+  });
+  updatePeriodView(d, L);
+}
+
+let __corpData = null;
+fetch('assets/data/corporate-workation-status.json?v=' + Date.now())
+  .then(r => r.ok ? r.json() : null)
+  .then(d => { __corpData = d; renderCorpDashboard(d); })
+  .catch(() => renderCorpDashboard(null));
+I18N_RERENDERS.push(() => renderCorpDashboard(__corpData));
+</script>
+</body></html>

@@ -11,6 +11,12 @@ const I18N = {
     'footer.terms': 'Terms of Service',
     'footer.privacy': 'Privacy Policy',
     'footer.links': 'DearMonday Links',
+    'footer.platformLink': 'DearMonday Platform',
+    'footer.bizNameLabel': 'Company Name', 'footer.bizNameValue': 'DearMonday Corp.',
+    'footer.repLabel': 'Representatives', 'footer.repValue': 'Jeongsu Kim, Sungwoo Kim',
+    'footer.bizRegLabel': 'Business Registration No.', 'footer.ecommerceLabel': 'E-Commerce License No.',
+    'footer.addressLabel': 'Address', 'footer.addressValue': '3F-310, 21 Baekbeom-ro 31-gil, Mapo-gu, Seoul (Gongdeok-dong, Seoul Startup Hub Annex)',
+    'footer.privacyOfficerLabel': 'Personal Data Protection Officer', 'footer.privacyOfficerValue': 'Sungwoo Kim (sungwoo.kim@dearmonday.io)',
     'home.hero.eyebrow': 'Workation Insight Lab · Private Workation Research Institute',
     'home.hero.h1': 'Proving the Value of Workation <em>with Data</em>',
     'home.hero.p': 'DearMonday, Korea’s dedicated workation platform, has accumulated workation usage data from a diverse customer base of companies, individuals, and local governments since the market’s earliest days. Beyond our own directly-operated locations, we also run private-partner and municipal public facilities — and use the data gathered across all of them to propose original workation indices, quantitatively proving the corporate and regional economic effects that workation creates.',
@@ -75,6 +81,9 @@ const I18N = {
     'wibi.method.p': 'Cross-verifies prior research, corporate inquiry/meeting data, quantitative surveys and in-depth interviews to refine the index and entry model.',
     'wibi.step1.h4': 'Reflecting Company Profile', 'wibi.step1.p': 'Reflects that the same score can carry different constraints and execution conditions depending on size, industry, job function, work style, and welfare level.',
     'wibi.step1.li1': 'Company size and approval structure', 'wibi.step1.li2': 'Security sensitivity by industry', 'wibi.step1.li3': 'Share of remotely-doable jobs',
+    'wibi.step1.n': '01 · Pre-Classification', 'wibi.step2.n': '02 · Quantitative Diagnosis', 'wibi.step3.n': '03 · Qualitative Verification',
+    'wibi.domainA.score': '25pt', 'wibi.domainB.score': '20pt', 'wibi.domainC.score': '20pt', 'wibi.domainD.score': '20pt', 'wibi.domainE.score': '15pt',
+    'wibi.stage5.badge': 'Structural Constraint',
     'wibi.step2.h4': '5 Domains · 17 Questions', 'wibi.step2.p': 'Diagnoses adoption readiness across Work & System (25pt), Security & IT (20pt), Cost & Budget (20pt), Decision-Making (20pt), and Experience & Information (15pt).',
     'wibi.step2.li1': '100-point structure total', 'wibi.step2.li2': 'Reviews security/remote-access disqualifying conditions', 'wibi.step2.li3': 'Identifies bottlenecks by domain',
     'wibi.step3.h4': 'Interpreting the Reasons Behind the Score', 'wibi.step3.p': 'In-depth interviews confirm why a score came out the way it did and what conditions would enable adoption, to design a tailored entry path.',
@@ -122,10 +131,42 @@ const I18N = {
     'w2bi.method.p': 'Only verifiable evidence is scored — unconfirmed information is never scored arbitrarily.',
     'w2bi.step1.h4': 'Combining Research and Real Customer Data', 'w2bi.step1.p': 'Builds evaluation items by cross-referencing the KTO corporate guide and prior research against 2022–2026 corporate customer purchase, inquiry, and interview data.',
     'w2bi.step1.li1': '5 mandatory requirements · 45 points', 'w2bi.step1.li2': '7 recommended requirements · 55 points',
+    'w2bi.step1.n': '01 · Extract Items',
     'w2bi.step2.h4': 'Evidence-Based Converted Score', 'w2bi.step2.p': 'Only items confirmed via official websites, operator materials, or on-site visits are finalized. Unconfirmed items are excluded from the scorable total as well.',
     'w2bi.formula': 'Converted Index = Confirmed Score ÷ Scorable Total × 100',
+    'w2bi.step2.n': '02 · Partial-Confirmation Principle',
     'w2bi.step3.h4': 'Mandatory Requirements & Program Fit, Judged Independently', 'w2bi.step3.p': 'After checking the mandatory subtotal and any zero-scored items, business-trip-linked, team workshop, immersive project, and regular-work types are each judged independently.',
     'w2bi.step3.li1': 'Whether mandatory subtotal reaches 33+', 'w2bi.step3.li2': 'Type fit ≥ 80 · evidence coverage ≥ 60%',
+    'w2bi.step3.n': '03 · Independent Judgment',
+    'w2bi.sources.h3': 'Metrics & Data Sources',
+    'w2bi.sources.p': 'The metrics WIL produces are structured as below, and each metric is written after directly verifying the source data. Items whose evidence cannot be confirmed are marked unconfirmed and not scored.',
+    'w2bi.sources.thMajor': 'Category', 'w2bi.sources.thMid': 'Sub-Category', 'w2bi.sources.thMetric': 'Metric', 'w2bi.sources.thSource': 'Source',
+    'w2bi.sources.r1cat': 'Corporate Requirement Fit',
+    'w2bi.sources.r1a': 'Work Environment', 'w2bi.sources.r1a.metric': 'Wifi · Private Workspace · Work-Support Equipment · Collaboration Facilities',
+    'w2bi.sources.r1b': 'Stay Environment', 'w2bi.sources.r1b.metric': 'Room Quality · Experience Programs · Operating Hours',
+    'w2bi.sources.r1c': 'Access & Process', 'w2bi.sources.r1c.metric': 'Transit Access · Commute Difficulty · Usage Process · Physical Security',
+    'w2bi.sources.srcOnsite': 'Facility official operating info, on-site visit', 'w2bi.sources.srcOps': 'Facility official operating info, operator confirmation',
+    'w2bi.sources.r2cat': 'Stay Performance',
+    'w2bi.sources.r2a': 'Usage Status', 'w2bi.sources.r2a.metric': 'Nights stayed · per-facility usage pattern · corporate/individual usage share',
+    'w2bi.sources.r2b': 'Repeat Visits', 'w2bi.sources.r2b.metric': 'Repeat-visit rate · long-stay share · B2B conversion rate',
+    'w2bi.sources.srcDb': 'DearMonday booking/operations DB',
+    'w2bi.sources.r3cat': 'Spending', 'w2bi.sources.planned2027': 'Planned 2027',
+    'w2bi.sources.r3a': 'Actual Payments', 'w2bi.sources.r3a.metric': 'Spend per person per night · spending structure by industry',
+    'w2bi.sources.srcCard': 'Card approval/settlement data linkage (consent-based)',
+    'w2bi.sources.r3b': 'Ripple Effect', 'w2bi.sources.r3b.metric': 'Production-inducing effect · value-added-inducing effect',
+    'w2bi.sources.srcBok': 'Bank of Korea Regional Input-Output Table',
+    'w2bi.sources.r4a': 'User Satisfaction', 'w2bi.sources.r4a.mid': 'Stay Quality', 'w2bi.sources.r4a.metric': 'Work immersion · lodging satisfaction · local content satisfaction',
+    'w2bi.sources.srcSurvey': 'Checkout survey',
+    'w2bi.cta.h2': 'Diagnose Your Facility’s <em>Corporate Requirement Fit</em>',
+    'w2bi.cta.p': 'A self-diagnosis applying the exact same 12-item, 100-point system used in the official diagnosis. From your answers alone, instantly see the W2BI total score, corporate workation fit, and which program types your facility matches.',
+    'w2bi.cta.btn': 'Try Our W2BI Self-Diagnosis →',
+    'w2bi.d1.n': '01 · Mandatory', 'w2bi.d1.score': 'Weight 5pt',
+    'w2bi.d2.n': '02 · Mandatory', 'w2bi.d2.score': 'Weight 15pt',
+    'w2bi.d3.n': '03 · Mandatory', 'w2bi.d3.score': 'Weight 5pt',
+    'w2bi.d4.n': '04 · Mandatory', 'w2bi.d4.score': 'Weight 10pt',
+    'w2bi.d5.n': '05 · Mandatory', 'w2bi.d5.score': 'Weight 10pt',
+    'w2bi.d6.n': '06–12 · Recommended', 'w2bi.d6.label': 'Operating Hours · Security · Collaboration Facilities · Access & More', 'w2bi.d6.score': 'Weight 55pt',
+    'common.overview': 'Overview', 'common.methodology': 'Methodology',
     'w2bi.progtypes.h2': '4 Program Types by <em>How Companies Use the Facility</em>',
     'w2bi.progtypes.p': 'Types are defined not by facility form, but by work continuity, collaboration style, and purpose of stay.',
     'w2bi.prog1.b': 'Business-Trip-Linked Work-Continuity', 'w2bi.prog1.p': 'An individual/small-group-focused type supporting work before and after a business trip and short stays.',
@@ -204,13 +245,67 @@ const I18N = {
     'modal.reqLabel': 'Mandatory Items · 5 · 45pt — Excluded from corporate matching if subtotal is below 33',
     'modal.recLabel': 'Recommended Items · 7 · 55pt',
     'modal.footHint': 'Please select all items, then click View Results.',
-    'modal.reset': 'Reset', 'modal.viewResult': 'View Results'
+    'modal.reset': 'Reset', 'modal.viewResult': 'View Results',
+    'modal.alertIncomplete': 'There are {n} unanswered items. Please answer all items.',
+    'modal.fitOk': 'Fits', 'modal.fitFail': 'Mandatory requirements not met',
+    'modal.fitCapFail': 'Capacity {cap} seats (below {req} required)',
+    'modal.fitScoreFail': 'Fit {fit} (below threshold 80)',
+    'modal.fitScorePrefix': 'Fit ',
+    'modal.scoreTotalLabel': 'W2BI Total Score / 100', 'modal.reqSubtotalLabel': 'Mandatory Subtotal / 45',
+    'modal.recSubtotalLabel': 'Recommended Subtotal / 55', 'modal.matchedTypesLabel': 'Matched Program Types / 4',
+    'modal.verdictPass': 'Fits corporate workation — eligible for corporate matching. (Mandatory subtotal {req} ≥ 33)',
+    'modal.verdictZeroFail': 'Improvement needed — {items} scored 0. Any item scoring 0 excludes this facility from corporate matching.',
+    'modal.verdictScoreFail': 'Improvement needed — mandatory subtotal is {req}, {gap} points short of the 33-point threshold.',
+    'modal.itemNumber': 'Item #{i}',
+    'modal.problemLabel': 'Issue', 'modal.currentAnswerTemplate': "Current answer is '{picked}', which falls short of the top standard.",
+    'modal.improveStandardLabel': 'Improvement Standard', 'modal.bestCaseLabel': 'Top-Standard Example',
+    'modal.publicFacilityLabel': 'municipally operated facility',
+    'modal.allTopStandardTitle': 'All items meet the top standard',
+    'modal.allTopStandardDesc': 'Based on your current answers, no items need further improvement.',
+    'modal.disclaimer': 'This self-diagnosis is a reference result based on your answers. The official W2BI diagnosis is finalized after an on-site visit and verification of operating data.',
+    'modal.downloadPdf': 'Download Results as PDF',
+    'modal.unconfirmed': 'Unconfirmed',
+    'dash.loading': 'Loading data…', 'dash.error': 'Could not load data.',
+    'dash.sourceLabel': 'Data Source', 'dash.sourceText': 'DearMonday platform booking data (aggregated after PII removal)',
+    'dash.updatedLabel': 'Updated', 'dash.scheduleLabel': 'Next auto-refresh: every Monday 09:00 KST',
+    'dash.unitReservations': ' bookings',
+    'dash.reservationData': 'reservation data',
+    'dash.corp.b2bShareLabel': 'B2B (Corporate) Share of All Bookings', 'dash.corp.peakLabel': 'Peak Month',
+    'dash.corp.peakShareLabel': 'Peak Month Share', 'dash.corp.top3Label': 'Top-3 Months Share',
+    'dash.corp.chartTitle': 'Monthly Workation Seasonality (Calendar Month, All Years Combined)',
+    'dash.corp.chartSub': 'Share of each group’s (B2B / B2C) annual bookings falling in each calendar month, each group normalized to 100%',
+    'dash.corp.b2bSeries': 'Corporate (B2B) Bookings', 'dash.corp.b2cSeries': 'Individual (B2C) Bookings',
+    'dash.corp.prodTitle': 'Top Corporate-Booked Products (Ranked)', 'dash.corp.prodSub': 'Workation products ranked by share of corporate (B2B) bookings',
+    'dash.corp.avgNightsB2BLabel': 'Avg. Nights per Guest · Company-Sponsored (B2B)',
+    'dash.corp.avgNightsB2CLabel': 'Avg. Nights per Guest · Personal Expense (B2C)',
+    'dash.corp.avgPaymentB2BLabel': 'Avg. Room+Office Spend per Guest (10K KRW) · Company-Sponsored (B2B)',
+    'dash.corp.avgPaymentB2CLabel': 'Avg. Room+Office Spend per Guest (10K KRW) · Personal Expense (B2C)',
+    'dash.unitNights': ' nights', 'dash.unitManwon': ' × 10K KRW',
+    'dash.corp.basisLabel': 'Date Basis', 'dash.corp.basisUseDate': 'By Stay Date', 'dash.corp.basisPaymentDate': 'By Payment Date',
+    'dash.corp.periodLabel': 'Period', 'dash.corp.periodAll': 'All Time', 'dash.corp.periodLast3m': 'Last 3 Months',
+    'dash.corp.periodLast6m': 'Last 6 Months', 'dash.corp.periodLast12m': 'Last 12 Months',
+    'dash.corp.cmp1Title': 'Average Stay Duration Comparison', 'dash.corp.cmp1Unit': 'Per Person (nights)',
+    'dash.corp.cmp2Title': 'Average Booking Cost Comparison', 'dash.corp.cmp2Unit': 'Per Person',
+    'dash.corp.cmp3Title': 'Municipal Subsidy Program Participation Rate', 'dash.corp.cmp3Unit': 'Share of all bookings using a municipal subsidy product',
+    'market.soon.tag': 'Data in Preparation',
+    'dash.market.b2bShareLabel': 'B2B Share of All Bookings', 'dash.market.b2cShareLabel': 'B2C Share of All Bookings',
+    'dash.market.topB2BLabel': 'Top B2B Region', 'dash.market.topB2CLabel': 'Top B2C Region',
+    'dash.market.chartTitle': 'Regional Booking Share — B2B vs B2C', 'dash.market.chartSub': 'Share of each group’s (B2B / B2C) total bookings by region, each group normalized to 100%',
+    'dash.market.tblRegion': 'Region', 'dash.market.tblRank': 'Overall Rank',
+    'dash.market.tblB2BShare': 'Share within B2B', 'dash.market.tblB2CShare': 'Share within B2C',
+    'dash.market.tblTitle': 'Regional Ranking'
   },
   ja: {
     'header.subscribe': '登録する',
     'footer.terms': '利用規約',
     'footer.privacy': '個人情報処理方針',
     'footer.links': 'DearMonday 関連リンク',
+    'footer.platformLink': 'DearMondayプラットフォーム',
+    'footer.bizNameLabel': '商号', 'footer.bizNameValue': '株式会社DearMonday',
+    'footer.repLabel': '代表者', 'footer.repValue': 'キム・ジョンス、キム・ソンウ',
+    'footer.bizRegLabel': '事業者登録番号', 'footer.ecommerceLabel': '通信販売業届出番号',
+    'footer.addressLabel': '住所', 'footer.addressValue': 'ソウル特別市麻浦区百凡路31キル21 地上3階310号(孔徳洞、ソウル創業ハブ別館)',
+    'footer.privacyOfficerLabel': '個人情報管理責任者', 'footer.privacyOfficerValue': 'キム・ソンウ (sungwoo.kim@dearmonday.io)',
     'home.hero.eyebrow': 'Workation Insight Lab・ワーケーション専門の民間研究所',
     'home.hero.h1': 'ワーケーションの価値を<em>データで証明</em>します',
     'home.hero.p': '韓国のワーケーション専門プラットフォームDearMondayは、市場初期から企業・個人・自治体など多様な顧客層のワーケーション利用データを蓄積してきました。自社直営拠点だけでなく、民間パートナー・自治体公共施設まで運営して蓄積したデータをもとに、独自のワーケーション指数を提案し、ワーケーションが生み出す企業効果と地域経済波及効果を定量的に実証します。',
@@ -275,6 +370,9 @@ const I18N = {
     'wibi.method.p': '先行研究、企業問い合わせ・ミーティングデータ、定量アンケートと深層インタビューを相互検証し、指数と導入モデルを高度化します。',
     'wibi.step1.h4': '企業プロファイルの反映', 'wibi.step1.p': '規模・業種・職務・勤務形態・福利水準により、同じ点数でも異なる制約と実行条件を持ちうることを反映します。',
     'wibi.step1.li1': '企業規模と決裁構造', 'wibi.step1.li2': '業種別セキュリティ感度', 'wibi.step1.li3': 'リモート遂行可能な職務の比率',
+    'wibi.step1.n': '01・事前分類', 'wibi.step2.n': '02・定量診断', 'wibi.step3.n': '03・質的検証',
+    'wibi.domainA.score': '25点', 'wibi.domainB.score': '20点', 'wibi.domainC.score': '20点', 'wibi.domainD.score': '20点', 'wibi.domainE.score': '15点',
+    'wibi.stage5.badge': '構造的制約',
     'wibi.step2.h4': '5大領域・17項目', 'wibi.step2.p': '業務・制度25点、セキュリティ・IT20点、費用・予算20点、意思決定20点、経験・情報15点で導入可能性を診断します。',
     'wibi.step2.li1': '合計100点の構造', 'wibi.step2.li2': 'セキュリティ・リモート接続の失格条件を検討', 'wibi.step2.li3': '領域別ボトルネックを確認',
     'wibi.step3.h4': '点数の原因と条件の解釈', 'wibi.step3.p': '深層インタビューでなぜその点数になったのか、どんな条件が整えば導入可能かを確認し、オーダーメイドの導入経路を設計します。',
@@ -322,10 +420,42 @@ const I18N = {
     'w2bi.method.p': '検証可能な根拠のみを採点し、未確認情報を任意に点数化することはありません。',
     'w2bi.step1.h4': '研究と実際の顧客データの結合', 'w2bi.step1.p': 'KTO企業向けガイドと先行研究に、2022〜2026年の企業顧客の購買・問い合わせ・インタビューデータを照合し評価項目を構成します。',
     'w2bi.step1.li1': '必須要求事項5項目・45点', 'w2bi.step1.li2': '推奨要求事項7項目・55点',
+    'w2bi.step1.n': '01・項目抽出',
     'w2bi.step2.h4': '根拠に基づく換算指数', 'w2bi.step2.p': '公式ウェブサイト、運営機関資料と現場実査で確認された項目のみを確定します。未確認項目は評価可能配点からも除外します。',
     'w2bi.formula': '換算指数 = 確定点数 ÷ 評価可能配点 × 100',
+    'w2bi.step2.n': '02・部分確認原則',
     'w2bi.step3.h4': '必須要件とタイプ適合性の独立判定', 'w2bi.step3.p': '必須小計と0点項目を先に確認した後、出張連携、チームワークショップ、没入プロジェクト、正規勤務タイプをそれぞれ独立して判定します。',
     'w2bi.step3.li1': '必須33点以上かどうか', 'w2bi.step3.li2': 'タイプ適合度80以上・根拠確保率60%以上',
+    'w2bi.step3.n': '03・独立判定',
+    'w2bi.sources.h3': '指標及びデータ出所',
+    'w2bi.sources.p': 'WILが算出する指標は下記のように構成され、各指標は原典データを直接確認して作成します。根拠が確認できない項目はスコアを付与せず未確認と表記します。',
+    'w2bi.sources.thMajor': '大分類', 'w2bi.sources.thMid': '中分類', 'w2bi.sources.thMetric': '指標', 'w2bi.sources.thSource': '出所',
+    'w2bi.sources.r1cat': '企業要求事項満足水準',
+    'w2bi.sources.r1a': '業務環境', 'w2bi.sources.r1a.metric': 'Wifi・個人業務施設・業務支援機器・協業施設',
+    'w2bi.sources.r1b': '滞在環境', 'w2bi.sources.r1b.metric': '客室品質・体験プログラム・運営時間',
+    'w2bi.sources.r1c': 'アクセス・手続き', 'w2bi.sources.r1c.metric': '公共交通アクセス・通勤難易度・利用手続き・物理的セキュリティ',
+    'w2bi.sources.srcOnsite': '施設公式運営情報、現場実査', 'w2bi.sources.srcOps': '施設公式運営情報、運営チーム確認',
+    'w2bi.sources.r2cat': '滞在実績',
+    'w2bi.sources.r2a': '利用現況', 'w2bi.sources.r2a.metric': '滞在泊数・施設別利用パターン・企業/個人利用比重',
+    'w2bi.sources.r2b': '再訪問', 'w2bi.sources.r2b.metric': '再訪問率・長期滞在比率・B2B転換率',
+    'w2bi.sources.srcDb': 'DearMonday予約・運営DB',
+    'w2bi.sources.r3cat': '消費支出', 'w2bi.sources.planned2027': '2027年予定',
+    'w2bi.sources.r3a': '実決済', 'w2bi.sources.r3a.metric': '1人1泊あたり消費支出額・業種別消費構造',
+    'w2bi.sources.srcCard': 'カード承認・買入内訳連動(同意ベース)',
+    'w2bi.sources.r3b': '波及効果', 'w2bi.sources.r3b.metric': '生産誘発効果・付加価値誘発効果',
+    'w2bi.sources.srcBok': '韓国銀行地域産業連関表',
+    'w2bi.sources.r4a': '需要者満足', 'w2bi.sources.r4a.mid': '滞在品質', 'w2bi.sources.r4a.metric': '業務没入度・宿泊満足度・地域コンテンツ満足度',
+    'w2bi.sources.srcSurvey': 'チェックアウトアンケート',
+    'w2bi.cta.h2': '当施設の<em>企業要求事項満足度</em>を診断してみましょう',
+    'w2bi.cta.p': '実際の診断に使用する12項目・100点満点体系をそのまま適用した自己診断です。回答だけでW2BI総点、企業ワーケーション適合可否、プログラムタイプ別該当可否をすぐに確認できます。',
+    'w2bi.cta.btn': '当施設のW2BI自己診断をしてみる →',
+    'w2bi.d1.n': '01・必須', 'w2bi.d1.score': '加重値5点',
+    'w2bi.d2.n': '02・必須', 'w2bi.d2.score': '加重値15点',
+    'w2bi.d3.n': '03・必須', 'w2bi.d3.score': '加重値5点',
+    'w2bi.d4.n': '04・必須', 'w2bi.d4.score': '加重値10点',
+    'w2bi.d5.n': '05・必須', 'w2bi.d5.score': '加重値10点',
+    'w2bi.d6.n': '06–12・推奨', 'w2bi.d6.label': '運営時間・セキュリティ・協業施設・アクセス他', 'w2bi.d6.score': '加重値55点',
+    'common.overview': '概要', 'common.methodology': '方法論',
     'w2bi.progtypes.h2': '企業の利用方式による<em>4つのプログラムタイプ</em>',
     'w2bi.progtypes.p': '施設形態ではなく、業務連続性、協業方式と滞在目的を基準にタイプを区分します。',
     'w2bi.prog1.b': '出張連携業務継続型', 'w2bi.prog1.p': '出張前後の業務処理と短期滞在を支援する個人・小規模中心のタイプです。',
@@ -404,13 +534,67 @@ const I18N = {
     'modal.reqLabel': '必須項目・5項目・45点 — 小計33点未満の場合、企業マッチング推薦対象から除外',
     'modal.recLabel': '推奨項目・7項目・55点',
     'modal.footHint': 'すべての項目を選択した後、結果を見るを押してください。',
-    'modal.reset': 'リセット', 'modal.viewResult': '結果を見る'
+    'modal.reset': 'リセット', 'modal.viewResult': '結果を見る',
+    'modal.alertIncomplete': '未回答の項目が{n}個あります。すべての項目に回答してください。',
+    'modal.fitOk': '該当', 'modal.fitFail': '必須要件未充足',
+    'modal.fitCapFail': '定員{cap}席({req}席未満)',
+    'modal.fitScoreFail': '適合度{fit}(基準80未満)',
+    'modal.fitScorePrefix': '適合度 ',
+    'modal.scoreTotalLabel': 'W2BI総点 / 100点', 'modal.reqSubtotalLabel': '必須小計 / 45点',
+    'modal.recSubtotalLabel': '推奨小計 / 55点', 'modal.matchedTypesLabel': '該当プログラム類型 / 4',
+    'modal.verdictPass': '企業ワーケーション適合－企業マッチング推薦対象です。(必須小計{req}点 ≥ 33点)',
+    'modal.verdictZeroFail': '改善が必要－{items}が0点です。0点項目があると企業マッチング推薦対象から除外されます。',
+    'modal.verdictScoreFail': '改善が必要－必須小計{req}点で、基準33点に{gap}点不足しています。',
+    'modal.itemNumber': '{i}番項目',
+    'modal.problemLabel': '問題点', 'modal.currentAnswerTemplate': '現在の回答は「{picked}」で、最高基準に未達です。',
+    'modal.improveStandardLabel': '改善基準', 'modal.bestCaseLabel': '最高基準事例',
+    'modal.publicFacilityLabel': '自治体運営施設',
+    'modal.allTopStandardTitle': 'すべての項目が最高基準です',
+    'modal.allTopStandardDesc': '現在の回答基準では追加改善が必要な項目はありません。',
+    'modal.disclaimer': '本自己診断は回答に基づく参考結果です。公式W2BI診断は現場実査及び運営データ確認を経て確定されます。',
+    'modal.downloadPdf': '結果をPDFでダウンロード',
+    'modal.unconfirmed': '未確認',
+    'dash.loading': 'データを読み込み中です…', 'dash.error': 'データを読み込めませんでした。',
+    'dash.sourceLabel': 'データ出所', 'dash.sourceText': 'DearMondayプラットフォーム予約データ(個人情報除去後に集計)',
+    'dash.updatedLabel': '更新', 'dash.scheduleLabel': '次回自動更新: 毎週月曜9:00(韓国時間)',
+    'dash.unitReservations': '件',
+    'dash.reservationData': '予約データ',
+    'dash.corp.b2bShareLabel': '全予約中B2B(企業)の比重', 'dash.corp.peakLabel': '最多利用月',
+    'dash.corp.peakShareLabel': '最多月比重', 'dash.corp.top3Label': '上位3ヶ月比重',
+    'dash.corp.chartTitle': '月別ワーケーション利用季節性(暦月基準、年度統合)',
+    'dash.corp.chartSub': '企業会員(B2B)・個人会員(B2C)それぞれの年間予約を100%とした場合の月別比重比較',
+    'dash.corp.b2bSeries': '企業(B2B)予約', 'dash.corp.b2cSeries': '個人(B2C)予約',
+    'dash.corp.prodTitle': '企業予約上位商品ランキング', 'dash.corp.prodSub': '企業会員(B2B)予約に占める比重が高いワーケーション商品順位',
+    'dash.corp.avgNightsB2BLabel': '1人当たり平均宿泊日数・会社支援(B2B)',
+    'dash.corp.avgNightsB2CLabel': '1人当たり平均宿泊日数・個人負担(B2C)',
+    'dash.corp.avgPaymentB2BLabel': '1人当たり平均宿泊+オフィス決済額(万ウォン)・会社支援(B2B)',
+    'dash.corp.avgPaymentB2CLabel': '1人当たり平均宿泊+オフィス決済額(万ウォン)・個人負担(B2C)',
+    'dash.unitNights': '日', 'dash.unitManwon': '万ウォン',
+    'dash.corp.basisLabel': '基準日', 'dash.corp.basisUseDate': '宿泊基準', 'dash.corp.basisPaymentDate': '決済基準',
+    'dash.corp.periodLabel': '期間', 'dash.corp.periodAll': '全期間', 'dash.corp.periodLast3m': '直近3ヶ月',
+    'dash.corp.periodLast6m': '直近6ヶ月', 'dash.corp.periodLast12m': '直近12ヶ月',
+    'dash.corp.cmp1Title': '平均宿泊日数比較', 'dash.corp.cmp1Unit': '1人当たり(泊)',
+    'dash.corp.cmp2Title': '平均予約費用比較', 'dash.corp.cmp2Unit': '1人当たり',
+    'dash.corp.cmp3Title': '自治体支援参加比重', 'dash.corp.cmp3Unit': '全予約に占める自治体支援金商品利用比率',
+    'market.soon.tag': 'データ整備中',
+    'dash.market.b2bShareLabel': '全予約中B2Bの比重', 'dash.market.b2cShareLabel': '全予約中B2Cの比重',
+    'dash.market.topB2BLabel': 'B2B最多利用地域', 'dash.market.topB2CLabel': 'B2C最多利用地域',
+    'dash.market.chartTitle': '地域別予約比重－B2B vs B2C', 'dash.market.chartSub': '企業(B2B)・個人(B2C)それぞれの全予約を100%とした場合の地域別比重比較',
+    'dash.market.tblRegion': '地域', 'dash.market.tblRank': '総合順位',
+    'dash.market.tblB2BShare': 'B2B内比重', 'dash.market.tblB2CShare': 'B2C内比重',
+    'dash.market.tblTitle': '地域別ランキング'
   },
   zh: {
     'header.subscribe': '订阅',
     'footer.terms': '使用条款',
     'footer.privacy': '隐私政策',
     'footer.links': 'DearMonday 相关链接',
+    'footer.platformLink': 'DearMonday平台',
+    'footer.bizNameLabel': '公司名称', 'footer.bizNameValue': 'DearMonday有限公司',
+    'footer.repLabel': '代表人', 'footer.repValue': 'Jeongsu Kim、Sungwoo Kim',
+    'footer.bizRegLabel': '营业执照注册号', 'footer.ecommerceLabel': '电子商务经营许可证号',
+    'footer.addressLabel': '地址', 'footer.addressValue': '首尔特别市麻浦区百凡路31街21号 地上3层310号(孔德洞，首尔创业中心别馆)',
+    'footer.privacyOfficerLabel': '个人信息管理负责人', 'footer.privacyOfficerValue': 'Sungwoo Kim (sungwoo.kim@dearmonday.io)',
     'home.hero.eyebrow': 'Workation Insight Lab · 工作度假专业民间研究所',
     'home.hero.h1': '用数据<em>证明工作度假的价值</em>',
     'home.hero.p': '韩国工作度假专业平台DearMonday，自市场萌芽期起便积累了企业、个人、地方政府等多样客户群体的工作度假使用数据。除直营设施外，还运营民间合作伙伴及地方政府公共设施，并基于这些数据积累提出独有的工作度假指数，以定量方式证明工作度假带来的企业效应与地区经济波及效应。',
@@ -475,6 +659,9 @@ const I18N = {
     'wibi.method.p': '交叉验证先行研究、企业咨询·会议数据、定量问卷与深度访谈，持续优化指数与导入模型。',
     'wibi.step1.h4': '反映企业档案', 'wibi.step1.p': '反映规模·行业·职务·工作方式·福利水平不同，同一分数也可能对应不同的制约与执行条件。',
     'wibi.step1.li1': '企业规模与审批结构', 'wibi.step1.li2': '各行业安保敏感度', 'wibi.step1.li3': '可远程执行的职务比例',
+    'wibi.step1.n': '01·预先分类', 'wibi.step2.n': '02·定量诊断', 'wibi.step3.n': '03·定性验证',
+    'wibi.domainA.score': '25分', 'wibi.domainB.score': '20分', 'wibi.domainC.score': '20分', 'wibi.domainD.score': '20分', 'wibi.domainE.score': '15分',
+    'wibi.stage5.badge': '结构性制约',
     'wibi.step2.h4': '5大领域·17项问题', 'wibi.step2.p': '以办公·制度(25分)、安保·IT(20分)、费用·预算(20分)、决策(20分)、经验·信息(15分)诊断导入可能性。',
     'wibi.step2.li1': '总计100分结构', 'wibi.step2.li2': '审查安保·远程接入的不合格条件', 'wibi.step2.li3': '确认各领域瓶颈',
     'wibi.step3.h4': '解读分数背后的原因与条件', 'wibi.step3.p': '通过深度访谈确认该分数产生的原因以及在何种条件下可以导入，从而设计定制化的导入路径。',
@@ -522,10 +709,42 @@ const I18N = {
     'w2bi.method.p': '仅对可验证的依据进行评分，未确认的信息绝不会被随意计分。',
     'w2bi.step1.h4': '结合研究与实际客户数据', 'w2bi.step1.p': '将KTO企业定制指南与先行研究，对照2022~2026年企业客户的购买·咨询·访谈数据，构成评估项目。',
     'w2bi.step1.li1': '5项必需要求事项·45分', 'w2bi.step1.li2': '7项推荐要求事项·55分',
+    'w2bi.step1.n': '01·提取项目',
     'w2bi.step2.h4': '基于依据的换算指数', 'w2bi.step2.p': '仅确定通过官方网站、运营机构资料及现场实地考察确认的项目。未确认项目也将从可评估配点中排除。',
     'w2bi.formula': '换算指数 = 确定分数 ÷ 可评估配点 × 100',
+    'w2bi.step2.n': '02·部分确认原则',
     'w2bi.step3.h4': '独立判定必需要件与类型适配性', 'w2bi.step3.p': '先确认必需项小计与0分项目，再分别独立判定出差关联、团队工作坊、沉浸式项目、正式办公类型。',
     'w2bi.step3.li1': '必需项小计是否达到33分以上', 'w2bi.step3.li2': '类型适配度80以上·依据确认率60%以上',
+    'w2bi.step3.n': '03·独立判定',
+    'w2bi.sources.h3': '指标及数据来源',
+    'w2bi.sources.p': 'WIL计算的指标构成如下，各指标均通过直接核实原始数据编写。无法确认依据的项目不予评分，标记为未确认。',
+    'w2bi.sources.thMajor': '大分类', 'w2bi.sources.thMid': '中分类', 'w2bi.sources.thMetric': '指标', 'w2bi.sources.thSource': '来源',
+    'w2bi.sources.r1cat': '企业需求满足水平',
+    'w2bi.sources.r1a': '办公环境', 'w2bi.sources.r1a.metric': 'Wifi·个人办公设施·办公支持设备·协作设施',
+    'w2bi.sources.r1b': '停留环境', 'w2bi.sources.r1b.metric': '客房品质·体验项目·营业时间',
+    'w2bi.sources.r1c': '交通·流程', 'w2bi.sources.r1c.metric': '公共交通可达性·通勤难度·使用流程·物理安全',
+    'w2bi.sources.srcOnsite': '设施官方运营信息、现场考察', 'w2bi.sources.srcOps': '设施官方运营信息、运营团队确认',
+    'w2bi.sources.r2cat': '停留业绩',
+    'w2bi.sources.r2a': '使用现况', 'w2bi.sources.r2a.metric': '停留间夜数·各设施使用模式·企业/个人使用占比',
+    'w2bi.sources.r2b': '回访', 'w2bi.sources.r2b.metric': '回访率·长期停留比例·B2B转化率',
+    'w2bi.sources.srcDb': 'DearMonday预订·运营数据库',
+    'w2bi.sources.r3cat': '消费支出', 'w2bi.sources.planned2027': '计划2027年',
+    'w2bi.sources.r3a': '实际支付', 'w2bi.sources.r3a.metric': '人均每晚消费支出额·各行业消费结构',
+    'w2bi.sources.srcCard': '刷卡授权·结算数据联动(基于同意)',
+    'w2bi.sources.r3b': '带动效应', 'w2bi.sources.r3b.metric': '生产诱发效应·附加值诱发效应',
+    'w2bi.sources.srcBok': '韩国银行地区产业关联表',
+    'w2bi.sources.r4a': '需求方满意度', 'w2bi.sources.r4a.mid': '停留品质', 'w2bi.sources.r4a.metric': '办公投入度·住宿满意度·当地内容满意度',
+    'w2bi.sources.srcSurvey': '退房问卷',
+    'w2bi.cta.h2': '诊断本设施的<em>企业需求满足度</em>',
+    'w2bi.cta.p': '完全套用正式诊断所用的12项、满分100分体系的自我诊断。仅凭作答即可立即确认W2BI总分、是否适合企业工作度假、以及各项目类型的匹配情况。',
+    'w2bi.cta.btn': '试试本设施的W2BI自我诊断 →',
+    'w2bi.d1.n': '01·必需', 'w2bi.d1.score': '权重5分',
+    'w2bi.d2.n': '02·必需', 'w2bi.d2.score': '权重15分',
+    'w2bi.d3.n': '03·必需', 'w2bi.d3.score': '权重5分',
+    'w2bi.d4.n': '04·必需', 'w2bi.d4.score': '权重10分',
+    'w2bi.d5.n': '05·必需', 'w2bi.d5.score': '权重10分',
+    'w2bi.d6.n': '06–12·推荐', 'w2bi.d6.label': '营业时间·安全·协作设施·可达性等', 'w2bi.d6.score': '权重55分',
+    'common.overview': '概述', 'common.methodology': '方法论',
     'w2bi.progtypes.h2': '依企业使用方式划分的<em>4大项目类型</em>',
     'w2bi.progtypes.p': '类型划分并非依据设施形态，而是依据办公连续性、协作方式与停留目的。',
     'w2bi.prog1.b': '出差关联办公连续型', 'w2bi.prog1.p': '支持出差前后办公处理及短期停留的个人·小规模为主的类型。',
@@ -604,7 +823,55 @@ const I18N = {
     'modal.reqLabel': '必需项目·5项·45分 — 小计低于33分时将被排除在企业匹配推荐之外',
     'modal.recLabel': '推荐项目·7项·55分',
     'modal.footHint': '请选择所有项目后点击查看结果。',
-    'modal.reset': '重置', 'modal.viewResult': '查看结果'
+    'modal.reset': '重置', 'modal.viewResult': '查看结果',
+    'modal.alertIncomplete': '还有{n}个项目未作答，请回答所有项目。',
+    'modal.fitOk': '符合', 'modal.fitFail': '未满足必需条件',
+    'modal.fitCapFail': '定员{cap}座(低于{req}座要求)',
+    'modal.fitScoreFail': '适配度{fit}(低于基准80)',
+    'modal.fitScorePrefix': '适配度 ',
+    'modal.scoreTotalLabel': 'W2BI总分 / 100分', 'modal.reqSubtotalLabel': '必需项小计 / 45分',
+    'modal.recSubtotalLabel': '推荐项小计 / 55分', 'modal.matchedTypesLabel': '符合的项目类型 / 4',
+    'modal.verdictPass': '符合企业工作度假标准－属于企业匹配推荐对象。(必需项小计{req}分 ≥ 33分)',
+    'modal.verdictZeroFail': '需要改善－{items}为0分。存在0分项目将被排除在企业匹配推荐之外。',
+    'modal.verdictScoreFail': '需要改善－必需项小计为{req}分，距33分基准还差{gap}分。',
+    'modal.itemNumber': '第{i}项',
+    'modal.problemLabel': '问题点', 'modal.currentAnswerTemplate': "当前回答为'{picked}'，未达到最高标准。",
+    'modal.improveStandardLabel': '改善标准', 'modal.bestCaseLabel': '最高标准案例',
+    'modal.publicFacilityLabel': '地方政府运营设施',
+    'modal.allTopStandardTitle': '所有项目均达到最高标准',
+    'modal.allTopStandardDesc': '按当前回答，没有需要进一步改善的项目。',
+    'modal.disclaimer': '本自我诊断为基于回答的参考结果。正式W2BI诊断需经过现场调研及运营数据核实后确定。',
+    'modal.downloadPdf': '下载PDF结果',
+    'modal.unconfirmed': '未确认',
+    'dash.loading': '正在加载数据…', 'dash.error': '数据加载失败。',
+    'dash.sourceLabel': '数据来源', 'dash.sourceText': 'DearMonday平台预订数据(去除个人信息后汇总)',
+    'dash.updatedLabel': '更新时间', 'dash.scheduleLabel': '下次自动更新：每周一09:00(韩国时间)',
+    'dash.unitReservations': '单',
+    'dash.reservationData': '预订数据',
+    'dash.corp.b2bShareLabel': '全部预订中B2B(企业)占比', 'dash.corp.peakLabel': '最多使用月份',
+    'dash.corp.peakShareLabel': '最多月份占比', 'dash.corp.top3Label': '前三月份占比',
+    'dash.corp.chartTitle': '各月工作度假使用季节性(按日历月，合并各年度)',
+    'dash.corp.chartSub': '将企业会员(B2B)、个人会员(B2C)各自的年度预订量视为100%时的月度占比对比',
+    'dash.corp.b2bSeries': '企业(B2B)预订', 'dash.corp.b2cSeries': '个人(B2C)预订',
+    'dash.corp.prodTitle': '企业预订热门产品排行', 'dash.corp.prodSub': '按企业(B2B)预订占比排序的工作度假产品排行',
+    'dash.corp.avgNightsB2BLabel': '人均平均住宿天数·公司支持(B2B)',
+    'dash.corp.avgNightsB2CLabel': '人均平均住宿天数·个人自费(B2C)',
+    'dash.corp.avgPaymentB2BLabel': '人均平均住宿+办公室支付金额(万韩元)·公司支持(B2B)',
+    'dash.corp.avgPaymentB2CLabel': '人均平均住宿+办公室支付金额(万韩元)·个人自费(B2C)',
+    'dash.unitNights': '天', 'dash.unitManwon': '万韩元',
+    'dash.corp.basisLabel': '基准日', 'dash.corp.basisUseDate': '住宿基准', 'dash.corp.basisPaymentDate': '支付基准',
+    'dash.corp.periodLabel': '期间', 'dash.corp.periodAll': '全部期间', 'dash.corp.periodLast3m': '最近3个月',
+    'dash.corp.periodLast6m': '最近6个月', 'dash.corp.periodLast12m': '最近12个月',
+    'dash.corp.cmp1Title': '平均住宿天数对比', 'dash.corp.cmp1Unit': '人均(晚)',
+    'dash.corp.cmp2Title': '平均预订费用对比', 'dash.corp.cmp2Unit': '人均',
+    'dash.corp.cmp3Title': '地方政府补贴参与占比', 'dash.corp.cmp3Unit': '在全部预订中使用地方政府补贴商品的比例',
+    'market.soon.tag': '数据整理中',
+    'dash.market.b2bShareLabel': '全部预订中B2B占比', 'dash.market.b2cShareLabel': '全部预订中B2C占比',
+    'dash.market.topB2BLabel': 'B2B最多使用地区', 'dash.market.topB2CLabel': 'B2C最多使用地区',
+    'dash.market.chartTitle': '各地区预订占比——B2B与B2C对比', 'dash.market.chartSub': '将企业(B2B)、个人(B2C)各自的全部预订视为100%时的地区占比对比',
+    'dash.market.tblRegion': '地区', 'dash.market.tblRank': '综合排名',
+    'dash.market.tblB2BShare': 'B2B内占比', 'dash.market.tblB2CShare': 'B2C内占比',
+    'dash.market.tblTitle': '各地区排行'
   }
 };
 
@@ -931,7 +1198,10 @@ const KW = {
 '회의실 수 미확인':['meeting room count unconfirmed','会議室数未確認','会议室数量未确认'],
 '회의실·장비 X':['no meeting room·equipment','会議室・機器なし','无会议室·设备'],
 '회의실형 · Wi-Fi 미확인':['meeting-room type · Wi-Fi unconfirmed','会議室型・Wi-Fi未確認','会议室型·Wi-Fi未确认'],
-'해당 시설 없음':['no facilities match','該当施設なし','暂无符合条件设施']
+'해당 시설 없음':['no facilities match','該当施設なし','暂无符合条件设施'],
+'1월':['Jan','1月','1月'],'2월':['Feb','2月','2月'],'3월':['Mar','3月','3月'],'4월':['Apr','4月','4月'],
+'5월':['May','5月','5月'],'6월':['Jun','6月','6月'],'7월':['Jul','7月','7月'],'8월':['Aug','8月','8月'],
+'9월':['Sep','9月','9月'],'10월':['Oct','10月','10月'],'11월':['Nov','11月','11月'],'12월':['Dec','12月','12月']
 };
 Object.assign(KW, {
 /* 직영점(BRANCHES) 명칭·지역·부제 */
@@ -1009,6 +1279,90 @@ Object.assign(KW, {
 '객실 품질 · 운영 시간 · 이용 절차 · 지역 내 교통 · 체험 프로그램 · 대중교통 접근성 · 개인 업무 시설':['Room quality · Operating hours · Usage process · Local transit · Experience programs · Transit access · Private workspace','客室品質・営業時間・利用手続き・地域内交通・体験プログラム・公共交通アクセス・個人業務施設','客房品质·营业时间·使用流程·当地交通·体验项目·公共交通可达性·个人办公设施'],
 '판정 항목':['Judgment Criteria','判定項目','判定项目'],
 '해당':['Fits','該当','符合']
+});
+/* DataLab 대시보드: 광역 시·도 지역명 (REGION_ORDER, build_dashboard_data.py) */
+Object.assign(KW, {
+'서울특별시':['Seoul','ソウル特別市','首尔特别市'],
+'경기도':['Gyeonggi-do','京畿道','京畿道'],
+'인천광역시':['Incheon','仁川広域市','仁川广域市'],
+'강원특별자치도':['Gangwon State','江原特別自治道','江原特别自治道'],
+'충청남도':['Chungcheongnam-do','忠清南道','忠清南道'],
+'충청북도':['Chungcheongbuk-do','忠清北道','忠清北道'],
+'대전광역시':['Daejeon','大田広域市','大田广域市'],
+'전라남도':['Jeollanam-do','全羅南道','全罗南道'],
+'전북특별자치도':['Jeonbuk State','全北特別自治道','全北特别自治道'],
+'광주광역시':['Gwangju','光州広域市','光州广域市'],
+'경상북도':['Gyeongsangbuk-do','慶尚北道','庆尚北道'],
+'대구광역시':['Daegu','大邱広域市','大邱广域市'],
+'경상남도':['Gyeongsangnam-do','慶尚南道','庆尚南道'],
+'부산광역시':['Busan','釜山広域市','釜山广域市'],
+'울산광역시':['Ulsan','蔚山広域市','蔚山广域市'],
+'제주도':['Jeju-do','済州道','济州道'],
+'기타':['Other','その他','其他'],
+'미확인':['Unconfirmed','未確認','未确认']
+});
+/* 자가진단 모달(QUESTIONS) 12개 문항 · 4개 선택지 — index/w2bi 등 여러 페이지 공용 모달 */
+Object.assign(KW, {
+'Wifi 환경 및 정보 보안':['Wifi Environment & Information Security','Wifi環境及び情報セキュリティ','Wifi环境及信息安全'],
+'Wifi 자체를 제공하지 않음':['No Wifi provided at all','Wifiそのものを提供しない','完全不提供Wifi'],
+'공용 Wifi만 제공':['Shared Wifi only','共用Wifiのみ提供','仅提供公共Wifi'],
+'워케이션 전용 Wifi 제공':['Dedicated workation Wifi provided','ワーケーション専用Wifi提供','提供工作度假专用Wifi'],
+'전용 Wifi + 기업 보안 요건(망분리 등) 지원 가능':['Dedicated Wifi + can support corporate security requirements (network segregation, etc.)','専用Wifi＋企業セキュリティ要件(ネットワーク分離等)対応可能','专用Wifi+可支持企业安全要求(网络隔离等)'],
+'개인 업무 시설':['Private Workspace','個人業務施設','个人办公设施'],
+'카페·로비 등 재고 관리·예약이 불가한 유사 업무공간':['Cafe/lobby-type space only, no seat inventory or booking management','カフェ・ロビー等、在庫管理・予約ができない類似業務空間','咖啡厅·大堂等无法进行库存管理·预约的类似办公空间'],
+'전용 오피스는 있으나 좌석 관리 체계 없음':['Dedicated office exists but no seat management system','専用オフィスはあるが座席管理体系なし','有专用办公室但无座位管理体系'],
+'사무실 수준 개인 좌석 + 정원 기반 관리':['Office-grade private seating + capacity-based management','オフィス水準の個人座席＋定員ベース管理','办公室级个人座位+按定员管理'],
+'좌석 재고·예약 시스템이 자동 연동됨':['Seat inventory and booking system auto-integrated','座席在庫・予約システムが自動連動','座位库存·预约系统自动联动'],
+'체험 프로그램':['Experience Programs','体験プログラム','体验项目'],
+'업무 시간 중 체험 참가가 필수인 형태':['Participation mandatory during work hours','業務時間中の体験参加が必須の形態','工作时间内必须参加体验项目'],
+'업무 외 시간 운영 프로그램 1개':['1 program offered outside work hours','業務外時間運営プログラム1個','工作时间外运营1个项目'],
+'업무 외 시간 운영 프로그램 2개 이상':['2+ programs offered outside work hours','業務外時間運営プログラム2個以上','工作时间外运营2个以上项目'],
+'2개 이상 + 사전 예약·결제 시스템 제공':['2+ programs + advance booking/payment system','2個以上＋事前予約・決済システム提供','2个以上项目+提供预约·支付系统'],
+'객실 품질':['Room Quality','客室品質','客房品质'],
+'공용 욕실·기본 침구만 (도미토리·캠핑장 등)':['Shared bathroom, basic bedding only (dormitory/camping, etc.)','共用浴室・基本寝具のみ(ドミトリー・キャンプ場等)','仅公用浴室·基本床品(多人间·露营地等)'],
+'개인 욕실 + 기본 어메니티 구비':['Private bathroom + basic amenities','個人浴室＋基本アメニティ完備','独立浴室+配备基础用品'],
+'호텔급 객실 (비데·욕조·다양한 타입)':['Hotel-grade room (bidet, bathtub, various types)','ホテル級客室(ビデ・浴槽・多様なタイプ)','酒店级客房(智能马桶·浴缸·多种房型)'],
+'관광공사 3성 이상 (조식·부대시설·프런트·방음)':['KTO 3-star or above (breakfast, amenities, front desk, soundproofing)','観光公社3つ星以上(朝食・付帯施設・フロント・防音)','韩国观光公社3星级以上(早餐·配套设施·前台·隔音)'],
+'이용 절차':['Usage Process','利用手続き','使用流程'],
+'지원정책 없음 / 개인별 선별·환급 절차':['No support policy / individual screening & reimbursement process','支援政策なし／個人別選別・払戻手続き','无支持政策/个人筛选·报销流程'],
+'개인 온라인 예약만 가능':['Individual online booking only','個人オンライン予約のみ可能','仅可个人在线预订'],
+'기업 신청 가능 + 지원금 신청서 전산화':['Corporate application possible + digitized subsidy application','企業申請可能＋支援金申請書電算化','可企业申请+补贴申请书电子化'],
+'기업 전용 절차 + 지원금·예약 통합 전산화 (출력·스캔 제로)':['Corporate-dedicated process + fully digitized subsidy/booking (zero printing/scanning)','企業専用手続き＋支援金・予約統合電算化(印刷・スキャンゼロ)','企业专用流程+补贴·预订一体化电子化(零打印·扫描)'],
+'운영 시간':['Operating Hours','運営時間','营业时间'],
+'9~6시만 운영, 주말·공휴일 미운영':['9-6 only, closed weekends/holidays','9~6時のみ運営、週末・祝日休業','仅9点至6点营业，周末·节假日不营业'],
+'평일 연장 운영 (~22시)':['Extended weekday hours (until 22:00)','平日延長運営(~22時)','工作日延长营业(至22点)'],
+'08~23시 등 장시간 운영':['Long hours, e.g. 08:00-23:00','08~23時等長時間運営','08点至23点等长时间营业'],
+'24시간 연중 상시 운영':['Open 24/7 year-round','24時間年中無休運営','24小时全年无休营业'],
+'물리적 보안':['Physical Security','物理的セキュリティ','物理安全'],
+'출입 통제 체계·CCTV 없음':['No access control or CCTV','入退室管理体系・CCTVなし','无门禁管理体系·CCTV'],
+'CCTV만 운영':['CCTV only','CCTVのみ運営','仅运营CCTV'],
+'출입 통제 + CCTV 운영':['Access control + CCTV','入退室管理＋CCTV運営','门禁管理+CCTV'],
+'출입 통제 + 예약 연동 + 방문자 전산 관리 + CCTV 녹화 보관':['Access control + booking integration + digital visitor management + CCTV recording archive','入退室管理＋予約連動＋来訪者電算管理＋CCTV録画保管','门禁管理+预约联动+访客电子化管理+CCTV录像存档'],
+'협업 시설 (미팅룸)':['Collaboration Facilities (Meeting Rooms)','協業施設(ミーティングルーム)','协作设施(会议室)'],
+'미팅룸 미제공':['No meeting room','ミーティングルーム未提供','不提供会议室'],
+'미팅룸은 있으나 좌석 대비 부족':['Meeting room exists but insufficient for seat count','ミーティングルームはあるが座席数に対し不足','有会议室但相对座位数不足'],
+'좌석 10석당 1개 확보 + 기본 시설':['1 room per 10 seats + basic facilities','座席10席あたり1室確保＋基本施設','每10个座位配备1间+基础设施'],
+'좌석 10석당 1개 + 기본 시설 + 예약 관리 시스템':['1 per 10 seats + basic facilities + booking management system','座席10席あたり1室＋基本施設＋予約管理システム','每10个座位1间+基础设施+预约管理系统'],
+'업무 지원 장비 및 시설':['Work-Support Equipment & Facilities','業務支援機器及び施設','办公支持设备及设施'],
+'장비·시설 미제공':['No equipment or facilities','機器・施設未提供','不提供设备·设施'],
+'모니터 정도만 제공':['Monitor only','モニター程度のみ提供','仅提供显示器'],
+'모니터 + 복합기 + 탕비실':['Monitor + multifunction printer + pantry','モニター＋複合機＋給湯室','显示器+复合打印机+茶水间'],
+'전 좌석 모니터 + 보관함 + 복합기 + 탕비실 + 폰부스':['Monitor at every seat + lockers + multifunction printer + pantry + phone booth','全座席モニター＋保管庫＋複合機＋給湯室＋フォンブース','全部座位配显示器+储物柜+复合打印机+茶水间+电话亭'],
+'대중 교통 접근성':['Public Transit Access','公共交通アクセス','公共交通可达性'],
+'자차 이동만 가능':['Car access only','自家用車移動のみ可能','仅可自驾抵达'],
+'시외버스 등 제한적 접근':['Limited access via intercity bus, etc.','市外バス等限定的アクセス','仅可通过市际客车等有限方式抵达'],
+'KTX·종합터미널 연계 가능':['KTX/bus terminal connection available','KTX・総合ターミナル連携可能','可衔接KTX·综合客运站'],
+'KTX + 지역 내 이동 30분 이내':['KTX + within 30 min local transfer','KTX＋地域内移動30分以内','KTX+当地转乘30分钟以内'],
+'지역 내 대중 교통':['Local Public Transit','地域内公共交通','当地公共交通'],
+'버스·택시 이용이 현실적으로 불가':['Bus/taxi use practically unavailable','バス・タクシー利用が実質的に不可能','实际上无法使用公交·出租车'],
+'제한적 (배차 간격·운행 시간 제약)':['Limited (infrequent, restricted hours)','限定的(配車間隔・運行時間制約)','有限(发车间隔·运营时间受限)'],
+'버스·택시 원활하게 이용 가능':['Bus/taxi readily available','バス・タクシーを円滑に利用可能','可顺畅使用公交·出租车'],
+'버스·택시·지역 모빌리티 등 다양한 수단 운영':['Various options: bus, taxi, local mobility services, etc.','バス・タクシー・地域モビリティ等多様な手段運営','运营公交·出租车·当地出行等多种方式'],
+'출퇴근 난이도 (숙소↔오피스)':['Commute Difficulty (Lodging ↔ Office)','通勤難易度(宿泊↔オフィス)','通勤难度(住宿↔办公室)'],
+'수단 무관 30분 이상 소요':['30+ min regardless of transport','手段問わず30分以上所要','无论何种方式均需30分钟以上'],
+'차량 10~30분 소요':['10-30 min by vehicle','車両10~30分所要','车程10至30分钟'],
+'도보 10분 이내':['Within 10 min walk','徒歩10分以内','步行10分钟以内'],
+'동일 건물·동일 부지 (도보 거리)':['Same building/same site (walking distance)','同一建物・同一敷地(徒歩圏内)','同一栋楼·同一场地(步行距离)']
 });
 
 function trK(kr){
@@ -1345,7 +1699,7 @@ const QUESTIONS = [
 ];
 
 const SELF_EXAMPLES = {
-  dm:['경주 라한셀렉트호텔점','경주 라한셀렉트호텔점','제주 마레보비치호텔점','경주 라한셀렉트호텔점','경주 라한셀렉트호텔점','속초 체스터톤스호텔점','경주 라한셀렉트호텔점','제주 마레보비치호텔점','경주 라한셀렉트호텔점','시흥 르컬렉티브점','경주 춘추관점','경주 라한셀렉트호텔점'],
+  dm:['경주 라한셀렉트호텔점','경주 라한셀렉트호텔점','제주 마레보비치호텔점','경주 라한셀렉트호텔점','경주 라한셀렉트호텔점','경주 체스터톤스호텔점','경주 라한셀렉트호텔점','제주 마레보비치호텔점','경주 라한셀렉트호텔점','시흥 르컬렉티브점','경주 춘추관점','경주 라한셀렉트호텔점'],
   public:['남해 오피스 닻','남해 오피스 닻','공주 힐스포레','가평 W지우리조트','남해 오피스 닻','남해 오피스 닻','남해 오피스 닻','남해 오피스 닻','남해 오피스 닻','가평 호텔자라','남해 오피스 닻','남해 오피스 닻']
 };
 
@@ -1416,7 +1770,7 @@ function mountFooter(){
           <div class="dd" id="dmDD">
             <button class="dd-btn" id="dmDDBtn"><span data-i18n="footer.links">디어먼데이 관련 링크</span> <i>▾</i></button>
             <div class="dd-menu">
-              <a href="https://dearmonday.io" target="_blank" rel="noopener">디어먼데이 플랫폼 <em>↗</em></a>
+              <a href="https://dearmonday.io" target="_blank" rel="noopener"><span data-i18n="footer.platformLink">디어먼데이 플랫폼</span> <em>↗</em></a>
               <a href="https://www.youtube.com/@dearmonday" target="_blank" rel="noopener">YouTube <em>↗</em></a>
               <a href="https://www.instagram.com/dear.monday.official" target="_blank" rel="noopener">Instagram <em>↗</em></a>
               <a href="https://blog.naver.com/dear_monday" target="_blank" rel="noopener">Naver Blog <em>↗</em></a>
@@ -1425,10 +1779,10 @@ function mountFooter(){
         </div>
       </div>
       <div class="f-legal">
-        <b>상호명</b> 주식회사 디어먼데이 <b>대표자</b> 김정수, 김성우
-        <b>사업자등록번호</b> 544-81-02720 <b>통신판매업신고번호</b> 2024-서울중구-0166호
-        <b>주소</b> 서울특별시 마포구 백범로 31길, 21 지상 3층 310호 (공덕동, 서울창업허브 별관)
-        <b>개인정보 관리책임자</b> 김성우 (sungwoo.kim@dearmonday.io)
+        <b data-i18n="footer.bizNameLabel">상호명</b> <span data-i18n="footer.bizNameValue">주식회사 디어먼데이</span> <b data-i18n="footer.repLabel">대표자</b> <span data-i18n="footer.repValue">김정수, 김성우</span>
+        <b data-i18n="footer.bizRegLabel">사업자등록번호</b> 544-81-02720 <b data-i18n="footer.ecommerceLabel">통신판매업신고번호</b> 2024-서울중구-0166호
+        <b data-i18n="footer.addressLabel">주소</b> <span data-i18n="footer.addressValue">서울특별시 마포구 백범로 31길, 21 지상 3층 310호 (공덕동, 서울창업허브 별관)</span>
+        <b data-i18n="footer.privacyOfficerLabel">개인정보 관리책임자</b> <span data-i18n="footer.privacyOfficerValue">김성우 (sungwoo.kim@dearmonday.io)</span>
         <span style="margin-left:auto">Copyright ⓒ 2026 DearMonday. All rights reserved.</span>
       </div>
     </div>
@@ -1436,7 +1790,7 @@ function mountFooter(){
   const dd = document.getElementById('dmDD');
   document.getElementById('dmDDBtn').onclick = e => { e.stopPropagation(); dd.classList.toggle('open'); };
   document.addEventListener('click', () => dd.classList.remove('open'));
-  applyLang(getLang());
+  mountLangSwitch();
 }
 
 /* ── 히어로/배너 쇼케이스 슬라이더 (여러 페이지 공용) ── */
@@ -1473,10 +1827,10 @@ function mountShowcase(elId, dotsId, pickIdx){
 function mountSelfModal(_isRerender){
   const req = QUESTIONS.filter(q => q.req), rec = QUESTIONS.filter(q => !q.req);
   const mk = q => `<div class="q">
-      <div class="qt"><b>${q.id}. ${q.t}</b></div>
+      <div class="qt"><b>${q.id}. ${trK(q.t)}</b></div>
       <div class="opts">${q.o.map(([lb, sc]) =>
         `<label class="opt"><input type="radio" name="q${q.id}" value="${sc}">
-         <span>${lb}</span></label>`).join('')}</div>
+         <span>${trK(lb)}</span></label>`).join('')}</div>
     </div>`;
   document.getElementById('wilModal').innerHTML = `
   <div class="modal" id="selfModal">
@@ -1529,7 +1883,7 @@ function calcSelf(scroll){
   const s = getScores();
   const missing = QUESTIONS.filter(q => !document.querySelector(`input[name="q${q.id}"]:checked`));
   if (missing.length) {
-    alert(`미응답 문항이 ${missing.length}개 있습니다. 모든 문항에 응답해 주세요.`);
+    alert((t('modal.alertIncomplete') || '미응답 문항이 {n}개 있습니다. 모든 문항에 응답해 주세요.').replace('{n}', missing.length));
     return;
   }
   const cap = +document.getElementById('capIn').value || 0;
@@ -1539,56 +1893,57 @@ function calcSelf(scroll){
   const zero = [1,2,3,4,5].filter(i => s[i] === 0);
   const pass = zero.length === 0 && reqSum >= 33;
 
-  const tRes = TYPES.map(t => {
-    const got = t.items.reduce((a, i) => a + s[i], 0);
-    const den = t.items.reduce((a, i) => a + QUESTIONS.find(q => q.id === i).w, 0);
+  const tRes = TYPES.map(ty => {
+    const got = ty.items.reduce((a, i) => a + s[i], 0);
+    const den = ty.items.reduce((a, i) => a + QUESTIONS.find(q => q.id === i).w, 0);
     const fit = den ? Math.round(got / den * 1000) / 10 : 0;
-    const capOk = !t.cap || cap >= t.cap;
+    const capOk = !ty.cap || cap >= ty.cap;
     const ok = pass && fit >= 80 && capOk;
-    let why = '적합';
-    if (!pass) why = '필수 요건 미충족';
-    else if (!capOk) why = `정원 ${cap}석 (${t.cap}석 미만)`;
-    else if (fit < 80) why = `적합도 ${fit} (기준 80 미만)`;
-    return {...t, fit, ok, why};
+    let why = t('modal.fitOk') || '적합';
+    if (!pass) why = t('modal.fitFail') || '필수 요건 미충족';
+    else if (!capOk) why = (t('modal.fitCapFail') || '정원 {cap}석 ({req}석 미만)').replace('{cap}', cap).replace('{req}', ty.cap);
+    else if (fit < 80) why = (t('modal.fitScoreFail') || '적합도 {fit} (기준 80 미만)').replace('{fit}', fit);
+    return {...ty, fit, ok, why};
   });
 
   const box = document.getElementById('selfResult');
   const improve = QUESTIONS.filter(q => s[q.id] < q.w).map(q => {
     const picked = q.o.find(([, score]) => score === s[q.id]);
     const best = q.o[q.o.length - 1][0];
-    return `<div class="improve-item"><h5>${q.id}. ${q.t}</h5>
-      <p><b>문제 지점</b> 현재 응답은 ‘${picked ? picked[0] : '미확인'}’으로 최고 기준에 미달합니다.<br>
-      <b>개선 기준</b> ${best}<br>
-      <b>최고 기준 사례</b> <a href="https://dearmonday.io/branch/list?useCount=0" target="_blank" rel="noopener">DearMonday ${SELF_EXAMPLES.dm[q.id - 1]}</a> · 지자체 운영 시설 ${SELF_EXAMPLES.public[q.id - 1]}</p></div>`;
+    const pickedLabel = picked ? trK(picked[0]) : (t('modal.unconfirmed') || '미확인');
+    return `<div class="improve-item"><h5>${q.id}. ${trK(q.t)}</h5>
+      <p><b>${t('modal.problemLabel')||'문제 지점'}</b> ${(t('modal.currentAnswerTemplate')||"현재 응답은 '{picked}'으로 최고 기준에 미달합니다.").replace('{picked}', pickedLabel)}<br>
+      <b>${t('modal.improveStandardLabel')||'개선 기준'}</b> ${trK(best)}<br>
+      <b>${t('modal.bestCaseLabel')||'최고 기준 사례'}</b> <a href="https://dearmonday.io/branch/list?useCount=0" target="_blank" rel="noopener">${trK('DearMonday ' + SELF_EXAMPLES.dm[q.id - 1])}</a> · ${t('modal.publicFacilityLabel')||'지자체 운영 시설'} ${trK(SELF_EXAMPLES.public[q.id - 1])}</p></div>`;
   }).join('');
   box.className = 'result on';
   box.innerHTML = `
     <div class="res-top">
-      <div><b>${total}</b><span>W2BI 총점 / 100점</span></div>
-      <div><b>${reqSum}</b><span>필수 소계 / 45점</span></div>
-      <div><b>${recSum}</b><span>권장 소계 / 55점</span></div>
-      <div><b>${tRes.filter(t => t.ok).length}</b><span>해당 프로그램 유형 / 4</span></div>
+      <div><b>${total}</b><span>${t('modal.scoreTotalLabel')||'W2BI 총점 / 100점'}</span></div>
+      <div><b>${reqSum}</b><span>${t('modal.reqSubtotalLabel')||'필수 소계 / 45점'}</span></div>
+      <div><b>${recSum}</b><span>${t('modal.recSubtotalLabel')||'권장 소계 / 55점'}</span></div>
+      <div><b>${tRes.filter(t2 => t2.ok).length}</b><span>${t('modal.matchedTypesLabel')||'해당 프로그램 유형 / 4'}</span></div>
     </div>
     <div class="res-verdict ${pass ? 'pass' : 'fail'}">
       ${pass
-        ? `기업 워케이션 적합 — 기업 매칭 추천 대상입니다. (필수 소계 ${reqSum}점 ≥ 33점)`
+        ? (t('modal.verdictPass') || '기업 워케이션 적합 — 기업 매칭 추천 대상입니다. (필수 소계 {req}점 ≥ 33점)').replace('{req}', reqSum)
         : zero.length
-          ? `개선 필요 — ${zero.map(i => i + '번 항목').join(', ')}이 0점입니다. 0점 항목이 있으면 기업 매칭 추천 대상에서 제외됩니다.`
-          : `개선 필요 — 필수 소계 ${reqSum}점으로 기준 33점에 ${33 - reqSum}점 부족합니다.`}
+          ? (t('modal.verdictZeroFail') || '개선 필요 — {items}이 0점입니다. 0점 항목이 있으면 기업 매칭 추천 대상에서 제외됩니다.').replace('{items}', zero.map(i => (t('modal.itemNumber')||'{i}번 항목').replace('{i}', i)).join(', '))
+          : (t('modal.verdictScoreFail') || '개선 필요 — 필수 소계 {req}점으로 기준 33점에 {gap}점 부족합니다.').replace('{req}', reqSum).replace('{gap}', 33 - reqSum)}
     </div>
     <div class="res-types">
-      ${tRes.map(t => `<div class="rt ${t.ok ? 'ok' : 'no'}">
-        <div class="mark">${t.ok ? 'V' : '–'}</div><b>${t.n}</b>
-        <span>${t.ok ? '적합도 ' + t.fit : t.why}</span>
+      ${tRes.map(t3 => `<div class="rt ${t3.ok ? 'ok' : 'no'}">
+        <div class="mark">${t3.ok ? 'V' : '–'}</div><b>${trK(t3.n)}</b>
+        <span>${t3.ok ? (t('modal.fitScorePrefix')||'적합도 ') + t3.fit : t3.why}</span>
       </div>`).join('')}
     </div>
     <div class="improve-list">
-      ${improve || '<div class="improve-item"><h5>모든 항목이 최고 기준입니다</h5><p>현재 응답 기준으로 추가 개선이 필요한 항목이 없습니다.</p></div>'}
+      ${improve || `<div class="improve-item"><h5>${t('modal.allTopStandardTitle')||'모든 항목이 최고 기준입니다'}</h5><p>${t('modal.allTopStandardDesc')||'현재 응답 기준으로 추가 개선이 필요한 항목이 없습니다.'}</p></div>`}
     </div>
     <p style="margin-top:14px;font-size:11.5px;color:var(--mute);line-height:1.6">
-      본 자가 진단은 응답 기반 참고 결과입니다. 공식 W2BI 진단은 현장 실사 및 운영 데이터 확인을 거쳐 확정됩니다.
+      ${t('modal.disclaimer')||'본 자가 진단은 응답 기반 참고 결과입니다. 공식 W2BI 진단은 현장 실사 및 운영 데이터 확인을 거쳐 확정됩니다.'}
     </p>
-    <button class="btn-fill pdf-btn" onclick="downloadSelfPDF()">결과를 PDF로 다운로드</button>`;
+    <button class="btn-fill pdf-btn" onclick="downloadSelfPDF()">${t('modal.downloadPdf')||'결과를 PDF로 다운로드'}</button>`;
   if (scroll) box.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 function downloadSelfPDF(){ window.print(); }
