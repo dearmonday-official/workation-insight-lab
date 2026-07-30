@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T16:07:44+09:00",
+  "updatedAt": "2026-07-30T16:18:38+09:00",
   "sourceUpdatedAt": "2026-07-30T16:02:10",
   "dataRangeStart": "2024-03-12",
   "dataRangeEnd": "2026-10-14",
@@ -21,12 +21,12 @@
     "all": {
       "metrics": {
         "B2B": {
-          "avgNightsPerMember": 10.46,
+          "avgNightsPerMember": 2.46,
           "avgCostPerMemberManwon": 33.3,
           "supportPct": 14.2
         },
         "B2C": {
-          "avgNightsPerMember": 10.13,
+          "avgNightsPerMember": 2.41,
           "avgCostPerMemberManwon": 22.7,
           "supportPct": 61.4
         }
@@ -69,12 +69,12 @@
     "2024": {
       "metrics": {
         "B2B": {
-          "avgNightsPerMember": 12.44,
+          "avgNightsPerMember": 2.61,
           "avgCostPerMemberManwon": 38.2,
           "supportPct": 11.4
         },
         "B2C": {
-          "avgNightsPerMember": 17.72,
+          "avgNightsPerMember": 2.18,
           "avgCostPerMemberManwon": 43.3,
           "supportPct": 24.0
         }
@@ -117,12 +117,12 @@
     "2025": {
       "metrics": {
         "B2B": {
-          "avgNightsPerMember": 8.79,
+          "avgNightsPerMember": 2.35,
           "avgCostPerMemberManwon": 29.6,
           "supportPct": 17.8
         },
         "B2C": {
-          "avgNightsPerMember": 8.72,
+          "avgNightsPerMember": 2.49,
           "avgCostPerMemberManwon": 18.0,
           "supportPct": 63.8
         }
@@ -165,12 +165,12 @@
     "2026": {
       "metrics": {
         "B2B": {
-          "avgNightsPerMember": 10.29,
+          "avgNightsPerMember": 2.42,
           "avgCostPerMemberManwon": 31.6,
           "supportPct": 10.7
         },
         "B2C": {
-          "avgNightsPerMember": 5.91,
+          "avgNightsPerMember": 2.45,
           "avgCostPerMemberManwon": 13.1,
           "supportPct": 84.0
         }
