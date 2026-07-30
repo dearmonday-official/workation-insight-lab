@@ -256,9 +256,8 @@ header:hover .mega,.mega:hover{display:block}
      font-family:inherit;white-space:nowrap;border-bottom:2px solid transparent;margin-bottom:-2px;transition:.18s;letter-spacing:-.02em}
 .tab:hover{color:var(--teal)}
 .tab.on{color:var(--teal);border-bottom-color:var(--teal)}
-.tab.cat-index.on{color:#00766f;border-bottom-color:#00766f}.tab.cat-research.on{color:#2166b1;border-bottom-color:#2166b1}
-.tab.cat-academic.on{color:#7554a3;border-bottom-color:#7554a3}.tab.cat-forum.on{color:#bd6715;border-bottom-color:#bd6715}
-.tab.cat-statistics.on{color:#28814f;border-bottom-color:#28814f}
+.tab.cat-report.on{color:#bd6715;border-bottom-color:#bd6715}.tab.cat-index.on{color:#00766f;border-bottom-color:#00766f}
+.tab.cat-academic.on{color:#7554a3;border-bottom-color:#7554a3}.tab.cat-data.on{color:#28814f;border-bottom-color:#28814f}
 .tab small{display:block;font-size:11px;font-weight:600;color:var(--mute);margin-top:3px}
 .tab.on small{color:var(--gold-deep)}
 .tabpane{display:none} .tabpane.on{display:block}
@@ -326,9 +325,8 @@ tbody tr:hover{background:var(--teal-50)}
 .ritem:hover{background:var(--white);padding-left:14px}
 .rcat{flex:none;width:96px;font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--teal);
       border:1px solid var(--teal-100);background:var(--teal-50);padding:5px 0;border-radius:5px;text-align:center}
-.rcat.cat-index{color:#00766f;border-color:#9fd4cf;background:#e8f7f5}.rcat.cat-research{color:#2166b1;border-color:#adc9e8;background:#eef5fc}
-.rcat.cat-academic{color:#7554a3;border-color:#cbbbe0;background:#f5f0fa}.rcat.cat-forum{color:#bd6715;border-color:#ebc49c;background:#fff5ea}
-.rcat.cat-statistics{color:#28814f;border-color:#add7bd;background:#eef8f1}
+.rcat.cat-report{color:#bd6715;border-color:#ebc49c;background:#fff5ea}.rcat.cat-index{color:#00766f;border-color:#9fd4cf;background:#e8f7f5}
+.rcat.cat-academic{color:#7554a3;border-color:#cbbbe0;background:#f5f0fa}.rcat.cat-data{color:#28814f;border-color:#add7bd;background:#eef8f1}
 .rbody{flex:1}
 .rbody h5{font-size:15.5px;font-weight:700;letter-spacing:-.03em;line-height:1.5}
 .rbody p{margin-top:5px;font-size:12.5px;color:var(--mute)}

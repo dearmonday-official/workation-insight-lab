@@ -7,7 +7,7 @@
 <meta name="description" content="WIL이 발행한 연구보고서와 발행 예정 콘텐츠를 카테고리별로 확인하세요.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/dear monday-07.png">
-<link rel="stylesheet" href="assets/wil.css?v=202607301643">
+<link rel="stylesheet" href="assets/wil.css?v=202607301900">
 </head>
 <body class="page-research">
 
@@ -31,13 +31,22 @@
 <div id="wilFooter"></div>
 <div id="wilModal"></div>
 
-<script src="assets/wil.js?v=202607301643"></script>
+<script src="assets/wil.js?v=202607301900"></script>
 <script>
   mountHeader('research');
   mountFooter();
   mountSelfModal();
 
   const REPORTS = [
+    {cat:'REPORT', date:'2026.4Q', done:false,
+     title:{ko:'워케이션 인사이트 분기 리포트 Vol.1 — 워케이션 소비, 어디에 얼마나 쓰는가 (1Q 소비 테마)',
+             en:'Workation Insight Quarterly Report Vol.1 — Where and How Much Is Spent on Workation (1Q Consumption Theme)',
+             ja:'ワーケーションインサイト四半期レポート Vol.1－ワーケーション消費、どこにいくら使うか（1Q消費テーマ）',
+             zh:'工作度假洞察季度报告 Vol.1——工作度假消费,花在哪里、花多少（1Q消费主题）'},
+     desc:{ko:'B2B/B2C 이용 동향·W2BI 지수 스냅샷·소비 심층분석을 담은 WIL 정기 리포트 창간호',
+           en:'WIL’s inaugural quarterly report — B2B/B2C usage trends, a W2BI index snapshot, and an in-depth spending analysis',
+           ja:'B2B/B2C利用動向・W2BI指数スナップショット・消費深堀分析を収録したWIL定例レポート創刊号',
+           zh:'收录B2B/B2C使用趋势、W2BI指数快照及消费深度分析的WIL定期报告创刊号'}},
     {cat:'INDEX', date:'2026.07', done:true,
      title:{ko:'워케이션 시설의 기업 요구사항 만족 지수(W2BI) 진단 기준 명세서 &amp; 직영 시설 2차 진단 결과',
              en:'Workation Facility Corporate-Requirement Fit Index (W2BI) Diagnosis Spec &amp; 2nd-Round Directly-Operated Facility Results',
@@ -47,7 +56,7 @@
            en:'11 directly-operated workation facilities · 12-item scoring · program-type fit judgment',
            ja:'直営ワーケーション施設11拠点・12項目採点・プログラムタイプ別該当判定',
            zh:'11家直营工作度假设施·12项评分·各项目类型适配判定'}},
-    {cat:'RESEARCH', date:'2026.07', done:true,
+    {cat:'ACADEMIC', date:'2026.07', done:true,
      title:{ko:'워케이션의 지역 경제 파급 효과: 실결제 데이터 기반 실증 연구 계획서',
              en:'Regional Economic Impact of Workation: Real-Payment-Data-Based Empirical Research Plan',
              ja:'ワーケーションの地域経済波及効果：実決済データに基づく実証研究計画書',
@@ -65,7 +74,7 @@
            en:'Dongduk Women’s University · Kyonggi University joint-research governance and yearly roadmap',
            ja:'同徳女子大学・京畿大学共同研究ガバナンス及び年度別ロードマップ',
            zh:'同德女子大学·京畿大学联合研究治理及年度路线图'}},
-    {cat:'FORUM', date:'2026.11', done:false,
+    {cat:'REPORT', date:'2026.11', done:false,
      title:{ko:'워케이션 데이터 포럼 — 기존 체류 데이터 기반 1차 실증 수치 발표',
              en:'Workation Data Forum — 1st Empirical Findings Based on Existing Stay Data',
              ja:'ワーケーションデータフォーラム－既存滞在データに基づく第1次実証数値発表',
@@ -74,7 +83,7 @@
            en:'Publishing preliminary indicators: stay-nights, per-facility usage patterns, corporate-usage share',
            ja:'滞在泊数・施設別利用パターン・企業利用比率など先行指標を公開',
            zh:'公开住宿间夜数·各设施使用模式·企业使用占比等先行指标'}},
-    {cat:'STATISTICS', date:'2027.1Q', done:false,
+    {cat:'DATA', date:'2027.1Q', done:false,
      title:{ko:'K-워케이션 생활인구 소비지출액 통계 — 신용카드 실측 1차 파일럿',
              en:'K-Workation Living-Population Spending Statistics — 1st Credit-Card Measurement Pilot',
              ja:'K-ワーケーション生活人口消費支出額統計－クレジットカード実測第1次パイロット',
