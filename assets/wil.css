@@ -335,7 +335,7 @@ tbody tr:hover{background:var(--teal-50)}
 .rstat{display:inline-block;margin-top:4px;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:4px}
 .rstat.done{background:#DDF0E4;color:#14663A}
 .rstat.plan{background:var(--gold-50);color:var(--gold-deep)}
-.rdownload{flex:none;margin-left:18px;padding:9px 18px;border-radius:8px;background:var(--teal);color:#fff;
+.rdownload{display:inline-block;margin-top:10px;padding:9px 18px;border-radius:8px;background:var(--teal);color:#fff;
            font-size:12.5px;font-weight:700;white-space:nowrap;transition:.18s}
 .rdownload:hover{background:var(--teal-deep)}
 
@@ -572,7 +572,6 @@ footer{background:#002522;color:rgba(255,255,255,.62);padding:26px 0 24px;font-s
   .rbody{width:100%}
   .rdate{width:100%;min-width:0;text-align:left}
   .rdate b{display:inline;margin-right:8px}
-  .rdownload{margin-left:0}
   .mhead,.mbody,.mfoot{padding-left:20px;padding-right:20px}
   .quad{max-width:340px;aspect-ratio:1/1.05}
   .qn{width:calc(50% - 12px)}
