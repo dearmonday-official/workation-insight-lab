@@ -7,7 +7,7 @@
 <meta name="description" content="WIL이 발행한 연구보고서와 발행 예정 콘텐츠를 카테고리별로 확인하세요.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/dear monday-07.png">
-<link rel="stylesheet" href="assets/wil.css?v=202607310125">
+<link rel="stylesheet" href="assets/wil.css?v=202607310140">
 </head>
 <body class="page-research">
 
@@ -31,7 +31,7 @@
 <div id="wilFooter"></div>
 <div id="wilModal"></div>
 
-<script src="assets/wil.js?v=202607310125"></script>
+<script src="assets/wil.js?v=202607310140"></script>
 <script>
   mountHeader('research');
   mountFooter();
@@ -120,8 +120,8 @@
         : '';
       const inner = `
         <span class="rcat cat-${r.cat.toLowerCase()}">${r.cat}</span>
-        <div class="rbody"><h5>${r.title[lang] || r.title.ko}</h5><p>${r.desc[lang] || r.desc.ko}</p></div>
-        <div class="rdate"><b>${r.date}</b><span class="rstat ${r.done ? 'done' : 'plan'}">${r.done ? (t('research.statDone') || '발행 완료') : (t('research.statPlan') || '발행 예정')}</span>${downloadBtn}</div>`;
+        <div class="rbody"><h5>${r.title[lang] || r.title.ko}</h5><p>${r.desc[lang] || r.desc.ko}</p>${downloadBtn}</div>
+        <div class="rdate"><b>${r.date}</b><span class="rstat ${r.done ? 'done' : 'plan'}">${r.done ? (t('research.statDone') || '발행 완료') : (t('research.statPlan') || '발행 예정')}</span></div>`;
       if (r.file && r.done) {
         return `<div class="ritem">${inner}</div>`;
       }
