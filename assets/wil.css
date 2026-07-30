@@ -567,8 +567,12 @@ footer{background:#002522;color:rgba(255,255,255,.62);padding:26px 0 24px;font-s
   .vision{padding:32px 22px}
   .vision-top h3{font-size:21px}
   .idx{padding:28px 22px}
-  .ritem{flex-wrap:wrap;gap:12px}
-  .rdate{text-align:left}
+  .ritem{flex-direction:column;align-items:flex-start;gap:10px}
+  .rcat{width:auto}
+  .rbody{width:100%}
+  .rdate{width:100%;min-width:0;text-align:left}
+  .rdate b{display:inline;margin-right:8px}
+  .rdownload{margin-left:0}
   .mhead,.mbody,.mfoot{padding-left:20px;padding-right:20px}
   .quad{max-width:340px;aspect-ratio:1/1.05}
   .qn{width:calc(50% - 12px)}

@@ -7,7 +7,7 @@
 <meta name="description" content="WIL이 발행한 연구보고서와 발행 예정 콘텐츠를 카테고리별로 확인하세요.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="assets/dear monday-07.png">
-<link rel="stylesheet" href="assets/wil.css?v=202607301945">
+<link rel="stylesheet" href="assets/wil.css?v=202607302020">
 </head>
 <body class="page-research">
 
@@ -31,14 +31,14 @@
 <div id="wilFooter"></div>
 <div id="wilModal"></div>
 
-<script src="assets/wil.js?v=202607301945"></script>
+<script src="assets/wil.js?v=202607302020"></script>
 <script>
   mountHeader('research');
   mountFooter();
   mountSelfModal();
 
   const REPORTS = [
-    {cat:'REPORT', date:'2026.4Q', done:false, file:'assets/reports/DearMonday_WIL_QuarterlyReport_Vol1.pdf',
+    {cat:'REPORT', date:'2026.4Q', done:true, file:'assets/reports/DearMonday_WIL_QuarterlyReport_Vol1.pdf',
      title:{ko:'워케이션 인사이트 분기 리포트 Vol.1 — 워케이션 소비, 어디에 얼마나 쓰는가 (1Q 소비 테마)',
              en:'Workation Insight Quarterly Report Vol.1 — Where and How Much Is Spent on Workation (1Q Consumption Theme)',
              ja:'ワーケーションインサイト四半期レポート Vol.1－ワーケーション消費、どこにいくら使うか（1Q消費テーマ）',
@@ -119,7 +119,7 @@
         <span class="rcat cat-${r.cat.toLowerCase()}">${r.cat}</span>
         <div class="rbody"><h5>${r.title[lang] || r.title.ko}</h5><p>${r.desc[lang] || r.desc.ko}</p></div>
         <div class="rdate"><b>${r.date}</b><span class="rstat ${r.done ? 'done' : 'plan'}">${r.done ? (t('research.statDone') || '발행 완료') : (t('research.statPlan') || '발행 예정')}</span></div>`;
-      if (r.file) {
+      if (r.file && r.done) {
         return `<div class="ritem">${inner}<a href="${r.file}" class="rdownload" download>${t('research.download') || 'PDF 다운로드'}</a></div>`;
       }
       return `<a href="mailto:research@dearmonday.io" class="ritem">${inner}</a>`;

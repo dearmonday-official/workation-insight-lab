@@ -875,7 +875,13 @@ const I18N = {
   }
 };
 
-function getLang(){ return localStorage.getItem('wil_lang') || 'ko'; }
+function getLang(){
+  const saved = localStorage.getItem('wil_lang');
+  if (saved) return saved;
+  const supported = ['ko','en','ja','zh'];
+  const sys = ((navigator.language || navigator.userLanguage || 'ko').split('-')[0]).toLowerCase();
+  return supported.includes(sys) ? sys : 'ko';
+}
 
 /* 정적 마크업(data-i18n)이 아니라 JS가 매번 새로 그리는 동적 콘텐츠(표·모달 등)에서 쓰는 조회 함수.
    ko이거나 키가 없으면 null을 반환하므로, 호출부에서 `t('key') || '한국어 기본값'` 형태로 사용한다 */
