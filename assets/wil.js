@@ -1733,7 +1733,7 @@ function mountHeader(active){
   <header>
     <div class="hbar">
       <a href="index.html" class="brand">
-        <img class="brand-mark-full" src="assets/wil-main-logo.png?v=202607311550" alt="DearMonday Workation Insight Lab">
+        <img class="brand-mark-full" src="assets/wil-main-logo.png?v=202607311600" alt="DearMonday Workation Insight Lab">
       </a>
       <nav class="nav" id="nav">${nav}</nav>
       <div class="hact">
@@ -1768,7 +1768,7 @@ function mountFooter(){
     <div class="container">
       <div class="f-row">
         <div class="f-brand">
-          <img class="f-brand-full" src="assets/wil-footer-logo.png?v=202607311550" alt="DearMonday Workation Insight Lab">
+          <img class="f-brand-full" src="assets/wil-footer-logo.png?v=202607311600" alt="DearMonday Workation Insight Lab">
         </div>
         <div class="f-act">
           <a href="https://dearmonday.io/common/terms" target="_blank" rel="noopener" data-i18n="footer.terms">이용약관</a>
