@@ -75,7 +75,7 @@ header:hover .mega,.mega:hover{display:block}
 
 /* ═══════════ HERO ═══════════ */
 .hero{background:var(--teal);position:relative;overflow:hidden;padding:0 0 74px}
-.photo-mountain .hero{background-image:linear-gradient(90deg,rgba(0,48,46,.93),rgba(0,55,52,.72) 50%,rgba(0,55,52,.2)),url('hero-home-people-2026.webp');background-size:cover;background-position:center 55%}
+.photo-mountain .hero{background-image:linear-gradient(90deg,rgba(0,48,46,.93),rgba(0,55,52,.72) 50%,rgba(0,55,52,.2)),url('hero-home-desk-2026.webp');background-size:cover;background-position:center 55%}
 .hero::before{content:'';position:absolute;inset:0;background:
   radial-gradient(900px 460px at 88% -10%,rgba(233,179,0,.17),transparent 62%),
   radial-gradient(680px 420px at 2% 106%,rgba(8,107,119,.6),transparent 60%)}
@@ -121,7 +121,7 @@ header:hover .mega,.mega:hover{display:block}
 .phead{background-color:var(--teal);background-image:linear-gradient(90deg,rgba(0,55,52,.94),rgba(0,81,79,.72) 58%,rgba(0,55,52,.36)),url('phead-indexes-people-2026.webp');background-size:cover;background-repeat:no-repeat;background-position:center;position:relative;overflow:hidden;padding:48px 0;
        min-height:340px;box-sizing:border-box;display:flex;align-items:center}
 .photo-ocean .phead{background-image:linear-gradient(90deg,rgba(0,55,52,.94),rgba(0,81,79,.7) 58%,rgba(0,55,52,.32)),url('phead-ocean-office.png')}
-.page-about .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.18)),url('phead-about-people-2026.webp')}.page-indexes .phead,.page-w2bi .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.2)),url('phead-indexes-people-2026.webp')}.page-datalab .phead,.page-wibi .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.18)),url('phead-datalab-people-2026.webp')}.page-research .phead,.page-market .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.18)),url('phead-research-people-2026.webp')}
+.page-about .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.18)),url('phead-about-desk-2026.webp')}.page-indexes .phead,.page-w2bi .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.2)),url('phead-indexes-people-2026.webp')}.page-datalab .phead,.page-wibi .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.18)),url('phead-datalab-people-2026.webp')}.page-research .phead,.page-market .phead{background-image:linear-gradient(90deg,rgba(0,48,46,.92),rgba(0,55,52,.7) 48%,rgba(0,55,52,.18)),url('phead-research-desk-2026.webp')}
 .phead::before{content:'';position:absolute;inset:0;background:radial-gradient(760px 380px at 90% -20%,rgba(233,179,0,.2),transparent 60%)}
 /* .phead가 수직 중앙 정렬을 위해 flex 컨테이너가 되면서, 자식인 .container가
    flex item으로서 auto-margin에 의해 가운데로 좁게 정렬되는 문제가 생긴다
